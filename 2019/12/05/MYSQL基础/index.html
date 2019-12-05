@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="一.对数据库的操作（增删改查）–创建数据库：create database 数据库名； –删除数据库 drop database 数据库名； –修改数据库 alter database 数据库名 harset=gbk； –查询所有数据库：show databases； –查看建立数据库的语句：show create database 数据库名；show databases like ‘%t%’;–">
+<meta name="keywords" content="learn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DreamTheater&#39;s Blog">
+<meta property="og:url" content="http://dream-theater.top/2019/12/05/MYSQL基础/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="一.对数据库的操作（增删改查）–创建数据库：create database 数据库名； –删除数据库 drop database 数据库名； –修改数据库 alter database 数据库名 harset=gbk； –查询所有数据库：show databases； –查看建立数据库的语句：show create database 数据库名；show databases like ‘%t%’;–">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-04T06:57:31.921Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DreamTheater&#39;s Blog">
+<meta name="twitter:description" content="一.对数据库的操作（增删改查）–创建数据库：create database 数据库名； –删除数据库 drop database 数据库名； –修改数据库 alter database 数据库名 harset=gbk； –查询所有数据库：show databases； –查看建立数据库的语句：show create database 数据库名；show databases like ‘%t%’;–">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content>
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2019/12/05/MYSQL基础/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Thu Dec 05 2019 21:35:16 GMT+0800">
+    <meta property="article:modified_time" content="Wed Dec 04 2019 14:57:31 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2019/12/05/MYSQL基础/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">August 2019<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/learning/">learning<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/practise/">practise<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-7.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title"></div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-12-05 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aS3LCMBAFQN//0smWqgTzZvRBUO1VKmDLrYU0PM3189XXhYeHh4eHh4eHdxjviq/77z9++s+QwRP+3lt9Nzw8PLydvBdLbQx49oo9ZPXd8PDw8Pbz8mGeYarskenAw8PD+xReXjRXpyYZFw8PD+8TeXlM8KLwbU0THh4e3mm8wg/+AH9fXo9MwcKsBQ8PDy/mVQ/Adv79hvM9PDw8vFteuaXp9tG9rWVh0xUeHh7eAt6zhbhaBN+/bi8gTkZsZi14eHh4U3nji3vemJVMbvIDAA8PD+9dvGpQm28Y+aKfhBETUmo8PDy8AV4eIuQh77qiGQ8PD+8cXr70z220Gm+KxcPDwzuB14sYqoA8tihPAR4eHt5iXrXJqRo3JK0GyQZTaFPAw8PDW8zrPaIXZ+SLfn5shoeHh3caL98S8ki3uqnkxTQeHh7eHt6s5tRqSZ2M25waPDw8vC28kSbRagNBM2IY2Rjw8PDwpvLyB/VaoHqxRR4B4+Hh4e3nJTfnAWsCyEvt/C48PDy8/bxkoa8iZ/2n/AMADw8PbzGvV0yPRBUrxsXDw8Pbz8tj1l5B3Fv6E16UteDh4eFN5c1qkxqKD4IAdyjGxcPDw5vK6x1TjTSYziqgC/seHh4e3lTeFV8jG0kveui1KeDh4eHt4SWbQX7clT9zvOzGw8PDey8vD2eTieg1DfQ2Jzw8PLyTeXkb1tz2gkLJjoeHh3c8rwqeG21MLqnx8PDwiry8UM7jgyRuyL8TvRseHh7eFl41CBg56Eq2gTz+WHK+h4eHh3fL+74LDw8PDw8PDw/vgOsX4LFpBJcFGEsAAAAASUVORK5CYII=">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://dream-theater.top/2019/12/05/MYSQL基础/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=&url=http://dream-theater.top/2019/12/05/MYSQL基础/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2019/12/05/MYSQL基础/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2019/12/05/MYSQL基础/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2019/12/05/MYSQL基础/&title=" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2019/12/05/MYSQL基础/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2019/12/05/MYSQL基础/&text=" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <p>一.对数据库的操作（增删改查）<br>–创建数据库：<code>create database</code> 数据库名；</p>
+<p>–删除数据库 <code>drop database</code> 数据库名；</p>
+<p>–修改数据库 <code>alter database</code> 数据库名 <code>harset=gbk</code>；</p>
+<p>–查询所有数据库：<code>show databases</code>；</p>
+<p>–查看建立数据库的语句：<code>show create database</code> 数据库名；<br><code>show databases like ‘%t%’;</code><br>–like命令，显示所有名字里带t的数据库名<br>–%匹配0个或多个任意字符，_ 匹配任意一个字符</p>
+<p>–设置默认数据库 use 数据库名；</p>
+<p>二.对数据表的操作<br>–创建数据表（增删改查）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line"><span class="keyword">Id</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">username <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line"><span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>–删除表<br><code>drop table 表名</code>；</p>
+<p>–修改表<br><code>alter table 表名 engine=innodb</code>；–可以修改默认引擎<br><code>alter table 表名 charset=gbk</code>；–可以修改默认字符集<br><code>rename table 表名1 to 表名2</code>；–修改表名</p>
+<p>–查看表<br><code>show tables</code>；查看所有数据表<br><code>show create table 表名；</code>查看建表语句<br><code>desc 表名</code>；查看表结构</p>
+<p>三.对字段的操作<br>创建字段在创建数据表时进行，在已经拥有了表之后，还可以对字段进行操作</p>
+<p>–增加新字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">add</span> <span class="keyword">column</span> gender <span class="built_in">char</span>（<span class="number">1</span>）；<span class="comment">--在student数据表中新增gender字段</span></span><br></pre></td></tr></table></figure>
+
+<p>–删除字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">drop</span> <span class="keyword">column</span> gender；</span><br></pre></td></tr></table></figure>
+
+<p>–修改字段类型和属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">modify</span> <span class="keyword">column</span> gender <span class="built_in">varchar</span>（<span class="number">1</span>）<span class="keyword">after</span> <span class="keyword">id</span>；<span class="comment">--修改gender字段定义</span></span><br></pre></td></tr></table></figure>
+
+<p>–修改字段的名字和定义</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">change</span> <span class="keyword">column</span> gender sex <span class="built_in">varchar</span>（<span class="number">1</span>）；</span><br></pre></td></tr></table></figure>
+
+<p>四.对记录的操作<br>–新增记录：insert into 表名（字段列表）values （值的列表）；<br>–注意：值必须与字段列表一一对应<br>–值得个数与数据表中字段的个数完全一致时，可以省略字段列表</p>
+<p>–记录查询<br><code>select [字段列表] [from子句] [inner join子句] [where 子句] [group by子句] [having子句] [order by子句] [limit 子句][字段列表]：字段1，字段2，字段3......</code><br><code>*</code> :通配符，匹配所有字段<br><code>-- select username from student;</code> –查看所有人的姓名<br><code>-- select username,age from student;</code> –从学生表中查看所有人的姓名和年龄</p>
+<p>–from子句：用于为select语句提供数据，确定数据源<br>1个表：将这个表设置为数据的来源表<br>多个表：联表查询<br>还可以为表格指定别名<br>–从学生表中查询出所有数据 <code>select * from student；</code><br>–指定别名为s <code>select *from student s；</code><br>–从学生表和班级表中获取数据 <code>select * from student，classes；</code></p>
+<p>–where子句：用于过滤数据，只取出满足条件的记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student <span class="keyword">where</span> age&gt;=<span class="number">20</span>;</span><br><span class="line">  <span class="comment">--查询出年龄大于20岁的同学</span></span><br></pre></td></tr></table></figure>
+
+<p>–<code>order by</code>子句：用于对显示的数据进行排序<br>–<code>select * from student where age&gt;=20 order by age asc;</code><br>–<code>select * from student where age&gt;=20 order by age desc;</code></p>
+<p>–limit子句：用于限制输出数据的条数<br>–查询出年龄大于20岁的同学，只要最小的两个。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> * <span class="keyword">from</span> student <span class="keyword">where</span> age&gt;=<span class="number">20</span> <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">asc</span> <span class="keyword">limit</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>limit n;</code> –提取前n条数据<br><code>limit m，n；</code>–从m条开始提取n条数据</p>
+<p>–修改记录<br>update 表名 set 字段名1=新的值1，…字段名n=新的值n，where子句；<br>–将所有同学都归为ID是1的班级 <code>update student set classid=1；</code><br><code>update student set age=22 where username=“张三”；</code></p>
+<p>–删除记录<br><code>delete from 表名 where 条件子句；</code><br><code>delete from student where age=0；--删除年龄为0的所有同学</code></p>
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2019/12/05/MYSQL基础/">http://dream-theater.top/2019/12/05/MYSQL基础/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/09/20/Django之医院管理系统（一）/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2019 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
