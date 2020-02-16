@@ -8,21 +8,21 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>原生JS操作DOM | DreamTheater&#39;s Blog</title>
+  <title>原生JS操作DOM(一) | DreamTheater&#39;s Blog</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
   <meta name="description" content="DOM及其基础操作1234567891011&amp;gt; DOM : document object model 文档对象模型，提供一些属性和方法供我们操作页面中的元素- document.getElementById()   指定在文档中，基于元素的ID获得这个元素对象- [context].getElementsByTagName() 在指定上下文（容器）中，通过标签名获取一组元素集合-  [co">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原生JS操作DOM">
-<meta property="og:url" content="http://dream-theater.top/2020/02/16/原生JS操作DOM/index.html">
+<meta property="og:title" content="原生JS操作DOM(一)">
+<meta property="og:url" content="http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/index.html">
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
 <meta property="og:description" content="DOM及其基础操作1234567891011&amp;gt; DOM : document object model 文档对象模型，提供一些属性和方法供我们操作页面中的元素- document.getElementById()   指定在文档中，基于元素的ID获得这个元素对象- [context].getElementsByTagName() 在指定上下文（容器）中，通过标签名获取一组元素集合-  [co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-16T08:09:20.383Z">
+<meta property="og:updated_time" content="2020-02-16T08:13:24.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原生JS操作DOM">
+<meta name="twitter:title" content="原生JS操作DOM(一)">
 <meta name="twitter:description" content="DOM及其基础操作1234567891011&amp;gt; DOM : document object model 文档对象模型，提供一些属性和方法供我们操作页面中的元素- document.getElementById()   指定在文档中，基于元素的ID获得这个元素对象- [context].getElementsByTagName() 在指定上下文（容器）中，通过标签名获取一组元素集合-  [co">
 
   <meta name="format-detection" content="telephone=no,email=no">
@@ -32,7 +32,7 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="DreamTheater&#39;s Blog">
-  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/16/原生JS操作DOM/">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
@@ -41,11 +41,11 @@
 
   
     <meta property="article:published_time" content="Sun Feb 16 2020 15:43:12 GMT+0800">
-    <meta property="article:modified_time" content="Sun Feb 16 2020 16:09:20 GMT+0800">
+    <meta property="article:modified_time" content="Sun Feb 16 2020 16:13:24 GMT+0800">
   
 
   
-    <link rel="canonical" href="http://dream-theater.top/2020/02/16/原生JS操作DOM/">
+    <link rel="canonical" href="http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/">
   
 
   
@@ -103,7 +103,7 @@
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
         
       </div>
     </div>
@@ -166,10 +166,10 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-17.png" style="max-height: 240px;">
+      <img src="/images/random/material-16.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">原生JS操作DOM</div>
+          <div class="mdui-card-primary-title">原生JS操作DOM(一)</div>
           <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-16 / <i class="iconfont">&#xe601;</i> Wujiang</div>
         </div>
       </div>
@@ -182,7 +182,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbElEQVR42u3aQW6EMBAEwP3/p5NrpGi93bYxaFWcEEnARSTG6pnXz1cfLzw8PDw8PDw8vIfxXvHx9/f/n7+78u6vxk+ZWxseHh7eSd6HT+2Q9H8pyU/bV5msDQ8PD+88L39MvohxUckLT7E2PDw8vIfxxtvffCuc3BkPDw/vO3j5FjnfuD+07uHh4eFtCiPyj/g4kmjveShrwcPDw4t56w2w684f0d/Dw8PDWxlpih8zF/vePFOGh4eHF/CSIHV8vX0pcyFFESjj4eHh3cRbGSBIBk/bBliyQjw8PLwzvJWG1jiuTTbWbRFKSgseHh7e1by5jXLe4spLy0qpwMPDw7uL1z5yZel562tbGIGHh4e3lbcSK7TIubKUj2Th4eHhneTloUN+JQpey0ZaPTqAh4eHt5WXb5rbRlQeW7TR8Idig4eHh3cx7+Qgflt48o0+Hh4e3nle2+zPm2T5QMDcSFYd4+Lh4eFt4uW3KD7QUwOsbausrnt4eHh4W8OI9nM/1/RKkHOjYHh4eHgneWceX7T/4y04Hh4e3nneygjpygDWSgjy4Sl4eHh4F/N2tfnbspEExHPlAQ8PD+8Mr/1k7wpwk4ZZPUqLh4eHdzEvDxHyTXY+HJDD8rAYDw8P72pee7TxQd74bwsSHh4e3l289qOct/DbwYL2peDh4eHdy5vbUo9D2Dl2Xnje3hkPDw/vIK8dAmivz40I1AUDDw8P72G89jwvHrsGXvHw8PCeyWtbU+sjVsUrwMPDwzvImwsOVl5EvmXfsKXGw8PD28prg4Dk+t44I/+X4OHh4V3N+74DDw8PDw8PDw/vAccvad/jX+j9qzkAAAAASUVORK5CYII=">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC30lEQVR42u3aUXLiMBAEUO5/6c0BskC3xlSM9PxFEbD1lKpMZlqPf0deD2xsbGxsbGxsbOxbsh/x9frzz+757Fv/WVZwz7U1Y2NjY5/AfvOnv2Q/u3O+Eb8/OVkzNjY29jns10UrKU7P3nldrpKCOlkzNjY2NnYCaNubdsuSXwM2NjY29ryAtQOmyRqwsbGxsScDmmSsf1XpSsZMH5+lYWNjY9+e3TYPd3j9B/k2NjY29i3ZiwcZ42ZgbSCVF6pizdjY2NibsifD/bzMJD+dvB+Nt7CxsbE3ZSe3WCtp88+3x3rejKWwsbGxD2bnQ/95C/EmrI1j5gsKGDY2NvaXsPMwIG8J2nKYh7ujsoeNjY29NTsvBmub0habpGjVxQ8bGxv7MHay6LaYXRsktMMvbGxs7F3Z+b/1bdMyj3vbslrHA9jY2NgbsZNh/dooZxIqtNuBjY2NfSY7PxDTDpUSZPv0ZMh18ZlTbGxs7C9kt+OhT0cLk2EWNjY29gnsBJwfxMxH9m2ZrEdIrwsYNjY29kbsJCKdPCx/Sh4bXHxkBxsbG/vL2XmTkLcuSQzcRrlt8Fzn29jY2NgbsddKUT5IWkMm0XIRD2BjY2Nvx14b97SLawPatbh3cZaGjY2N/eXsdvieB7RJ2Us2N/9WceYUGxsbewv2ZCifF561QHetNcLGxsbGThZRNADjQ5aTYBgbGxv7HPZavLoWDK8NqiaNDTY2NvYJ7OLLSyP7yScnYQM2Njb2aey8MCSxQR4G501Oe2FjY2OfwG6vyUB/Eh7Pn4KNjY29K7stBu1QPt+4fBPzcBobGxv7HPZkofkAKGl18uYkj5axsbGxz2FfVbTa4VEbSLTBMzY2Njb2/HU7TppsTd2KYGNjYx/Gzhc0OfSzdrfFoRI2Njb2Ruy1opKPeFpSvumLQS82Njb2Rux2ZJO3B0mrcG2Q/MF8GxsbG/uW7HMubGxsbGxsbGxs7NtcP6gRkQNH3EjNAAAAAElFTkSuQmCC">
               
             </li>
           </ul>
@@ -191,25 +191,25 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=原生JS操作DOM&url=http://dream-theater.top/2020/02/16/原生JS操作DOM/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=原生JS操作DOM(一)&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=原生JS操作DOM&url=http://dream-theater.top/2020/02/16/原生JS操作DOM/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=原生JS操作DOM(一)&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/16/原生JS操作DOM/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">Share to Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/16/原生JS操作DOM/" target="_blank" class="mdui-ripple">Share to Google+</a>
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">Share to Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/16/原生JS操作DOM/&title=原生JS操作DOM" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&title=原生JS操作DOM(一)" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=原生JS操作DOM&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/16/原生JS操作DOM/" target="_blank" class="mdui-ripple">Share to QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=原生JS操作DOM(一)&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">Share to QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/16/原生JS操作DOM/&text=原生JS操作DOM" target="_blank" class="mdui-ripple">Share to Telegram</a>
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&text=原生JS操作DOM(一)" target="_blank" class="mdui-ripple">Share to Telegram</a>
             </li>
           </ul>
         
@@ -235,7 +235,7 @@
 
       <blockquote class="mdui-m-t-5">
         
-        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/16/原生JS操作DOM/">http://dream-theater.top/2020/02/16/原生JS操作DOM/</a>
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/">http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/</a>
       </blockquote>
       
     </div>
@@ -253,6 +253,11 @@
 
 
   <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2020/02/16/原生JS操作DOM（二）/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prev
+      </a>
     
     <div class="spacer"></div>
     
