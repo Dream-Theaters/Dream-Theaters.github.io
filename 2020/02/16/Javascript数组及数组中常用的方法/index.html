@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>Javascript数组及数组中常用的方法 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="数组1234567891011121314151617&amp;gt; 数组是对象数据类型的, 它属于特殊的对象,对象总会有键值对let ary = [12, 23, 34, 45];console.log(typeof ary); //=&amp;gt;&quot;object&quot;console.dir(ary);ary = &amp;#123;	0:12,	1:23,	2:34,	3:45,	length:4&amp;#125;数字作为">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript数组及数组中常用的方法">
+<meta property="og:url" content="http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="数组1234567891011121314151617&amp;gt; 数组是对象数据类型的, 它属于特殊的对象,对象总会有键值对let ary = [12, 23, 34, 45];console.log(typeof ary); //=&amp;gt;&quot;object&quot;console.dir(ary);ary = &amp;#123;	0:12,	1:23,	2:34,	3:45,	length:4&amp;#125;数字作为">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-16T11:33:13.256Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript数组及数组中常用的方法">
+<meta name="twitter:description" content="数组1234567891011121314151617&amp;gt; 数组是对象数据类型的, 它属于特殊的对象,对象总会有键值对let ary = [12, 23, 34, 45];console.log(typeof ary); //=&amp;gt;&quot;object&quot;console.dir(ary);ary = &amp;#123;	0:12,	1:23,	2:34,	3:45,	length:4&amp;#125;数字作为">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Sun Feb 16 2020 18:46:29 GMT+0800">
+    <meta property="article:modified_time" content="Sun Feb 16 2020 19:33:13 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">5</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">4</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-12.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">Javascript数组及数组中常用的方法</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-16 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzElEQVR42u3aQZLbMAwEQP//05sfyDMgN1HI1sllyxKbFxQw/PxceX2wsbGxsbGxsbGxX8n+xFf06Md/Jb8+P3llzdjY2NhnsxNM+02y3OT7ZD3RmrGxsbEvYCevT8pSXvySdz1vcb5l2NjY2NhJO7HUKpR3YmNjY2OvF7C22OTjoaSlwcbGxsaeDWiSwVAbBrQb8Q9madjY2NivZ+dtw3s+/9V8GxsbG/vF7PbaOzBaaU7qlWNjY2Mfys4LQzIqml3tIaFhqIyNjY19KDsZCSVl7Plps3igfcKXf2FjY2Mfym4LQzt+ajG7Nmsp38bGxsb+r9hJGcuHTcnxnTYAbpuWKOjFxsbGPojdNhuzwVA09CkPBtWHhLCxsbEPZefFrC1p+QAoaSfylRSzNGxsbOyD2L8x0G+P8jy/sb0/KmDY2NjYR7DXR0izMvYbAQA2Njb2nexkWcmv+QHNWWsxa1ewsbGx72HnS8nj210RQh4qDGdp2NjY2Iey87FO0pbkT17Z4roVwcbGxj6CXR98GR2jSVqLPHhuQwVsbGzss9l5uRq+rD1YUzY2+SZiY2Nj38aexbErY6OV4VHUDmFjY2Mfym5L1HrBa5+8UtKwsbGx72Gvj3XyEpi/az1IxsbGxr6HvevK49iV9qaNkLGxsbGxk5I2C4PzwdDK1mBjY2PfwG6/aduVtoy1IXE0GsPGxsa+kr35xeXgKY+Ek3KIjY2NfQO7CE2D778sotyUDeUQGxsb+1D2SgSbB8D5r8kmtoUTGxsb+2z2bAy0t4Ctfx4OlbCxsbEPYrfHYmaMvOHJx095YIyNjY19AzspP+3BmnyJbTPTHgDCxsbGxm6LWd6QzO6vw2BsbGxs7FFAu17A8pYJGxsbG3sW7u4KBmZBwoZWBBsbG/sIdjusmd3/ZXxfHuupDwBhY2NjH8q+58LGxsbGxsbGxsZ+zfUHMuf2STYj5JIAAAAASUVORK5CYII=">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Javascript数组及数组中常用的方法&url=http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=Javascript数组及数组中常用的方法&url=http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/&title=Javascript数组及数组中常用的方法" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=Javascript数组及数组中常用的方法&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/&text=Javascript数组及数组中常用的方法" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a><strong>数组</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt; 数组是对象数据类型的, 它属于特殊的对象,对象总会有键值对</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">12</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">45</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> ary); <span class="comment">//=&gt;"object"</span></span><br><span class="line"><span class="built_in">console</span>.dir(ary);</span><br><span class="line">ary = &#123;</span><br><span class="line">	<span class="number">0</span>:<span class="number">12</span>,</span><br><span class="line">	<span class="number">1</span>:<span class="number">23</span>,</span><br><span class="line">	<span class="number">2</span>:<span class="number">34</span>,</span><br><span class="line">	<span class="number">3</span>:<span class="number">45</span>,</span><br><span class="line">	length:<span class="number">4</span></span><br><span class="line">&#125;</span><br><span class="line">数字作为索引(key 属性名)</span><br><span class="line">length代表长度</span><br><span class="line">ary[<span class="number">0</span>] 根据索引获取指定项的内容</span><br><span class="line">ary.length 获取数组的长度</span><br><span class="line">ary.length<span class="number">-1</span> 最后一项的索引</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组中常用的方法"><a href="#数组中常用的方法" class="headerlink" title="数组中常用的方法"></a><strong>数组中常用的方法</strong></h3><ul>
+<li>方法的作用和含义</li>
+<li>方法的实参(类型和含义)</li>
+<li>方法的返回值</li>
+<li>原来的数组是否会发生改变</li>
+</ul>
+<h5 id="1-实现数组增删改的方法-这一部分方法都会修改原有的数组"><a href="#1-实现数组增删改的方法-这一部分方法都会修改原有的数组" class="headerlink" title="1. 实现数组增删改的方法(这一部分方法都会修改原有的数组)"></a><strong>1. 实现数组增删改的方法(这一部分方法都会修改原有的数组)</strong></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">push: 向数组末尾增加内容</span><br><span class="line">@params</span><br><span class="line">	多个任意类型</span><br><span class="line">@<span class="keyword">return</span></span><br><span class="line">	新增后数组的长度</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.push(<span class="number">30</span>, <span class="string">'AA'</span>, &#123;<span class="attr">name</span>: <span class="string">'xiaoming'</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(res, ary);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 基于原生js操作键值对的方法, 也可以向末尾追加一项新的内容</span></span><br><span class="line">ary[ary.length] = <span class="number">40</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">unshift: 向数组开始位置增加内容</span><br><span class="line">@params		多个任意类型</span><br><span class="line">@<span class="keyword">return</span>		新增后数组的长度</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.unshift(<span class="number">30</span>, <span class="string">'AA'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res, ary);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 基于原生ES6展开运算符,把原有的ARY克隆一份,再新的数组中创建第一项,其余的内容使用原始ARY中的信息即可, 也算实现了向开始追加的效果</span></span><br><span class="line">ary = [<span class="number">100</span>, ..ary];</span><br><span class="line"><span class="built_in">console</span>.log(ary); <span class="comment">//=&gt;[100, 30, 'AA', 10, 20]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">shift: 删除数组中的第一项</span><br><span class="line">@params 不传参数</span><br><span class="line">@<span class="keyword">return</span> 删除的那一项</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.shift();</span><br><span class="line"><span class="built_in">console</span>.log(res, ary); <span class="comment">//=&gt;10 [20, 30, 40]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 基于原生js中的DELETE, 把数组当作普通的对象, 确实可以删除掉某一项内容,但是不会影响数组本身的结构特点(length长度不会跟着修改), 真实项目中杜绝这样的删除使用</span></span><br><span class="line"><span class="keyword">delete</span> ary[<span class="number">0</span>];</span><br><span class="line"><span class="built_in">console</span>.log(ary); <span class="comment">//=&gt;&#123;1:30, 2:40, length:3&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pop: 删除数组中的最后一项</span><br><span class="line">@params 不传参数</span><br><span class="line">@<span class="keyword">return</span> 删除的那一项</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.pop();</span><br><span class="line"><span class="built_in">console</span>.log(res, ary); <span class="comment">//=&gt;40 [10, 20, 30]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 基于原生js让数组长度干掉一位, 默认干掉的就是最后一项</span></span><br><span class="line">ary.length--;  <span class="comment">//=&gt;ary.length = ary.length - 1;</span></span><br><span class="line"><span class="built_in">console</span>.log(ary);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">splice: 实现数组的增加,删除,修改</span><br><span class="line">@params   n,m都是数字   从索引n开始删除m个元素(m不写,是删除到末尾)</span><br><span class="line">@<span class="keyword">return</span>   把删除的部分用新数组存储起来返回</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>, <span class="number">60</span>, <span class="number">70</span>, <span class="number">80</span>, <span class="number">90</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.splice(<span class="number">2</span>,<span class="number">4</span>);   </span><br><span class="line"><span class="built_in">console</span>.log(res, ary);<span class="comment">//=&gt;[30,40,50,60]   [10,20,70,80,90];</span></span><br><span class="line"><span class="comment">// 基于这种方法可以清空一个数组,把原始数组中的内容以新数组存储起来(有点类似数组的克隆: 把原来数组克隆一份一模一样的给新数组)</span></span><br><span class="line">res = ary.splice(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res, ary); <span class="comment">//=&gt;[10,20,70,80,90] []</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除最后一项和第一项</span></span><br><span class="line">ary.splice(ary.length - <span class="number">1</span>);</span><br><span class="line">ary.splice(<span class="number">0</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">splice: 实现数组的增加,修改</span><br><span class="line">@params</span><br><span class="line">	n, m, x  从索引n开始删除m个元素,用x占用删除的部分</span><br><span class="line">	n, <span class="number">0</span>, x  从索引n开始, 一个都不删, 把x放到索引n的前面</span><br><span class="line">@<span class="keyword">return</span></span><br><span class="line">	把删除的部分用新数组存储起来返回</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.splice(<span class="number">1</span>, <span class="number">2</span>, <span class="string">'wujiang'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res, ary); <span class="comment">//=&gt;[20, 30] [10, 'wujiang', 40, 50]</span></span><br><span class="line"><span class="comment">// 实现增加</span></span><br><span class="line">ary.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'wu'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(ary);</span><br><span class="line"><span class="comment">// 向数组末尾增加</span></span><br><span class="line">ary.splice(ary.length, <span class="number">0</span>, <span class="string">'A'</span>);</span><br><span class="line"><span class="comment">// 向数组开始增加</span></span><br><span class="line">ary.splice(<span class="number">0</span>, <span class="number">0</span>, <span class="string">'B'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(ary);</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-数组的查询和拼接-此组学习的方法-原来数组不会改变"><a href="#2-数组的查询和拼接-此组学习的方法-原来数组不会改变" class="headerlink" title="2.数组的查询和拼接(此组学习的方法,原来数组不会改变)"></a><strong>2.数组的查询和拼接(此组学习的方法,原来数组不会改变)</strong></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">slice: 实现数组的查询</span><br><span class="line">@params</span><br><span class="line">	n, m都是数字  从索引n开始, 找到索引为m的地方(不包含m这一项)</span><br><span class="line">@<span class="keyword">return</span></span><br><span class="line">	把找到的内容以一个新数组的形式返回</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.slice(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res, ary);   <span class="comment">//=&gt;[20, 30]  [10, 20, 30, 40, 50]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// m不写是找到末尾</span></span><br><span class="line">res = ary.slice(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res);  <span class="comment">//=&gt;[20, 30, 40,50]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数组的克隆, 参数0不写也可以</span></span><br><span class="line">res = ary.slice(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res);   <span class="comment">//=&gt;[10, 20, 30, 40, 50]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">concat : 实现数组拼接</span><br><span class="line">@params</span><br><span class="line">	多个任意类型值</span><br><span class="line">@<span class="keyword">return</span></span><br><span class="line">	拼接后的新数组(原来数组不变)</span><br><span class="line"><span class="keyword">let</span> ary1 = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</span><br><span class="line"><span class="keyword">let</span> ary2 = [<span class="number">40</span>, <span class="number">50</span>, <span class="number">60</span>]</span><br><span class="line"><span class="keyword">let</span> res = ary1.concat(<span class="string">'wujiang'</span>, ary2);</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-把数组转换为字符串"><a href="#3-把数组转换为字符串" class="headerlink" title="3. 把数组转换为字符串"></a><strong>3. 把数组转换为字符串</strong></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">toString:把数组转换为字符串</span><br><span class="line">@params 不传递参数</span><br><span class="line">@<span class="keyword">return</span> 转换后的字符串, 每一项用逗号分隔(原来数组不变)</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.toString();</span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">//=&gt;"10, 20, 30"</span></span><br><span class="line"><span class="built_in">console</span>.log([].toString()); <span class="comment">//=&gt;""</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">12</span>].toString()); <span class="comment">//=&gt;"12"</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">join: 把数组转换为字符串</span><br><span class="line">@params   指定的分隔符(字符串格式)</span><br><span class="line">@<span class="keyword">return</span>   转换后的字符串(原来数组不变)</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</span><br><span class="line"><span class="keyword">let</span> res = ary.join(<span class="string">''</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">//=&gt;"102030"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> res = ary.join();</span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">//=&gt;"10,20,30"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> res = ary.join(<span class="string">' '</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">//=&gt;"10 20 30"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> res = ary.join(<span class="string">'|'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">//=&gt;"10|20|30"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> res = ary.join(<span class="string">'+'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">//=&gt;"10+20+30"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">eval</span>(res)); <span class="comment">//=&gt;60    eval把字符串变为js表达式执行</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="4-检测数组中是否包含某一项"><a href="#4-检测数组中是否包含某一项" class="headerlink" title="4.检测数组中是否包含某一项"></a><strong>4.检测数组中是否包含某一项</strong></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">indexOf / lastIndexOf :检测当前项在数组中第一次或者最后一次出现位置的索引值(在IE6~<span class="number">8</span>中不兼容)</span><br><span class="line">@params</span><br><span class="line">	要检索的这一项内容</span><br><span class="line">@<span class="keyword">return</span></span><br><span class="line">	这一项出现的位置索引值(数字), 如果数组中没有这一项, 返回的结果是<span class="number">-1</span></span><br><span class="line">原来数组不变</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</span><br><span class="line"><span class="built_in">console</span>.log(ary.indexOf(<span class="number">20</span>)); <span class="comment">//=&gt;1</span></span><br><span class="line"><span class="built_in">console</span>.log(ary.lastindexOf(<span class="number">20</span>)); <span class="comment">//=&gt;4</span></span><br><span class="line"><span class="comment">//想验证ARY中是否包含'xiaoming'</span></span><br><span class="line"><span class="keyword">if</span> (arr.indexOf(<span class="string">'xiaoming'</span>) === <span class="number">-1</span>) &#123;</span><br><span class="line">	<span class="comment">// 不包含</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//也可以直接使用ES6新提供的includes方法判断</span></span><br><span class="line"><span class="keyword">if</span> (ary.includes(<span class="string">'xiaoming'</span>)) &#123;</span><br><span class="line">	<span class="comment">//包含: 如果存在返回的是TRUE</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-数组的排序或者排列"><a href="#5-数组的排序或者排列" class="headerlink" title="5. 数组的排序或者排列"></a><strong>5. 数组的排序或者排列</strong></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">reverse: 把数组倒过来排列</span><br><span class="line">@params  不需要</span><br><span class="line">@<span class="keyword">return</span>   排列后的新数组</span><br><span class="line"> 原来数组改变</span><br><span class="line"> <span class="keyword">let</span> ary = [<span class="number">12</span>, <span class="number">15</span>, <span class="number">9</span>, <span class="number">28</span>, <span class="number">10</span>, <span class="number">22</span>];</span><br><span class="line"> ary.reverse();</span><br><span class="line"> <span class="built_in">console</span>.log(ary);   <span class="comment">//=&gt;[22, 10, 28, 9, 15, 12]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">sort:实现数组的排序(默认由小到大排序)</span><br><span class="line"> @params</span><br><span class="line"> 	可以没有, 也可以是个函数</span><br><span class="line"> @<span class="keyword">return</span></span><br><span class="line"> 	排序后的新数组</span><br><span class="line"> 原来数组改变</span><br><span class="line"> <span class="keyword">let</span> ary = [<span class="number">7</span>,<span class="number">8</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">9</span>];</span><br><span class="line"> ary.sort();</span><br><span class="line"> <span class="built_in">console</span>.log(ary);<span class="comment">//=&gt;[2,4,5,6,7,8,9]</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">// SORT方法中如果不传递参数, 是无法处理10以上数字排序的(它默认按照每一项第一个字符来排, 不是我们想要的效果)</span></span><br><span class="line"> <span class="keyword">let</span> ary = [<span class="number">12</span>, <span class="number">15</span>, <span class="number">9</span>, <span class="number">28</span>, <span class="number">10</span>, <span class="number">22</span>];</span><br><span class="line"> ary.sort();</span><br><span class="line"> <span class="built_in">console</span>.log(ary); <span class="comment">//=&gt;[10, 12, 15, 22, 28, 9]</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">// 想要实现多位数正常排序, 需要给SORT传递一个函数,函数中返回 a-b 实现升序, 返回 b-a 实现降序(为啥? 需要先了解冒泡排序的机制)</span></span><br><span class="line"> <span class="keyword">let</span> ary = [<span class="number">12</span>, <span class="number">15</span>, <span class="number">9</span>, <span class="number">28</span>, <span class="number">10</span>, <span class="number">22</span>];</span><br><span class="line"> <span class="comment">//ary.sort(function(a, b)&#123; return a - b; &#125;);</span></span><br><span class="line"> </span><br><span class="line"> ary.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line"> 	<span class="comment">// a和b是相邻的两项</span></span><br><span class="line"> 	<span class="keyword">return</span> a - b;</span><br><span class="line"> &#125;);</span><br><span class="line"> </span><br><span class="line"> <span class="comment">// a和b是相邻的两项</span></span><br><span class="line"> ary.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</span><br><span class="line"> </span><br><span class="line"> <span class="built_in">console</span>.log(ary);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6.</span> 遍历数组中每一项的方法</span><br><span class="line">forEach : 遍历数组中的每一项内容</span><br><span class="line">@params</span><br><span class="line">	回调方法</span><br><span class="line">@<span class="keyword">return</span>   没有返回值</span><br><span class="line">原来数组不变</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">12</span>, <span class="number">15</span>, <span class="number">9</span>, <span class="number">28</span>, <span class="number">10</span>, <span class="number">22</span>];</span><br><span class="line"><span class="comment">// 基于原生js中的循环可以实现需求</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length; i++)&#123;</span><br><span class="line">	<span class="comment">// i:当前循环这一项的索引</span></span><br><span class="line">	<span class="comment">//ary[i]:根据索引获取循环的这一项</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'索引：'</span> + i + <span class="string">'内容：'</span> + ary[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ary.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="comment">// 数组中有多少项，函数就会被默认执行多少次</span></span><br><span class="line">	<span class="comment">// 每一次执行函数：item是数组中当前要操作的这一项，index是当前项的索引</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'索引：'</span> + i + <span class="string">'内容：'</span> + ary[i]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//Array.prototype 数组 原型		在浏览器console中查看数组中所有提供的方法,可以基于MDN网站去查询方法的用法</span></span><br><span class="line"></span><br><span class="line">map</span><br><span class="line">filter</span><br><span class="line">find</span><br><span class="line">reduce</span><br><span class="line">some</span><br><span class="line">every</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/">http://dream-theater.top/2020/02/16/Javascript数组及数组中常用的方法/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/16/原生JS操作DOM（二）/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
