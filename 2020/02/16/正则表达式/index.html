@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>正则表达式 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="regular expression:RegExp1234567891011用来处理字符串的规则1.只能处理字符串2.它是一个规则：可以验证字符串是否符合某个规则（test），也可以把字符串中符合规则的内容捕获到（exec / match...）let str = &quot;good good study , day day up!&quot;;//=&amp;gt;学正则就是用来制定规则let reg = /\d+/;">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://dream-theater.top/2020/02/16/正则表达式/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="regular expression:RegExp1234567891011用来处理字符串的规则1.只能处理字符串2.它是一个规则：可以验证字符串是否符合某个规则（test），也可以把字符串中符合规则的内容捕获到（exec / match...）let str = &quot;good good study , day day up!&quot;;//=&amp;gt;学正则就是用来制定规则let reg = /\d+/;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-16T07:36:00.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="regular expression:RegExp1234567891011用来处理字符串的规则1.只能处理字符串2.它是一个规则：可以验证字符串是否符合某个规则（test），也可以把字符串中符合规则的内容捕获到（exec / match...）let str = &quot;good good study , day day up!&quot;;//=&amp;gt;学正则就是用来制定规则let reg = /\d+/;">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/16/正则表达式/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Sun Feb 16 2020 15:26:42 GMT+0800">
+    <meta property="article:modified_time" content="Sun Feb 16 2020 15:36:00 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/16/正则表达式/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-5.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">正则表达式</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-16 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACbklEQVR42u3bQZKjMBAEQP//07sP2DWuagmZmUhOEx4HKDnQTbX8+vOrjxceHh4eHh4eHt7DeK/4yL//n0u+OcO7T2Zrw8PDwzvJ+/Co/WcpyaLz81yz87Xh4eHhneddF4PrR/b15fMzJLfvw9rw8PDwHsbLG+hr2IyKh4eH9xN5+UKTb7atPB4eHt7TeMULfxw6tAXjy1kLHh4eXsxrB2An//7CfA8PDw/vkldvaYqb5nz0lZeBaIV4eHh4N/Py7VBtmLv3puSbFfDw8PDO89Yf30kYkfw338CKh4eHd56XFIB2WNUGwfmPCjbEuHh4eHjLvHxAlbTIs22veYuPh4eH90zeevGYRQ/tKA4PDw/vW7wkeliJGBJAGwS/vSIeHh7ezbz8RHlru+sRPxy24eHh4d3Ma4OAtnVOGvR8eBa15nh4eHhHeLMFzSLaNv7Aw8PDezIvjxX2ttH57VuKcfHw8PBu5rXg2aaB2SatDYUBDw8Pb4HXDrracVQSGbc3q06p8fDw8Lbykhf+2ehrNlrLPy92RuDh4eHdwGsj1zxiSBrlduvAh9uNh4eHdzNvV1zbNt+zghRdHQ8PD+8Ir3jVb6OBuF1ux3JRS42Hh4d3Ay9piNuBVv0oHw3h8PDw8L7Fm42sEupK0zy7Lh4eHt4Z3myb6QzW8tpShIeHh3eSlwcKK0P9lZBiuF0VDw8P72ZeMZ5fDnPbslQUDDw8PLyH8ZLC0I7N2nKCh4eH9xN57caClTFbfnU8PDy887y7G+IkaMgDkbow4OHh4W3lzYKA9aZ8ZTNrURjw8PDwtvJ+34GHh4eHh4eHh/eA4y+kDQw3h5VQuAAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=正则表达式&url=http://dream-theater.top/2020/02/16/正则表达式/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=正则表达式&url=http://dream-theater.top/2020/02/16/正则表达式/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/16/正则表达式/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/16/正则表达式/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/16/正则表达式/&title=正则表达式" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=正则表达式&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/16/正则表达式/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/16/正则表达式/&text=正则表达式" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="regular-expression-RegExp"><a href="#regular-expression-RegExp" class="headerlink" title="regular expression:RegExp"></a><strong>regular expression:RegExp</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">用来处理字符串的规则</span><br><span class="line"><span class="number">1.</span>只能处理字符串</span><br><span class="line"><span class="number">2.</span>它是一个规则：可以验证字符串是否符合某个规则（test），也可以把字符串中符合规则的内容捕获到（exec / match...）</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">"good good study , day day up!"</span>;</span><br><span class="line"><span class="comment">//=&gt;学正则就是用来制定规则</span></span><br><span class="line"><span class="keyword">let</span> reg = <span class="regexp">/\d+/</span>;  （是否包含数字）</span><br><span class="line">reg.test(str);   <span class="comment">//=&gt;false</span></span><br><span class="line"></span><br><span class="line">str = <span class="string">"2019-08-12"</span>;</span><br><span class="line">reg.exec(str);   <span class="comment">//=&gt;["2019", index:0, inputs:"原始字符串"]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="编写正则表达式"><a href="#编写正则表达式" class="headerlink" title="编写正则表达式"></a>编写正则表达式</h5><h6 id="创建方式有两种"><a href="#创建方式有两种" class="headerlink" title="创建方式有两种"></a>创建方式有两种</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;字面量创建方式（两个斜杆之间包起来的，都是用来描述规则的元字符）</span></span><br><span class="line"><span class="keyword">let</span> reg1 = <span class="regexp">/\d+/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;构造函数模式创建   两个参数：元字符字符串，修饰符字符串</span></span><br><span class="line"><span class="keyword">let</span> reg2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"\\d+"</span>);</span><br></pre></td></tr></table></figure>
+
+<h6 id="正则表达式有两部分组成"><a href="#正则表达式有两部分组成" class="headerlink" title="正则表达式有两部分组成"></a>正则表达式有两部分组成</h6><ul>
+<li>元字符</li>
+<li>修饰符<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常用的元字符</span></span><br><span class="line"><span class="comment">//=&gt;1.量词元字符：设置出现的次数</span></span><br><span class="line">* 零到多次      \d   代表<span class="number">0</span>~<span class="number">9</span>中的一个数字</span><br><span class="line">+ 一到多次</span><br><span class="line">? 零次或者一次</span><br><span class="line">&#123;n&#125; 出现n次</span><br><span class="line">&#123;n,&#125; 出现n到多次</span><br><span class="line">&#123;n,m&#125; 出现n到m次 （包含n和m）</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;2.特殊元字符：单个或者组合在一起代表特殊的含义</span></span><br><span class="line">\  转义字符（普通-&gt;特殊-&gt;普通）</span><br><span class="line">. 除\n（换行符）以外的任意字符</span><br><span class="line">^ 以哪一个元字符作为开始</span><br><span class="line">$ 以哪一个元字符作为结束</span><br><span class="line">\n 换行符</span><br><span class="line">\d <span class="number">0</span>~<span class="number">9</span>之间的一个数字</span><br><span class="line">\D 非<span class="number">0</span>~<span class="number">9</span>之间的一个数字（大写和小写的意思是相反的）</span><br><span class="line">\N 除\n（换行符）以外的任意字符</span><br><span class="line">\w 数字、字母、下划线中的任意一个字符</span><br><span class="line">\W 非数字、字母、下划线中的任意一个字符</span><br><span class="line">\s 一个空白字符（包含空格、制表符、换页符等）</span><br><span class="line">\t 一个制表符（一个TAB键：四个空格）</span><br><span class="line">\b 匹配一个单词的边界</span><br><span class="line">x|y x或者y中的一个字符</span><br><span class="line">[xyz] x或者y或者z中的一个字符</span><br><span class="line">[^xy] 除了x，y以外的任意字符</span><br><span class="line">[a-z] 指定a-z这个范围中的任意字符     [<span class="number">0</span><span class="number">-9</span>a-zA-Z_]===\w</span><br><span class="line">[^a-z] 上一个的取反“非”</span><br><span class="line">() 正则中的分组符合</span><br><span class="line">(?:)只匹配不捕获</span><br><span class="line">(?=) 正向预查</span><br><span class="line">(?!) 负向预查</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;3.普通元字符：代表本身含义的</span></span><br><span class="line">/wujiang/   次正则匹配的就是<span class="string">"wujiang"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正则表达式常用的修饰符：img</span></span><br><span class="line">i=&gt;ignoreCase   忽略单词大小写匹配</span><br><span class="line">m =&gt;multiline    可以进行多行匹配</span><br><span class="line">g =&gt; global      全局匹配</span><br><span class="line"></span><br><span class="line">/A/.test(<span class="string">'lalala'</span>)  =&gt;<span class="literal">false</span></span><br><span class="line">/A/i.test(<span class="string">'lalala'</span>)  =&gt;<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/16/正则表达式/">http://dream-theater.top/2020/02/16/正则表达式/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/14/Javascript初探(一)/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
