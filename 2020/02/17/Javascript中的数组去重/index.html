@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>Javascript中的数组去重 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051数组去重let ary = [1, 2, 3, 1, 2, 1, 2, 3, 2, 1, 2, 3];//=&amp;gt;[1, 2, 3]// 方案一：循环原有数组中的每一项，每拿到一项都往新数组中添加，添加之前验证新">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript中的数组去重">
+<meta property="og:url" content="http://dream-theater.top/2020/02/17/Javascript中的数组去重/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051数组去重let ary = [1, 2, 3, 1, 2, 1, 2, 3, 2, 1, 2, 3];//=&amp;gt;[1, 2, 3]// 方案一：循环原有数组中的每一项，每拿到一项都往新数组中添加，添加之前验证新">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-17T06:35:19.727Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript中的数组去重">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051数组去重let ary = [1, 2, 3, 1, 2, 1, 2, 3, 2, 1, 2, 3];//=&amp;gt;[1, 2, 3]// 方案一：循环原有数组中的每一项，每拿到一项都往新数组中添加，添加之前验证新">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/17/Javascript中的数组去重/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Mon Feb 17 2020 14:30:24 GMT+0800">
+    <meta property="article:modified_time" content="Mon Feb 17 2020 14:35:19 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/17/Javascript中的数组去重/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">11</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">9</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-11.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">Javascript中的数组去重</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-17 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0UlEQVR42u3aMXLDMAwEQP//00mbxs4BoCcOuKo8iSxx2cDE4fF15fXAxsbGxsbGxsbG/kj2I75+3v/su7+8+MnTXj+zes+z9WBjY2PvZifLTRivv5tv2bNvTdaMjY2NfQM7KVp5CcnvT95yYM3Y2NjY2K2jSILJDxvY2NjY2O9j944o1QsbGxsbe95USgpVvh3JX/Im1xt7adjY2Ngfz54Uj7/6/Mf5NjY2NvbHsMsjjK1tyu9JmkrNlWNjY2MvZVePFvkxIB+1qQYDebSMjY2NfRu798rJuE914/L/FgoYNjY29gp2cjBIXv+6kCSfy03/uLhiY2Njb2UnD81D3+oQT288qDpChI2NjX0D++zrq9Hs2WGgQtCLjY2NvYJdHnw5Gu6eaiFF24eNjY29mj1v2fSC3kfx6sUJ2NjY2LvZhZ/y8cHjbFsqDxWwsbGx72RPgtjqoudRweF8GxsbG3sFOw8AqgUmX9xkYKiwBmxsbOyl7HmgWz3MJEFCdLSoNp6wsbGxV7N7AUB14yaDO8lBaJRvY2NjY/9bdg/5uhQVWvatwZ3mu7CxsbGXsk+NxSQbkR9C8rUVCh42Njb2Una1LPUGaJLFzSOHA5NK2NjY2P+Q3ftx3xumqQLyOCEqh9jY2NhL2dVSlBSh/LgyeXt10AcbGxt7K3sydpkvblLw5sEANjY29m52tSBN2kO98LgaNmBjY2Nj58hqSFxt8c9jYGxsbOwb2POf/u/43IsQyk0lbGxs7BXs6pWXmXxZ8xIYtb2wsbGxl7J7hSEJD3JqlV3dMmxsbOwb2Hmbqdd+yptB+XEojxawsbGx72FXjw2T7cjB+XZgY2NjY+fFoNnWicOGSfSLjY2Njd1jT8LgUxv3yzqxsbGxL2D3mkr5gaE3alNtThWCXmxsbOxF7F7Qm4e7ecmZN7OePhkbGxt7KfueCxsbGxsbGxsbG/tjrm9RfDQ2btr6WwAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Javascript中的数组去重&url=http://dream-theater.top/2020/02/17/Javascript中的数组去重/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=Javascript中的数组去重&url=http://dream-theater.top/2020/02/17/Javascript中的数组去重/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/Javascript中的数组去重/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/Javascript中的数组去重/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/Javascript中的数组去重/&title=Javascript中的数组去重" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=Javascript中的数组去重&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/Javascript中的数组去重/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/Javascript中的数组去重/&text=Javascript中的数组去重" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">数组去重</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="comment">//=&gt;[1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 方案一：</span></span><br><span class="line">循环原有数组中的每一项，每拿到一项都往新数组中添加，</span><br><span class="line">添加之前验证新数组中是否存在这一项，不存在再增加</span><br><span class="line"><span class="keyword">let</span> newAry = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">	<span class="comment">// 循环获取原有数组中的每一项</span></span><br><span class="line">	<span class="keyword">let</span> item = ary[i];</span><br><span class="line">	<span class="comment">// 验证新数组中是否存在这一项</span></span><br><span class="line">	<span class="keyword">if</span> (newAry.includes(item)) &#123;</span><br><span class="line">		<span class="comment">// 存在这一项，不在增加到新数组中，继续下一轮循环即可</span></span><br><span class="line">		<span class="keyword">continue</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 新数组中不存在这一项，我们加入到新数组中即可</span></span><br><span class="line">	newAry.push(item);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(newAry);</span><br><span class="line">方案一优化：(简化代码)</span><br><span class="line"><span class="keyword">let</span> newAry = [];</span><br><span class="line">ary.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (newAry.includes(item)) <span class="keyword">return</span>;</span><br><span class="line">	newAry.push(item);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(newAry);</span><br><span class="line"></span><br><span class="line">方案二：</span><br><span class="line">先分别拿出数组中的每一项A</span><br><span class="line">用这一项A和“它后面的每项”依次进行比较，如果遇到和当前项A相同的，则在原来数组中把这一项移除掉</span><br><span class="line">不用includes/indexOf（这样保证兼容性）</span><br><span class="line"><span class="keyword">var</span> ary = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">	<span class="comment">// item: 每一次循环拿出来的当前项</span></span><br><span class="line">	<span class="comment">// i：当前项的索引 	i+1：代表后一项</span></span><br><span class="line">	<span class="keyword">var</span> item = ary[i]</span><br><span class="line">	<span class="comment">// 让当前项和后面的每一项进行比较（循环）</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; ary.length; j++) &#123;</span><br><span class="line">	<span class="comment">// compare: 后面拿出来要比较的每一项</span></span><br><span class="line">	<span class="keyword">var</span> compare = ary[j];</span><br><span class="line">	<span class="comment">// 如果compare和item相等， 说明这一项是重复的，我们把它删掉</span></span><br><span class="line">		<span class="keyword">if</span> (compare === item) &#123;</span><br><span class="line">			<span class="comment">//j索引这一项要从数组中移除</span></span><br><span class="line">			ary.splice(j, <span class="number">1</span>);</span><br><span class="line">			<span class="comment">//数组塌陷了：j后面的每一项索引都提前了一位，下一次要比较的应该还是j这个			  索引的内容</span></span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(ary);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//去重   方案三：</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="comment">// 1.创建一个空对象</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"><span class="comment">// 2.循环数组中的每一项， 把每一项向对象中进行存储 =&gt; item:item</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">	<span class="keyword">let</span> item = ary[i];</span><br><span class="line">	<span class="comment">// 3.每一次存储之前进行判断：验证obj中是否存在这一项</span></span><br><span class="line">	<span class="keyword">if</span> (obj[item] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">	<span class="comment">// 已经存在这一项</span></span><br><span class="line">		ary.splice(i, <span class="number">1</span>);</span><br><span class="line">		i--;</span><br><span class="line">		<span class="keyword">continue</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	obj[item] = item;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(ary);</span><br><span class="line"><span class="comment">// 基于splice实现删除性能不好：当前项被删后，后面每一项的索引都要向前提一位，如果后面内容过多， 一定影响性能</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方案三优化：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">	<span class="keyword">let</span> item = ary[i];</span><br><span class="line">	<span class="keyword">if</span> (obj[item] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">		ary[i] = ary[ary.length - <span class="number">1</span>];</span><br><span class="line">		ary.length--;</span><br><span class="line">		i--;</span><br><span class="line">		<span class="keyword">continue</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	obj[item] = item;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(ary);</span><br><span class="line"></span><br><span class="line"><span class="comment">//unique: 实现数组去重的方法</span></span><br><span class="line">@params ary [<span class="built_in">Array</span>] 要去重的数组</span><br><span class="line">@<span class="keyword">return</span> [<span class="built_in">Array</span>]  去重的数组</span><br><span class="line">by wujiang on <span class="number">20200205</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arry</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">		<span class="keyword">let</span> item = ary[i];</span><br><span class="line">		<span class="keyword">if</span> (obj[item] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">			ary[i] = ary[ary.length - <span class="number">1</span>];</span><br><span class="line">			ary.length--;</span><br><span class="line">			i--;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		obj[item] = item;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ary;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> aa = [<span class="number">12</span>, <span class="number">23</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">25</span>, <span class="number">23</span>, <span class="number">25</span>, <span class="number">14</span>, <span class="number">16</span>];</span><br><span class="line">aa = unique(aa);</span><br><span class="line">aa.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</span><br><span class="line"><span class="built_in">console</span>.log(aa);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//难点</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">12</span>, <span class="number">23</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">25</span>, <span class="number">23</span>, <span class="number">25</span>, <span class="number">14</span>, <span class="number">16</span>];</span><br><span class="line">ary.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</span><br><span class="line"><span class="keyword">let</span> str = ary.join(<span class="string">'@'</span>) + <span class="string">'@'</span>;</span><br><span class="line"><span class="keyword">let</span> reg = <span class="regexp">/(\d+@)\1*/g</span>;</span><br><span class="line">ary = [];</span><br><span class="line">str.replace(reg, (n, m) =&gt; &#123;</span><br><span class="line">	m = <span class="built_in">Number</span>(m.slice(<span class="number">0</span>, m.length - <span class="number">1</span>));</span><br><span class="line">	ary.push(m);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(ary);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 基于ES6的Set(对应的Map)实现去重</span><br><span class="line">let ary = [12, 23, 12, 15, 25, 23, 25, 14, 16];</span><br><span class="line">ary = [...new Set(ary)];</span><br><span class="line">console.log(ary);</span><br></pre></td></tr></table></figure>
+
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/17/Javascript中的数组去重/">http://dream-theater.top/2020/02/17/Javascript中的数组去重/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2020/02/17/javascript中的字符串常用方法/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prev
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/17/Linux基础命令片段/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

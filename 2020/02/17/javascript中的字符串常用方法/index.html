@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>javascript中的字符串常用方法 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="字符串中常用的方法123456789101112所有用单引号，双引号，反引号包起来的都是字符串let str = &apos;wujiang&apos;;// 每一个字符串都是由零到多个字符组成的str.length //=&amp;gt;字符串长度str[0] //=&amp;gt;获取索引为零（第一个）字符str[str.length - 1]  //=&amp;gt;获取最后一个字符 str.length-1最后一项索引str[100">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript中的字符串常用方法">
+<meta property="og:url" content="http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="字符串中常用的方法123456789101112所有用单引号，双引号，反引号包起来的都是字符串let str = &apos;wujiang&apos;;// 每一个字符串都是由零到多个字符组成的str.length //=&amp;gt;字符串长度str[0] //=&amp;gt;获取索引为零（第一个）字符str[str.length - 1]  //=&amp;gt;获取最后一个字符 str.length-1最后一项索引str[100">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-17T06:42:24.841Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript中的字符串常用方法">
+<meta name="twitter:description" content="字符串中常用的方法123456789101112所有用单引号，双引号，反引号包起来的都是字符串let str = &apos;wujiang&apos;;// 每一个字符串都是由零到多个字符组成的str.length //=&amp;gt;字符串长度str[0] //=&amp;gt;获取索引为零（第一个）字符str[str.length - 1]  //=&amp;gt;获取最后一个字符 str.length-1最后一项索引str[100">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Mon Feb 17 2020 14:37:04 GMT+0800">
+    <meta property="article:modified_time" content="Mon Feb 17 2020 14:42:24 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">11</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">9</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-19.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">javascript中的字符串常用方法</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-17 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0klEQVR42u3aQXIbMQwEQP//08k1VSltZgA5Ucjek8qiVuzVAcaAXz+uvL6wsbGxsbGxsbGxP5L9FV/Pn8rffbmtx5W/vjvcMzY2NvbR7HZDz3+Zvf59u6/2NtwzNjY29gXs5Ouf1+Tl6tWnvu+RYWNjY2PnxSNpS5IG5rnVwcbGxsbeF7A27snXJ6ESNjY2NvYsoMlbjqRc5aR/nKVhY2Njfzw7H5p+zuu/Ot/GxsbG/mB2e+Vtw6bl2MRYL3eOjY2NfSi7jYTyJiFfk9x5NkjAxsbGxm4Ht5sB7ezwZfEpbGxs7EPZSbGZRfYzzH5cUYRK2NjY2Eew2/gmH7u2JXATYK3m29jY2Nj/ObttFXJ82+S0BTVph7CxsbHvYW8O6OQr843OHvQqVMLGxsb+z9lts5GPgdu4v42QijXY2NjYh7Jnh3I2hyPz8W07AMDGxsa+k52PdfNAp20e2mZmeH9sbGzso9mzyH4/EshjrDcMnrGxsbGvYc+GuG1stH+IeSnFxsbGvoHdBkbFQZn18OCZXfx42NjY2Bez8wPxedg0u2d74BIbGxv7BnY76J01GPkRn1l4FMVP2NjY2EezZ9FPW4Te++BWoRI2Njb2Bew2HkoCoxY/Y68KGDY2NvYR7PamM+rmoM/wZ8PGxsY+mv2GMeooxG8HvW0UhY2NjX0POx/KzvDJAZ38u5KVw7qNjY2NfQQ7j/6TlfkjzqnDlgkbGxv7GnYyGEgCoNmwoUUWzQw2Njb2oez22rcT+TAgP/QTrcTGxsY+lL35Fz8PevK2Z/Y6Gm9gY2NjH83eHIuZtRyzVmQVcmFjY2NfwG4P1mzA3zEY+MN+sLGxsbEfy09SWtpIKA+tsLGxsbHfW8BmUX5e3tp4CxsbG/sednLTBNYezdnzVgUMGxsb+wj2Kqwpm4e8LZmFSt8y38bGxsb+YPY9FzY2NjY2NjY2NvbHXD8B55AqXIfkWTAAAAAASUVORK5CYII=">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=javascript中的字符串常用方法&url=http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=javascript中的字符串常用方法&url=http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/&title=javascript中的字符串常用方法" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=javascript中的字符串常用方法&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/&text=javascript中的字符串常用方法" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="字符串中常用的方法"><a href="#字符串中常用的方法" class="headerlink" title="字符串中常用的方法"></a><strong>字符串中常用的方法</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">所有用单引号，双引号，反引号包起来的都是字符串</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'wujiang'</span>;</span><br><span class="line"><span class="comment">// 每一个字符串都是由零到多个字符组成的</span></span><br><span class="line">str.length <span class="comment">//=&gt;字符串长度</span></span><br><span class="line">str[<span class="number">0</span>] <span class="comment">//=&gt;获取索引为零（第一个）字符</span></span><br><span class="line">str[str.length - <span class="number">1</span>]  <span class="comment">//=&gt;获取最后一个字符 str.length-1最后一项索引</span></span><br><span class="line">str[<span class="number">10000</span>]  <span class="comment">//=&gt;undefined 不存在这个索引</span></span><br><span class="line"><span class="comment">// 循环输出字符串中的每一个字符</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">	<span class="keyword">let</span> char = str(i);</span><br><span class="line">	<span class="built_in">console</span>.log(char);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">charAt / charCodeAt</span><br><span class="line">charAt: 根据索引获取指定位置的字符</span><br><span class="line">charCodeAt:获取指定字符的ASCII码值（Unicode编码值）</span><br><span class="line">@params</span><br><span class="line">	n [number] (找不到返回的是空字符串不是<span class="literal">undefined</span>), 获取对应的编码值</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'wujiang'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(<span class="number">0</span>));	<span class="comment">//=&gt;'z'</span></span><br><span class="line"><span class="built_in">console</span>.log(str[<span class="number">0</span>]);	<span class="comment">//=&gt;'z'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(<span class="number">10000</span>));	<span class="comment">//=&gt;''</span></span><br><span class="line"><span class="built_in">console</span>.log(str[<span class="number">10000</span>]);	<span class="comment">//=&gt;undefined</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.charCodeAt(<span class="number">0</span>));	<span class="comment">//=&gt;122</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.fromCharCode(<span class="number">122</span>)); <span class="comment">//=&gt;'z'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">substr / substring / slice   都是为了实现字符串的截取（在原来字符串中查找到自己想要的）</span><br><span class="line">substr（n, m): 从索引n开始截取m个字符，m不写是截取到末尾（后面方法也是）</span><br><span class="line">substring(n, m): 从索引n开始找到索引为m处（不含m）</span><br><span class="line">slice(n, m): 和substring一样，都是找到索引为m处，但是slice可以支持负数作为索引， 其余两个方法是不可以的</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'zhufengpeixunyangfanqihang'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.substr(<span class="number">3</span>, <span class="number">7</span>)); <span class="comment">//=&gt;'fengpei'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substring(<span class="number">3</span>, <span class="number">7</span>));  <span class="comment">//=&gt;'feng'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substr(<span class="number">3</span>));  <span class="comment">//=&gt;'fengpeixunyangfanqihang' 截取到末尾</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substring(<span class="number">3</span>));  <span class="comment">//=&gt;'fengpeixunyangfanqihang' 截取到末尾</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substring(<span class="number">3</span>, <span class="number">10000</span>));  <span class="comment">//=&gt;'fengpeixunyangfanqihang' 截取到末尾(超过索引的也只截取到末尾)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.substring(<span class="number">3</span>, <span class="number">7</span>));  <span class="comment">//=&gt;'feng'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.slice(<span class="number">3</span>, <span class="number">7</span>));  <span class="comment">//=&gt;'feng'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.substring(<span class="number">-7</span>, <span class="number">-3</span>));  <span class="comment">//=&gt;'' substring不支持负数索引</span></span><br><span class="line"><span class="built_in">console</span>.log(str.slice(<span class="number">-7</span>, <span class="number">-3</span>));  <span class="comment">//=&gt;'nqih'  slice支持负数索引</span></span><br><span class="line">快捷查找：负数索引，我们可以按照STR.LENGTH+负索引的方式找</span><br><span class="line">=&gt; slice(<span class="number">26</span><span class="number">-7</span>, <span class="number">26</span><span class="number">-3</span>)  =&gt;slice(<span class="number">19</span>, <span class="number">23</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">indexOf / lastIndexOf / includes</span><br><span class="line">验证字符是否存在</span><br><span class="line">indexOf(x, y): 获取x第一次出现位置的索引，y是控制查找的起始位置索引</span><br><span class="line">lastIndexOf(x): 最后一次出现位置的索引</span><br><span class="line">=&gt;没有这个字符， 返回的结果是<span class="number">-1</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'zhufengpeixunyangfanqihang'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'n'</span>));   <span class="comment">//=&gt;5</span></span><br><span class="line"><span class="built_in">console</span>.log(str.lastIndexOf(<span class="string">'n'</span>));   <span class="comment">//=&gt;24</span></span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'@'</span>));  <span class="comment">//=&gt;-1   不存在返回-1</span></span><br><span class="line"><span class="keyword">if</span> (str.indexOf(<span class="string">'@'</span>) === <span class="number">-1</span>) &#123;</span><br><span class="line">	<span class="comment">//字符串中不包含@这个字符</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'feng'</span>)); <span class="comment">//=&gt;3  验证整体第一次出现的位置，返回的索引是第一个字符所在位置的索引值</span></span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'peiy'</span>));  <span class="comment">//=&gt;-1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'n'</span>, <span class="number">7</span>));  <span class="comment">//=&gt;12	查找字符串索引7及之后的字符串</span></span><br><span class="line">中，n第一次出现的位置索引</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!str.includes(<span class="string">'@'</span>)) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'当前字符串不包含@'</span>)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">toUpperCase / toLowerCase</span><br><span class="line">字符串中字母的大小写转换</span><br><span class="line">toUpperCase():   转大写</span><br><span class="line">toLowerCase():   转小写</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'zhufengpeixunyangfanqihang'</span>;</span><br><span class="line">str = str.toUpperCase()</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">//=&gt;'ZHUFENGPEIXUNYANGFANQIHANG'</span></span><br><span class="line">str = str.toLowerCase();</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">//=&gt;'zhufengpeixunyangfanqihang'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现首字母大写</span></span><br><span class="line">str = str.substr(<span class="number">0</span>, <span class="number">1</span>).toUpperCase() + str.substr(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str);  <span class="comment">//=&gt;'Zhufengpeixunyangfanqihang'</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">split:([分隔符]) ：把字符串按照指定的分隔符拆分成数组（和数组中的join对应）</span><br><span class="line"><span class="comment">// 需求：把|分隔符变为,分隔符</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'music|movie|eat|sport'</span>;</span><br><span class="line"><span class="keyword">let</span> ary = str.split(<span class="string">'|'</span>); <span class="comment">//=&gt;["music", "movie", "eat", "sport"]</span></span><br><span class="line">str = ary.join(<span class="string">','</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str);   <span class="comment">//=&gt;"music, movie, eat, sport"</span></span><br><span class="line">split支持传递正则表达式</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">replace(老字符， 新字符): 实现字符串的替换(经常伴随着正则而用)</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'珠峰@培训@扬帆@起航'</span>;</span><br><span class="line">str = str.replace(<span class="string">'@'</span>, <span class="string">'-'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str);  <span class="comment">//=&gt;'珠峰-培训@扬帆@起航' 在不使用正则表达式的情况下，执行一次REPLACE只能替换一次字符</span></span><br><span class="line"></span><br><span class="line">str = str.replace(<span class="regexp">/@/g</span>, <span class="string">'-'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">//=&gt;珠峰-培训-扬帆-起航</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">match</span><br><span class="line">localCompare</span><br><span class="line">trim / trimLeft / trimRight</span><br><span class="line">...</span><br><span class="line">控制台输出<span class="built_in">String</span>.prototype  查看所有字符串中提供的方法</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">实现一些常用的需求</span><br><span class="line">时间格式字符串的处理</span><br><span class="line"><span class="keyword">let</span> time = <span class="string">'2019-7-24 12:6:23'</span>;</span><br><span class="line"><span class="comment">//=&gt;变为自己需要呈现的格式，例如：</span></span><br><span class="line"><span class="comment">// "2019年07月24日 12时06分23秒"</span></span><br><span class="line"><span class="comment">// "2019年07月24日"</span></span><br><span class="line"><span class="comment">// "07/24 12:06"</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="comment">// 方案一: 一路REPLACE</span></span><br><span class="line">time = time.replace(<span class="string">'-'</span>, <span class="string">'年'</span>).replace(<span class="string">'-'</span>, <span class="string">'月'</span>).replace(<span class="string">' '</span>, <span class="string">'日 '</span>)</span><br><span class="line">.replace(<span class="string">':'</span>, <span class="string">'时'</span>).replace(<span class="string">':'</span>, <span class="string">'分'</span>) + <span class="string">'秒'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(time);<span class="comment">//=&gt;"2019年07月24日 12时06分23秒"</span></span><br><span class="line"><span class="comment">// 不足十位补零</span></span><br><span class="line"><span class="keyword">let</span> addZero = <span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (val.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">	val = <span class="string">'0'</span> + val;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> val;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> addZero = <span class="function"><span class="params">val</span> =&gt;</span> val.length &lt; <span class="number">2</span> ? <span class="string">'0'</span> + val : val;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方案二：获取到年月日小时分钟秒这几个值后，最后想拼成什么效果就拼成什么效果</span></span><br><span class="line"><span class="keyword">let</span> time = <span class="string">'2019-7-24 12:6:23'</span>;</span><br><span class="line"><span class="keyword">let</span> ary = time.split(<span class="regexp">/(?: |-|:)/g</span>);  <span class="comment">//=&gt;["2019", "7", "24", "12", "6", "23"]</span></span><br><span class="line">time = ary[<span class="number">0</span>] + <span class="string">'年'</span> + addZero(ary[<span class="number">1</span>]) + <span class="string">'月'</span> + addZero(ary[<span class="number">2</span>]) + <span class="string">'日'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(time);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取值的方法： 基于SPLIT一项项的拆分</span></span><br><span class="line"><span class="keyword">let</span> n = time.split(<span class="string">' '</span>);   <span class="comment">//=&gt; ["2019-7-24", "12:6:23"]</span></span><br><span class="line"><span class="keyword">let</span> m = n[<span class="number">0</span>].split(<span class="string">'-'</span>);   <span class="comment">//=&gt; ["2019", "7", "24"]</span></span><br><span class="line"><span class="keyword">let</span> x = n[<span class="number">1</span>].split(<span class="string">':'</span>);   <span class="comment">//=&gt; ["12", "6", "23"]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取值的方法： 基于indexOf获取指定符号索引，基于substring一点点截</span></span><br><span class="line"><span class="keyword">let</span> n = time.indexOf(<span class="string">'-'</span>);</span><br><span class="line"><span class="keyword">let</span> m = time.lastIndexOf(<span class="string">'-'</span>);</span><br><span class="line"><span class="keyword">let</span> x = time.indexOf(<span class="string">' '</span>);</span><br><span class="line"><span class="keyword">let</span> y = time.indexOf(<span class="string">':'</span>);</span><br><span class="line"><span class="keyword">let</span> z = time.lastIndexOf(<span class="string">':'</span>);</span><br><span class="line"><span class="keyword">let</span> year = time.substring(<span class="number">0</span>, n);</span><br><span class="line"><span class="keyword">let</span> month = time.substring(n + <span class="number">1</span>, m);</span><br><span class="line"><span class="keyword">let</span> day = time.substring(m + <span class="number">1</span>, x);</span><br><span class="line"><span class="built_in">console</span>.log(year, month, day);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">实现一个方法queryURLParameter 获取一个URL地址问号后面传递的参数信息</span><br><span class="line">https:<span class="comment">//sports.qq.com/kbsweb/game.htm?mid=100008:100024498</span></span><br><span class="line">https:<span class="comment">//sports.qq.com/kbsweb/game.htm?mid=100008:100024496</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">'http://www.zhufengpeixun.cn/index.html?1x=1&amp;name=zhufeng&amp;teacher=aaa#box'</span>;</span><br><span class="line">结果： &#123;</span><br><span class="line">	<span class="number">1</span>x:<span class="number">1</span>,</span><br><span class="line">	name:<span class="string">'zhufeng'</span>,</span><br><span class="line">	teacher:<span class="string">'aaa'</span>,</span><br><span class="line">	HASH:<span class="string">'box'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1.</span> 获取问号或者井号后面的的值</span><br><span class="line"><span class="keyword">let</span> askIndex = url.indexOf(<span class="string">'?'</span>);</span><br><span class="line"><span class="keyword">let</span> wellIndex = url.indexOf(<span class="string">'#'</span>);</span><br><span class="line"><span class="keyword">let</span> askText = url.substring(askIndex + <span class="number">1</span>, wellIndex);</span><br><span class="line"><span class="keyword">let</span> wellText = url.substring(wellIndex + <span class="number">1</span>);</span><br><span class="line"><span class="comment">// askText =&gt;"1x=1&amp;name=zhufeng&amp;teacher=aaa"</span></span><br><span class="line"><span class="comment">// wellText =&gt; "box"</span></span><br><span class="line"><span class="comment">// 2.问号后面值的详细处理</span></span><br><span class="line"><span class="keyword">let</span> result = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> askAry = askText.split(<span class="string">'&amp;'</span>);</span><br><span class="line"><span class="comment">//=&gt;["1x=1", "name=zhufeng", "teacher=aaa"]</span></span><br><span class="line">askAry.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="comment">// item:当前从数组中循环的这一项</span></span><br><span class="line">	<span class="keyword">let</span> n = item.split(<span class="string">'='</span>);</span><br><span class="line">	<span class="keyword">let</span> key = n[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">let</span> value = n[<span class="number">1</span>];</span><br><span class="line">	result[key] = value;</span><br><span class="line">&#125;);</span><br><span class="line">result[<span class="string">'HASH'</span>] = wellText;</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">queryURLParams: 获取URL地址中问号传参的信息和哈希值</span><br><span class="line">@params</span><br><span class="line">	url [string]	要解析的URL字符串</span><br><span class="line">@<span class="keyword">return</span> </span><br><span class="line">	[object]  包含参数和哈希值信息的对象</span><br><span class="line">by wujiang on <span class="number">2020</span>/<span class="number">02</span>/<span class="number">06</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">queryURLParams</span> (<span class="params">url</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 获取?和#后面的信息</span></span><br><span class="line">	<span class="keyword">let</span> askIn = url.indexOf(<span class="string">'?'</span>),</span><br><span class="line">		wellIn = url.indexOf(<span class="string">'#'</span>),</span><br><span class="line">		askText = <span class="string">''</span>,</span><br><span class="line">		wellText = <span class="string">''</span>;</span><br><span class="line">	<span class="comment">// #不存在</span></span><br><span class="line">	wellIn === <span class="number">-1</span> ? wellIn = url.length : <span class="literal">null</span>;</span><br><span class="line">	</span><br><span class="line">	(<span class="keyword">if</span> (askIn &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="comment">// ?存在</span></span><br><span class="line">		askText = url.substring(askIn + <span class="number">1</span>, wellIn);</span><br><span class="line">	&#125;)</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// ?存在</span></span><br><span class="line">	askIn &gt;= <span class="number">0</span> ? askText = url.substring(askIn + <span class="number">1</span>, wellIn) : <span class="literal">null</span>;</span><br><span class="line">	wellText = url.substring(wellIn + <span class="number">1</span>);</span><br><span class="line">	<span class="comment">//2.获取每一部分信息</span></span><br><span class="line">	<span class="keyword">let</span> result = &#123;&#125;;</span><br><span class="line">	wellText !== <span class="string">''</span> ? result[<span class="string">'HASH'</span>] = wellText : <span class="literal">null</span>;</span><br><span class="line">	<span class="keyword">if</span> (askText !== <span class="string">''</span>) &#123;</span><br><span class="line">		<span class="keyword">let</span> ary = askText.split(<span class="string">'&amp;'</span>);</span><br><span class="line">		ary.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">			<span class="keyword">let</span> itemAry = item.split(<span class="string">'='</span>);</span><br><span class="line">			result[itemAry[<span class="number">0</span>]] = itemAry[<span class="number">1</span>];</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">'http://www.zhufengpeixun.cn/index.html?1x=1&amp;name=zhufeng&amp;teacher=aaa#box'</span>;</span><br><span class="line"><span class="keyword">let</span> paramsObj = queryURLParams(url);</span><br><span class="line"><span class="built_in">console</span>.log(paramsObj);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 难点</span></span><br><span class="line"><span class="comment">// 基于正则封装的才是最完美的</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">queryURLParams</span> (<span class="params">url</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> result = &#123;&#125;,</span><br><span class="line">		reg1 = <span class="regexp">/([^?=&amp;#]+)=([^?=&amp;#]+)/g</span>,</span><br><span class="line">		reg2 = <span class="regexp">/#([^?=&amp;#]+)/g</span>;</span><br><span class="line">	url.replace(reg1, (n, x, y) =&gt; result[x] = y);</span><br><span class="line">	url.replace(reg2, (n, x) =&gt; result[<span class="string">'HASH'</span>] = x);</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">'http://www.zhufengpeixun.cn/index.html?1x=1&amp;name=zhufeng&amp;teacher=aaa#box'</span>;</span><br><span class="line"><span class="keyword">let</span> paramsObj = queryURLParams(url);</span><br><span class="line"><span class="built_in">console</span>.log(paramsObj);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>实现一个最LOW的验证码：数字+字母共四位<br>验证码目的：防止外挂程序恶意批量注入的</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// queryCode：获取到四位随机的验证码，然后放到指定的盒子中</span></span><br><span class="line">	@params 不需要</span><br><span class="line">	@<span class="keyword">return</span> 不需要</span><br><span class="line">	by wujiang on <span class="number">2020</span>/<span class="number">02</span>/<span class="number">08</span></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">queryCode</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">//准备获取范围的字符串 0~61</span></span><br><span class="line">		ler area = 				   			     				<span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabsdefghijklmnopqrstuvwxyz0123456789"</span>;	</span><br><span class="line">		<span class="keyword">let</span> result = <span class="string">""</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">			<span class="comment">//每一次循环都获取一个随机的数字索引</span></span><br><span class="line">			<span class="keyword">let</span> ran = <span class="built_in">Math</span>.round(<span class="built_in">Math</span>.random()*<span class="number">61</span>);</span><br><span class="line">			<span class="comment">// 再根据获取的索引从范围字符串中找到对应的字符，把找到的字符拼接到最后的结果中</span></span><br><span class="line">			result += area.charAt(ran);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 放到盒子里面</span></span><br><span class="line">		codeBox.innerHTMl = result;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 第一次加载页面需要执行方法，让其显示在页面中</span></span><br><span class="line">	queryCode();</span><br><span class="line">	<span class="comment">// 点击看不清按钮，需要重新执行方法生成新的验证码</span></span><br><span class="line">	changeCode.onclick = queryCode;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 文本框失去焦点的时候：验证用户输入的内容和验证码是否相同，给予相关的提示，如果不一样需要重新生成验证码</span></span><br><span class="line">	<span class="comment">// onblur：文本框失去焦点事件</span></span><br><span class="line">	codeInp.onblur = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 获取用户和验证码内容(表单元素.value / 非表单元素.innerHTML获取内容)</span></span><br><span class="line">		<span class="keyword">let</span> val = codeInp.value,</span><br><span class="line">			code = codeBox.innerHTML;</span><br><span class="line">		<span class="keyword">if</span> (val.toLowerCase() === code.toLowerCase()) &#123;</span><br><span class="line">			alert(<span class="string">'温馨提示：验证码输入成功！'</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			alert(<span class="string">'温馨提示：验证码输入有误，请重试！'</span>);</span><br><span class="line">			codeInp.value = <span class="string">''</span>;</span><br><span class="line">			<span class="comment">// 重新生成验证码</span></span><br><span class="line">			queryCode();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/">http://dream-theater.top/2020/02/17/javascript中的字符串常用方法/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/17/Javascript中的数组去重/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
