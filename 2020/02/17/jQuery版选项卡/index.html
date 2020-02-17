@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>jQuery版选项卡 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041JQUERY版选项卡&amp;lt;!-- IMPORT JS --&amp;gt;&amp;lt;script src=&quot;node_modules/jquery/dist/jquery.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;//$([">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery版选项卡">
+<meta property="og:url" content="http://dream-theater.top/2020/02/17/jQuery版选项卡/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041JQUERY版选项卡&amp;lt;!-- IMPORT JS --&amp;gt;&amp;lt;script src=&quot;node_modules/jquery/dist/jquery.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;//$([">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-17T04:38:01.569Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery版选项卡">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041JQUERY版选项卡&amp;lt;!-- IMPORT JS --&amp;gt;&amp;lt;script src=&quot;node_modules/jquery/dist/jquery.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;//$([">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/17/jQuery版选项卡/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Mon Feb 17 2020 12:35:57 GMT+0800">
+    <meta property="article:modified_time" content="Mon Feb 17 2020 12:38:01 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/17/jQuery版选项卡/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">分类为空</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">7</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-17.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">jQuery版选项卡</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-17 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aS47jMAwFwNz/0jPbAQZxv0cpspEurQzDH5UDiAyp15+vHi88PDw8PDw8PLyH8V7x+Pf6/5/w7mnv7rq+fjY3PDw8vJO8H5baYHLvziR3te+9vgYPDw/vJG8WDPLlfna+nhseHh7ew3h5GLhOlKOyAh4eHt4v4+XPv74eDw8P78m8fIrXx7MAMHsCHh4e3l28WQPszPFt/T08PDy8N7x2tKnw9Zkkya5niIeHh/dhXj7dlYbWbLmPwsDsHwMeHh7eMm+2NNcvviwBtxsIisCAh4eHt5XXLuVtCMm3F7TtMTw8PLxn8lYS67bo0IaoooyLh4eHt5WXp7l5SJgt/W1Roy7j4uHh4W3itUXbNh1P8AkyT6zx8PDwzvCu2/8r4JXEPS8K4+Hh4T2HN9titRIwko9Sp9R4eHh4W3ltmrur2JrwkkIJHh4e3nneUsE0SI6Llv/ojXh4eHj38tYbY/lS/grG8BPg4eHhfZiXFAuS5HhWrm3T5eiHwcPDw/swL0l/1zdU5R9oFlrw8PDwTvLaFv6s/Jp/xBxcVKnx8PDwtvJmCfGs8Nom8W2gwsPDwzvPy7dAzZLy9VR++I8BDw8PbyuvLeC2G6T2jqUqNR4eHt4mXjvySbRbDVZCCB4eHt5JXrsorzTDZklzvXEBDw8P7wgvCQb5+ZV7V7Yd4OHh4Z3nrSfHbTBI2mN1iMLDw8N7GK+dRNta+2BKjYeHh3crLyqnjgoWs2CDh4eHdxdvNtHkzEoDLJkhHh4e3nneegmgDTZtqNiwpwwPDw9vE+/7Bh4eHh4eHh4e3gPGXy1G6EwHTpFmAAAAAElFTkSuQmCC">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=jQuery版选项卡&url=http://dream-theater.top/2020/02/17/jQuery版选项卡/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=jQuery版选项卡&url=http://dream-theater.top/2020/02/17/jQuery版选项卡/&via=Wujiang" target="_blank" class="mdui-ripple">分享到Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/jQuery版选项卡/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/jQuery版选项卡/" target="_blank" class="mdui-ripple">分享到Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/jQuery版选项卡/&title=jQuery版选项卡" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=jQuery版选项卡&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/jQuery版选项卡/" target="_blank" class="mdui-ripple">分享到QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/jQuery版选项卡/&text=jQuery版选项卡" target="_blank" class="mdui-ripple">分享到Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">JQUERY版选项卡</span><br><span class="line">&lt;!-- IMPORT JS --&gt;</span><br><span class="line">&lt;script src=<span class="string">"node_modules/jquery/dist/jquery.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="comment">//$([function]):等待页面中所有的DOM结构加载完成才会执行这个方法</span></span><br><span class="line"><span class="comment">// =&gt; $(document).ready([function])</span></span><br><span class="line"><span class="comment">//window.onload=function()&#123;&#125; : 等待页面中所有的资源（DOM结构、内容、其它的富媒体资源等）都加载完成才会执行函数</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//=&gt;选项卡正常思路：给所有的LI绑定点击事件，当点击某一个LI的时候，让其有选中样式，而其余的LI都移除选中样式，同时对应索引的DIV有选中样式，其余的DIV移除选中样式即可，这样就可以实现选项卡切换效果</span></span><br><span class="line">	<span class="keyword">let</span> $tabBox = $(<span class="string">'#tabBox'</span>),</span><br><span class="line">		$navList = $tabBox.find(<span class="string">'#navBox&gt;li'</span>)，</span><br><span class="line">		<span class="comment">//=&gt;$('#tabBox&gt;#navBox&gt;li')=&gt;$('#navBox&gt;li',#tabBox)</span></span><br><span class="line">		$divList = $tabBox.children(<span class="string">'div'</span>);</span><br><span class="line">	<span class="comment">//=&gt;JQ中特性：内置循环处理机制（基于一个JQ集合去操作某个方法，我们无需循环每一项单独操作，JQ内部帮我们循环处理了，例如：$navList.css('color','#000')集合中有100项，JQ会把100项都设置了这个样式，无需自己循环处理）</span></span><br><span class="line">	$navList.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">//=&gt;THIS:当前点击操作的元素 =&gt;$(this)才能调取JQ方法</span></span><br><span class="line">		<span class="comment">//=&gt;JQ特性：链式写法</span></span><br><span class="line">		<span class="keyword">let</span> n = $(<span class="keyword">this</span>).index();</span><br><span class="line">		$(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</span><br><span class="line">		<span class="comment">//=&gt;根据点击LI的索引，在DIV集合中找到对应的那一项，然后这一项选中，它的兄弟项都移除选中即可</span></span><br><span class="line">$divList.eq(n).addClass(<span class="string">'active'</span>).siblings().removeClass(<span class="string">'active'</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//let $sib = $(this).siblings();</span></span><br><span class="line">		<span class="comment">//$sib.removeClass('active');</span></span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//=&gt;基于JQ中的EACH遍历集合中的每一项，绑定点击事件</span></span><br><span class="line">	$navList.each(<span class="function"><span class="keyword">function</span> (<span class="params">index, $item</span>) </span>&#123;</span><br><span class="line">		<span class="comment">//参数顺序和内置的FOR-EACH是反着的</span></span><br><span class="line">		<span class="comment">//index:当前循环这一项的索引</span></span><br><span class="line">		<span class="comment">//$item:当前循环的这一项</span></span><br><span class="line">		<span class="comment">//this===$item:当前方法中的THIS也是循环的这一项</span></span><br><span class="line">		<span class="comment">// $item.on('click', function () &#123;</span></span><br><span class="line">				<span class="comment">//...</span></span><br><span class="line">		<span class="comment">// &#125;);</span></span><br><span class="line">	<span class="comment">//&#125;);</span></span><br><span class="line">	<span class="comment">// $navList.each((index, $item) =&gt; &#123;</span></span><br><span class="line">	<span class="comment">// //=&gt; THIS不再是循环的这一项（箭头函数中没有THIS）</span></span><br><span class="line">	<span class="comment">// &#125;);</span></span><br><span class="line">&#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	$(<span class="string">'.tabBox&gt;.navBox&gt;li'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">let</span> n = $(<span class="keyword">this</span>).index();</span><br><span class="line">		$(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>)</span><br><span class="line">			.siblings().removeClass(<span class="string">'active'</span>)</span><br><span class="line">			.parent()</span><br><span class="line">			.nextAll(<span class="string">'div'</span>).eq(n).addClass(<span class="string">'active'</span>)</span><br><span class="line">			.siblings().removeClass(<span class="string">'active'</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>本文链接：</strong><a href="http://dream-theater.top/2020/02/17/jQuery版选项卡/">http://dream-theater.top/2020/02/17/jQuery版选项卡/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/17/jQuery/">
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

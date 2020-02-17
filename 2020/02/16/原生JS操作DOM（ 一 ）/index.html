@@ -8,21 +8,21 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>原生JS操作DOM  (一) | DreamTheater&#39;s Blog</title>
+  <title>原生JS操作DOM（一） | DreamTheater&#39;s Blog</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
   <meta name="description" content="DOM及其基础操作1234567891011&amp;gt; DOM : document object model 文档对象模型，提供一些属性和方法供我们操作页面中的元素- document.getElementById()   指定在文档中，基于元素的ID获得这个元素对象- [context].getElementsByTagName() 在指定上下文（容器）中，通过标签名获取一组元素集合-  [co">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原生JS操作DOM  (一)">
+<meta property="og:title" content="原生JS操作DOM（一）">
 <meta property="og:url" content="http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/index.html">
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
 <meta property="og:description" content="DOM及其基础操作1234567891011&amp;gt; DOM : document object model 文档对象模型，提供一些属性和方法供我们操作页面中的元素- document.getElementById()   指定在文档中，基于元素的ID获得这个元素对象- [context].getElementsByTagName() 在指定上下文（容器）中，通过标签名获取一组元素集合-  [co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-16T09:02:19.864Z">
+<meta property="og:updated_time" content="2020-02-17T04:02:47.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原生JS操作DOM  (一)">
+<meta name="twitter:title" content="原生JS操作DOM（一）">
 <meta name="twitter:description" content="DOM及其基础操作1234567891011&amp;gt; DOM : document object model 文档对象模型，提供一些属性和方法供我们操作页面中的元素- document.getElementById()   指定在文档中，基于元素的ID获得这个元素对象- [context].getElementsByTagName() 在指定上下文（容器）中，通过标签名获取一组元素集合-  [co">
 
   <meta name="format-detection" content="telephone=no,email=no">
@@ -41,7 +41,7 @@
 
   
     <meta property="article:published_time" content="Sun Feb 16 2020 15:43:12 GMT+0800">
-    <meta property="article:modified_time" content="Sun Feb 16 2020 17:02:19 GMT+0800">
+    <meta property="article:modified_time" content="Mon Feb 17 2020 12:02:47 GMT+0800">
   
 
   
@@ -65,7 +65,7 @@
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
     <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
     <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
     <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
   </div>
 </header>
@@ -93,49 +93,49 @@
   <div class="mdui-list" mdui-collapse="{accordion: true}">
     <a href="/" class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
-      <div class="mdui-list-item-content">Home</div>
+      <div class="mdui-list-item-content">主页</div>
     </a>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
-        <div class="mdui-list-item-content">Archive</div>
+        <div class="mdui-list-item-content">归档</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">5</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
         
       </div>
     </div>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
-        <div class="mdui-list-item-content">Category</div>
+        <div class="mdui-list-item-content">分类</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
         
         
-          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">分类为空</a>
         
       </div>
     </div>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
-        <div class="mdui-list-item-content">Tag</div>
+        <div class="mdui-list-item-content">标签</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">5</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">7</span></a>
         
       </div>
     </div>
     <a href="/about" class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
-      <div class="mdui-list-item-content">About</div>
+      <div class="mdui-list-item-content">关于</div>
     </a>
   </div>
 
@@ -149,7 +149,7 @@
     
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <div class="mdui-list-item-content">Links</div>
+        <div class="mdui-list-item-content">友情链接</div>
         <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
@@ -166,10 +166,10 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-14.png" style="max-height: 240px;">
+      <img src="/images/random/material-5.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">原生JS操作DOM  (一)</div>
+          <div class="mdui-card-primary-title">原生JS操作DOM（一）</div>
           <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-16 / <i class="iconfont">&#xe601;</i> Wujiang</div>
         </div>
       </div>
@@ -191,32 +191,32 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=原生JS操作DOM  (一)&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=原生JS操作DOM（一）&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=原生JS操作DOM  (一)&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=原生JS操作DOM（一）&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&via=Wujiang" target="_blank" class="mdui-ripple">分享到Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">分享到Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">Share to Google+</a>
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">分享到Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&title=原生JS操作DOM  (一)" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&title=原生JS操作DOM（一）" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=原生JS操作DOM  (一)&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">Share to QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=原生JS操作DOM（一）&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/" target="_blank" class="mdui-ripple">分享到QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&text=原生JS操作DOM  (一)" target="_blank" class="mdui-ripple">Share to Telegram</a>
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/&text=原生JS操作DOM（一）" target="_blank" class="mdui-ripple">分享到Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <h3 id="DOM及其基础操作"><a href="#DOM及其基础操作" class="headerlink" title="DOM及其基础操作"></a><strong>DOM及其基础操作</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; DOM : <span class="built_in">document</span> object model 文档对象模型，提供一些属性和方法供我们操作页面中的元素</span><br><span class="line"></span><br><span class="line">- <span class="built_in">document</span>.getElementById()   指定在文档中，基于元素的ID获得这个元素对象</span><br><span class="line">- [context].getElementsByTagName() 在指定上下文（容器）中，通过标签名获取一组元素集合</span><br><span class="line">-  [context].getElementsByClassName()  在指定上下文中，通过样式类名获取一组元素集合（不兼容IE6<span class="number">-8</span>)</span><br><span class="line">-  <span class="built_in">document</span>.getElementsByName() 在整个文档中，通过标签的NAME属性值获取一组节点集合（在IE中只有表单元素的NAME才能识别，所以我们一般只应用于表单元素的处理）</span><br><span class="line">-  <span class="built_in">document</span>.head / <span class="built_in">document</span>.body / <span class="built_in">document</span>.documentElement 获取页面中的HEAD/BODY/HTML三个元素</span><br><span class="line">-  [context].querySelector([selector]) 在指定上下文中，通过选择器获取到指定的元素对象</span><br><span class="line">-  [context].querySelectorAll([selector]) 在指定上下文中，通过选择器获取到指定的元素集合</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt; querySelector / querySelectorAll 不兼容IE6~8</span></span><br></pre></td></tr></table></figure>
+      <h3 id="DOM及其基础操作"><a href="#DOM及其基础操作" class="headerlink" title="DOM及其基础操作"></a><strong>DOM及其基础操作</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; DOM : <span class="built_in">document</span> object model 文档对象模型，提供一些属性和方法供我们操作页面中的元素</span><br><span class="line"></span><br><span class="line">- <span class="built_in">document</span>.getElementById()   指定在文档中，基于元素的ID获得这个元素对象</span><br><span class="line">- [context].getElementsByTagName() 在指定上下文（容器）中，通过标签名获取一组元素集合</span><br><span class="line">-  [context].getElementsByClassName()  在指定上下文中，通过样式类名获取一组元素集合（不兼容IE6<span class="number">-8</span>)</span><br><span class="line">-  <span class="built_in">document</span>.getElementsByName() 在整个文档中，通过标签的NAME属性值获取一组节点集合（在IE中只有表单元素的NAME才能识别，所以我们一般只应用于表单元素的处理）</span><br><span class="line">-  <span class="built_in">document</span>.head / <span class="built_in">document</span>.body / <span class="built_in">document</span>.documentElement 获取页面中的HEAD/BODY/HTML三个元素</span><br><span class="line">-  [context].querySelector([selector]) 在指定上下文中，通过选择器获取到指定的元素对象</span><br><span class="line">-  [context].querySelectorAll([selector]) 在指定上下文中，通过选择器获取到指定的节点集合</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt; querySelector / querySelectorAll 不兼容IE6~8</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="节点和节点之间的关系属性"><a href="#节点和节点之间的关系属性" class="headerlink" title="节点和节点之间的关系属性"></a><strong>节点和节点之间的关系属性</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;js中的节点和描述节点之间关系的属性 </span></span><br><span class="line">&gt; 节点：Node（页面中所有的东西都是节点）</span><br><span class="line">&gt;  节点集合：NodeList（getElementsByName / querySelectorAll获取的都是节点集合）</span><br><span class="line"></span><br><span class="line">- 元素节点（元素标签）</span><br><span class="line">	- nodeType：<span class="number">1</span></span><br><span class="line">	- nodeName：大写的标签名</span><br><span class="line">	- nodeValue：<span class="literal">null</span></span><br><span class="line">- 文本节点</span><br><span class="line">	- nodeType：<span class="number">3</span></span><br><span class="line">	- nodeName：<span class="string">'#text'</span></span><br><span class="line">	- nodeValue：文本内容</span><br><span class="line">- 注释节点</span><br><span class="line">	- nodeType：<span class="number">8</span></span><br><span class="line">	- nodeName：<span class="string">'#commen'</span></span><br><span class="line">	- nodeValue：注释内容</span><br><span class="line">- 文档节点<span class="built_in">document</span></span><br><span class="line">	- nodeType：<span class="number">9</span></span><br><span class="line">	- nodeName：<span class="string">'#document'</span></span><br><span class="line">	- nodeValue：<span class="literal">null</span></span><br><span class="line">- ......</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;描述这些节点之间关系的属性</span></span><br><span class="line">- childNodes：获取所有的子节点</span><br><span class="line">- children：获取所有的元素子节点（子元素标签集合）</span><br><span class="line">- parentNode：获取父亲节点</span><br><span class="line">- firstChild：获取第一个子节点</span><br><span class="line">- lastChild：获取最后一个子节点</span><br><span class="line">- firstElementChild / lastElementChild：获取第一个和最后一个元素子节点（不兼容IE6<span class="number">-8</span>）</span><br><span class="line">- previousSibling：获取上一个哥哥节点</span><br><span class="line">- nextSibling：获取下一个弟弟节点</span><br><span class="line">- previousElementSibling / nextElementSibling：获取哥哥和弟弟元素节点（不兼容IE6<span class="number">-8</span>）</span><br><span class="line">- ......</span><br><span class="line"></span><br><span class="line"><span class="comment">// 标准浏览器（非IE6~8）中会把空格和换行当做文本节点处理(childNodes包含所有节点)</span></span><br><span class="line"><span class="comment">// 在IE6-8下，使用children会把注释也当做元素节点</span></span><br></pre></td></tr></table></figure>
 
@@ -226,7 +226,7 @@
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&gt; 在js中动态增删改元素</span><br><span class="line">createElement   创建元素对象</span><br><span class="line">createTextNode	创建文本对象</span><br><span class="line">appendChild   把元素添加到容器的末尾</span><br><span class="line">insertBefore  把元素添加到指定容器中指定元素的前面</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 动态创建一个DIV元素对象， 把其赋给BOX</span></span><br><span class="line"><span class="keyword">let</span> box = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">box.id = <span class="string">'boxActive'</span>;</span><br><span class="line">box.style.width = <span class="string">'200px'</span>;</span><br><span class="line">box.style.height = <span class="string">'200px'</span>;</span><br><span class="line">box.className = <span class="string">'RED'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 动态创建一个文本</span></span><br><span class="line"><span class="keyword">let</span> text = <span class="built_in">document</span>.createTextNode(<span class="string">'wujiang'</span>)；</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加: 容器.appendChild(元素)</span></span><br><span class="line">box.appendChild(text);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(box);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 放到指定元素前：容器.insertBefore([新增元素]，[指定元素])</span></span><br><span class="line"><span class="keyword">let</span> haha = <span class="built_in">document</span>.getElementById(<span class="string">'haha'</span>);</span><br><span class="line"><span class="comment">//haha.parentNode.insertBefore(...)</span></span><br><span class="line"><span class="built_in">document</span>.body.insertBefore(box, haha);</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cloneNode(<span class="literal">true</span>/<span class="literal">false</span>)：克隆元素或者节点</span><br><span class="line">removeChild  移除容器中的某个元素</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> box1 = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span><br><span class="line"><span class="comment">// 克隆第一份(深克隆)</span></span><br><span class="line"><span class="keyword">let</span> box2 = box1.cloneNode(<span class="literal">true</span>);</span><br><span class="line">box2.querySelector(<span class="string">'span'</span>).innerText = <span class="string">'珠峰培训2'</span>；</span><br><span class="line"><span class="comment">// 克隆第二份(浅克隆)</span></span><br><span class="line"><span class="keyword">let</span> box3 = box1.cloneNode(<span class="literal">false</span>);</span><br><span class="line">box3.innerHTML = <span class="string">"&lt;span&gt;珠峰培训3&lt;/span&gt;"</span>;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(box2);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(box3);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 容器.removeChild（元素）</span></span><br><span class="line"><span class="built_in">document</span>.body.removeChild(box2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cloneNode(<span class="literal">true</span>/<span class="literal">false</span>)：克隆元素或者节点</span><br><span class="line">removeChild  移除容器中的某个元素</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> box1 = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span><br><span class="line"><span class="comment">// 克隆第一份(深克隆)</span></span><br><span class="line"><span class="keyword">let</span> box2 = box1.cloneNode(<span class="literal">true</span>);</span><br><span class="line">box2.querySelector(<span class="string">'span'</span>).innerText = <span class="string">'xiaoming'</span>；</span><br><span class="line"><span class="comment">// 克隆第二份(浅克隆)</span></span><br><span class="line"><span class="keyword">let</span> box3 = box1.cloneNode(<span class="literal">false</span>);</span><br><span class="line">box3.innerHTML = <span class="string">"&lt;span&gt;xiaojun&lt;/span&gt;"</span>;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(box2);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(box3);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 容器.removeChild（元素）</span></span><br><span class="line"><span class="built_in">document</span>.body.removeChild(box2);</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btnList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'button'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btnList.length; i++) &#123;</span><br><span class="line">	<span class="comment">// 设置自定义属性：元素对象.属性名=属性值（原理是向元素对象对应的堆内存中添加了一个属性）</span></span><br><span class="line">	btnList[i].myIndex = i;</span><br><span class="line">	btnList[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 获取自定义属性：元素对象.属性名（原理是从堆内存中获取到对应的属性值）</span></span><br><span class="line">		alert(<span class="keyword">this</span>.myIndex);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">另一种设置自定义属性的方式</span><br><span class="line">基于SET-ATTRIBUTE是把属性信息写到了元素标签的结构上（在结构中可以看到的），并没有放到元素对象对应的堆内存中</span><br><span class="line">btnList[i].setAttribute(<span class="string">'data-index'</span>, i);</span><br><span class="line"><span class="comment">// 基于GET-ATTRIBUTE可以把结构上存储的自定义属性值获取到</span></span><br><span class="line">alert(<span class="keyword">this</span>.getAttribute(<span class="string">'data-index'</span>));</span><br></pre></td></tr></table></figure>
 
@@ -235,7 +235,7 @@
 
       <blockquote class="mdui-m-t-5">
         
-        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/">http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/</a>
+        <strong>本文链接：</strong><a href="http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/">http://dream-theater.top/2020/02/16/原生JS操作DOM（ 一 ）/</a>
       </blockquote>
       
     </div>
@@ -256,13 +256,13 @@
     
       <a rel="prev" class="extend prev" href="/2020/02/16/原生JS操作DOM（二）/">
         <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prev
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
       </a>
     
     <div class="spacer"></div>
     
       <a rel="next" class="extend next" href="/2020/02/16/正则表达式/">
-        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
     

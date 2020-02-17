@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>jQuery | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="jQuery1&amp;gt; 一款伟大的，用原生JS封装的，“操作DOM”的类库：它里面封装了大量的方法（在原先的版本中 v1.xxx, 这些方法兼容所有的浏览器），基于这些方法我们可以快速的进行DOM操作和项目开发  学习JQ途径123456789- 看API文档	http://jquery.cuishifeng.cn/- 看书籍	《锋利的jQuery第二版》- 大量做案例	在学习阶段，案例可以用原生">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery">
+<meta property="og:url" content="http://dream-theater.top/2020/02/17/jQuery/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="jQuery1&amp;gt; 一款伟大的，用原生JS封装的，“操作DOM”的类库：它里面封装了大量的方法（在原先的版本中 v1.xxx, 这些方法兼容所有的浏览器），基于这些方法我们可以快速的进行DOM操作和项目开发  学习JQ途径123456789- 看API文档	http://jquery.cuishifeng.cn/- 看书籍	《锋利的jQuery第二版》- 大量做案例	在学习阶段，案例可以用原生">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-17T04:31:25.231Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery">
+<meta name="twitter:description" content="jQuery1&amp;gt; 一款伟大的，用原生JS封装的，“操作DOM”的类库：它里面封装了大量的方法（在原先的版本中 v1.xxx, 这些方法兼容所有的浏览器），基于这些方法我们可以快速的进行DOM操作和项目开发  学习JQ途径123456789- 看API文档	http://jquery.cuishifeng.cn/- 看书籍	《锋利的jQuery第二版》- 大量做案例	在学习阶段，案例可以用原生">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/17/jQuery/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Mon Feb 17 2020 12:05:30 GMT+0800">
+    <meta property="article:modified_time" content="Mon Feb 17 2020 12:31:25 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/17/jQuery/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">分类为空</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">7</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-7.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">jQuery</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-17 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaElEQVR42u3awU7DMBAE0P7/T8MVCRFm1old0MupoqXx8yG7He/r419fLzw8PDw8PDw8vDfjveLr6+e/f0Nx++Aus7Xh4eHh7eQlC7rmtVsw+57rteHh4eHt57XFoP3fZOnXn4/WhoeHh/dmvIQ6e/Tn7+Lh4eH9LV5SGK4DhSSewMPDw/srvPwHf9IKt+HCLCDGw8PDO8WbHYDteX3sfA8PDw/vB1490hTc4N7yUK8QDw8P72FeEqQmjLzJbocS6u/Ew8PD28ibNbvJRrSFJImP8fDw8M7y8gBiJfCdBQ3JxuHh4eHt581a5HuHBtpChYeHh3eK195y1vjmcXCyWUUYgYeHh7eFtxShXpLakpCHI3h4eHg7ebOjqbYpnw1y5WUGDw8P7xRvNvDUPrjbTczjEjw8PLw9vPwH/ywgyB/6bSCCh4eHd5bXNrvrcUOyifmYFx4eHt4pXl4e1lvh5HhsGI7g4eHhPczLb7ASs85Gr2ZBCR4eHt7TvLyxbiODlb8kh2f1ZAQeHh7eTbwkqM1v1jbNdw2t4uHh4e3k5cdR7cHVLJBdiX3x8PDwdvLag652IDUPO5Ki8stK8PDw8B7mtU3z7Cgrb5Tr6AEPDw9vO6+98oGAZEGzbfqlaOHh4eE9zGsfynfFtXlI0R6b4eHh4e3h5cVgeMt4yKAtJ3h4eHhnecnjOw9h2ya7LU511oKHh4d3iHf9+bwFXznuKkYH8PDw8N6G1w5mJaTZ1tzcUuPh4eE9EEbkDXQeRrSvlyYj8PDw8G7irQcB6/FEe6hWFAY8PDy8W3n/78LDw8PDw8PDw3uD6xMH+HLeRp/4ggAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=jQuery&url=http://dream-theater.top/2020/02/17/jQuery/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=jQuery&url=http://dream-theater.top/2020/02/17/jQuery/&via=Wujiang" target="_blank" class="mdui-ripple">分享到Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/jQuery/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/jQuery/" target="_blank" class="mdui-ripple">分享到Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/jQuery/&title=jQuery" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=jQuery&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/jQuery/" target="_blank" class="mdui-ripple">分享到QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/jQuery/&text=jQuery" target="_blank" class="mdui-ripple">分享到Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a><strong>jQuery</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 一款伟大的，用原生JS封装的，“操作DOM”的类库：它里面封装了大量的方法（在原先的版本中 v1.xxx, 这些方法兼容所有的浏览器），基于这些方法我们可以快速的进行DOM操作和项目开发</span><br></pre></td></tr></table></figure>
+
+<h3 id="学习JQ途径"><a href="#学习JQ途径" class="headerlink" title="学习JQ途径"></a><strong>学习JQ途径</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 看API文档</span><br><span class="line">	http:<span class="comment">//jquery.cuishifeng.cn/</span></span><br><span class="line">- 看书籍</span><br><span class="line">	《锋利的jQuery第二版》</span><br><span class="line">- 大量做案例</span><br><span class="line">	在学习阶段，案例可以用原生JS做一遍，再用JQ做一遍</span><br><span class="line">- 学习JQ源码</span><br><span class="line">	- 更好的掌握JQ的应用，写出高性能可扩展的项目代码</span><br><span class="line">	- 让自己的JS的能力，尤其是组件插件等封装的能力直接上一个新台阶</span><br></pre></td></tr></table></figure>
+
+<h3 id="JQ的三大版本"><a href="#JQ的三大版本" class="headerlink" title="JQ的三大版本"></a><strong>JQ的三大版本</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- v1.xxx第一代版本</span><br><span class="line">	jquery<span class="number">-1.11</span><span class="number">.3</span>.min.js</span><br><span class="line">	第一代版本的特点：大而全，方法是兼容所有浏览器的（包括IE6），主要应用于需要考虑兼容的PC端项目中</span><br><span class="line">- v2.xxx第一代版本</span><br><span class="line">	主要是为移动端的开发准备的，不在兼容低版本浏览器（例如：IE8及以下），配合出现的还有jQuery mobile等UI库。但是，第二代版本在移动端方面的处理不如Zepto.js</span><br><span class="line">- v3.xxx 第三代版本</span><br><span class="line">	也不再兼容IE低版本浏览器了，它从性能等方面都要比之前的强，但是生不逢时，此时正好是angular / vue / react这种框架崛起的时代，大家已经不再基于操作DOM的思想开发了，JQ也就慢慢退出舞台了</span><br></pre></td></tr></table></figure>
+
+<h3 id="JQ中常用的方法"><a href="#JQ中常用的方法" class="headerlink" title="JQ中常用的方法"></a><strong>JQ中常用的方法</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;1.获取DOM元素</span></span><br><span class="line"><span class="comment">//操作方法:JQ选择器(根据选择器类型快速获取需要的元素)</span></span><br><span class="line">$([selector],[context])</span><br><span class="line">$(<span class="string">'#box'</span>)</span><br><span class="line">$(<span class="string">'.imgBox'</span>)</span><br><span class="line">$(<span class="string">'.box a'</span>)    $(<span class="string">'a'</span>, box)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">/*JQ支持的选择器：传统CSS3中的大部分都支持，还支持一些自己独有的，</span></span><br><span class="line"><span class="comment">例如</span></span><br><span class="line"><span class="comment">* :eq(n) 获取集合中索引为n的</span></span><br><span class="line"><span class="comment">* :gt(n) 大于这个索引的</span></span><br><span class="line"><span class="comment">* :lt(n) 小于这个索引的</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//节点之间关系的属性:用JQ选择器获取的元素，我们设置变量名的时候一般都以$开始</span></span><br><span class="line"><span class="comment">//=&gt;还可以再设置对应的选择器进行二次筛选</span></span><br><span class="line"><span class="keyword">let</span> $box = $(<span class="string">'.box'</span>);</span><br><span class="line">$box.children(<span class="string">'a'</span>);  <span class="comment">//=&gt;获取对应的子元素</span></span><br><span class="line">$box.find(<span class="string">'a'</span>);  <span class="comment">//=&gt;获取对应的后代元素</span></span><br><span class="line">$(<span class="string">'a'</span>).filter(<span class="string">'.active'</span>);  <span class="comment">//=&gt;同级筛选（在所有的A中筛选出具备CLASS='ACTIVE'样式类的A）</span></span><br><span class="line">$box.prev();</span><br><span class="line">$box.prev(<span class="string">'p'</span>);  <span class="comment">//=&gt;获取它上一个标签名为p的哥哥</span></span><br><span class="line">$box.prevAll();</span><br><span class="line">$box.next();</span><br><span class="line">$box.nextAll(<span class="string">'.link'</span>);</span><br><span class="line">$box.siblings();  <span class="comment">//=&gt;获取所有的兄弟</span></span><br><span class="line">$box.index();   <span class="comment">//=&gt;获取索引</span></span><br><span class="line">$box.parent(); <span class="comment">//=&gt;获取父元素</span></span><br><span class="line">$box.parents();<span class="comment">//=&gt;获取所有的祖先元素，一直到document</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;2.DOM增删改</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">`&lt;div id="box" class='box'&gt;</span></span><br><span class="line"><span class="string">	...</span></span><br><span class="line"><span class="string">&lt;/div&gt;`</span>;</span><br><span class="line">$(<span class="string">'body'</span>).append(str);  <span class="comment">//=&gt;追加到容器BODY的末尾</span></span><br><span class="line">$(<span class="string">'body'</span>).html(str); <span class="comment">//=&gt;等价于innerHTML</span></span><br><span class="line">$(<span class="string">'body'</span>).html();不传参是获取BODY中的HTML内容，除了这个方法还有text方法，等价于innerText</span><br><span class="line"></span><br><span class="line">$A.insertBefore($B);  <span class="comment">//=&gt;把$A放到$B的前面（注意点：$A,$B都是页面中已经存在的元素）</span></span><br><span class="line">$A.insertAfter($B);  <span class="comment">//=&gt;把$A放到$B的后面</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">`&lt;div id="box" class='box'&gt;</span></span><br><span class="line"><span class="string">	...</span></span><br><span class="line"><span class="string">&lt;/div&gt;`</span>).insertBefore($A);  <span class="comment">//=&gt;需要把新增加元素放到$A前面，需要把字符串用$()包起来，相当于创建了一个元素</span></span><br><span class="line"></span><br><span class="line">$A.appendTo($B);  <span class="comment">//=&gt;$B.append($A) 在$B容器的末尾追加$A</span></span><br><span class="line">$A.prependTo($B);  <span class="comment">//=&gt;$B.prepend($A) 在$B容器的开头追加$A</span></span><br><span class="line"></span><br><span class="line">$A.clone(); <span class="comment">//=&gt;实现元素的克隆</span></span><br><span class="line">$A.remove(); <span class="comment">//=&gt;实现元素的删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;操作表单元素的内容</span></span><br><span class="line">$inp.val()  <span class="comment">//获取表单元素内容</span></span><br><span class="line">$inp.val(<span class="string">'AAA'</span>)  <span class="comment">//设置表单元素内容</span></span><br><span class="line"><span class="comment">//html和text方法是操作非表单元素内容的</span></span><br><span class="line">------------------------------------------</span><br><span class="line"><span class="keyword">let</span> divBox=<span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">divBox.id=<span class="string">'box'</span>;</span><br><span class="line">divBox.className=<span class="string">'box'</span>;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(divBox);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">`&lt;div id="box" class='box'&gt;&lt;/div&gt;`</span>;</span><br><span class="line"><span class="built_in">document</span>.body.innerHTML=str;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;3.操作自定义属性</span></span><br><span class="line">$box.attr(<span class="string">'data-type'</span>)  <span class="comment">//=&gt;获取自定义属性值</span></span><br><span class="line">$box.attr(<span class="string">'data-type'</span>,<span class="string">'B'</span>)  <span class="comment">//=&gt;设置自定义属性值</span></span><br><span class="line">$box.attr(&#123;</span><br><span class="line">    <span class="string">'type'</span>:<span class="number">1</span>,</span><br><span class="line">    <span class="string">'name'</span>:<span class="string">'AA'</span></span><br><span class="line">&#125;);   <span class="comment">//=&gt;批量设置</span></span><br><span class="line">$box.removeAttr(<span class="string">'data-type'</span>);  <span class="comment">//=&gt;移除自定义属性</span></span><br><span class="line"><span class="comment">//表单元素操作内置或者自定义属性一般使用prop和removeProp</span></span><br><span class="line">$radio.prop(<span class="string">'checked'</span>)</span><br><span class="line">$radio.prop(<span class="string">'checked'</span>,<span class="literal">true</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;4.操作CSS样式（盒子模型属性）</span></span><br><span class="line"><span class="comment">//设置样式</span></span><br><span class="line">$box.css(<span class="string">'width'</span>,<span class="number">200</span>);  <span class="comment">//=&gt;css方法是设置或者批量设置样式（原理是设置STYLE行内样式）$box.css(&#123; width:200,height:200 &#125;),写的值不加单位，方法会帮我们自动设置上px单位</span></span><br><span class="line">$box.addClass(<span class="string">'active'</span>);<span class="comment">//=&gt;设置样式类（原理是对className的操作)，removeClass是移除，hasClass验证是否存在某个样式类，toggleClass之前有就是移除，没有就是新增</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取样式</span></span><br><span class="line">$box.css(<span class="string">'width'</span>); <span class="comment">//=&gt;不设置值的时候就是获取(原理是getComputedStyle,所有经过计算的样式都可以获取)</span></span><br><span class="line">$box.offset();  <span class="comment">//=&gt;当前元素距离BODY的左偏移和上偏移</span></span><br><span class="line">$box.position();  <span class="comment">//=&gt;当前元素距离父参照物的左偏移和上偏移</span></span><br><span class="line"><span class="comment">//$box.width(); //=&gt;.height()获取盒子宽高（传递值进来就是设置）</span></span><br><span class="line">$box.innerWidth/.innerHeight/.outerWidth/.outerHeight()</span><br><span class="line"><span class="comment">//=&gt;等价于clientWidth/Height 和 offsetWidth/Height</span></span><br><span class="line">$(<span class="built_in">document</span>).scrollTop([val]); <span class="comment">//=&gt;可以获取或者设置scrollTop的信息，对应的方法 .scrollLeft</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="除了操作DOM，JQ中还提供了其它有助于项目开发的方法"><a href="#除了操作DOM，JQ中还提供了其它有助于项目开发的方法" class="headerlink" title="除了操作DOM，JQ中还提供了其它有助于项目开发的方法"></a><strong>除了操作DOM，JQ中还提供了其它有助于项目开发的方法</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;事件处理</span></span><br><span class="line"><span class="comment">//$元素.on([event type],[function])</span></span><br><span class="line"><span class="comment">//$元素.off([event type],[function])</span></span><br><span class="line"><span class="comment">//$元素.bind()   $元素.unbind()  $元素.delegate() ...</span></span><br><span class="line"><span class="comment">//$元素.click()  .mouseover  .mouseout ...等常用事件的快捷绑定</span></span><br><span class="line">$box.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line">$box.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;动画处理</span></span><br><span class="line"><span class="comment">//.animate([目标样式]，[总时间]，[运动样式]，[运动完做的事情])</span></span><br><span class="line"><span class="comment">//.stop / .finish</span></span><br><span class="line">$box.stop().animate(&#123;</span><br><span class="line">    top:<span class="number">100</span>,</span><br><span class="line">    left:<span class="number">200</span></span><br><span class="line">&#125;,<span class="number">1000</span>,<span class="string">'linear'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;AJAX请求处理</span></span><br><span class="line"><span class="keyword">let</span> _DATA=<span class="literal">null</span>;</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url:<span class="string">'json/product.json'</span>,</span><br><span class="line">    method:<span class="string">'GET'</span>,</span><br><span class="line">    <span class="keyword">async</span>:<span class="literal">false</span>,</span><br><span class="line">    dataType:<span class="string">'json'</span>,</span><br><span class="line">    success:<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">//result:当请求成功执行success函数,result就是从服务器获取的结果</span></span><br><span class="line">        _DATA=result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;常用的工具方法</span></span><br><span class="line">$.each([数组、类数组、对象],<span class="function"><span class="keyword">function</span>(<span class="params">index,item</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//=&gt;遍历数组中的每一项 index:索引  item:当前循环这一项（如果是对象： index是属性名 item属性值）</span></span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'A'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">index,item</span>)</span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//$.toArray()转换为数组  $.merge()数组合并 $.makeArray()把类数组转换为数组  $.uniqueSort()去重加排序   $.type数据类型检测</span></span><br></pre></td></tr></table></figure>
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>本文链接：</strong><a href="http://dream-theater.top/2020/02/17/jQuery/">http://dream-theater.top/2020/02/17/jQuery/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2020/02/17/jQuery版选项卡/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/16/Javascript中的数学函数Math/">
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
