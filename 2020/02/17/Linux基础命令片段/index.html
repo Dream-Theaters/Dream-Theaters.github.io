@@ -8,31 +8,31 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>DreamTheater&#39;s Blog</title>
+  <title>Linux基础命令片段 | DreamTheater&#39;s Blog</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
   <meta name="description" content="命令提示符[root@localhost]#其中：root 当前登录用户localhost主机名当前所在目录（家目录）#超级用户的提示符$普通用户的提示符 命令格式命令 [选项] [参数]注意：1）个别命令使用不遵循此格式2）当有多个选项时，可以写在一起3）简化选项与完整选项-a 等于 –all 查询目录中内容：lsls [选项] [文件或目录]选项：-a 显示所有文件，包括隐藏文件-l 显示详情">
-<meta name="keywords" content="learn">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DreamTheater&#39;s Blog">
-<meta property="og:url" content="http://dream-theater.top/2019/12/15/Linux基础命令片段/index.html">
+<meta property="og:title" content="Linux基础命令片段">
+<meta property="og:url" content="http://dream-theater.top/2020/02/17/Linux基础命令片段/index.html">
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
 <meta property="og:description" content="命令提示符[root@localhost]#其中：root 当前登录用户localhost主机名当前所在目录（家目录）#超级用户的提示符$普通用户的提示符 命令格式命令 [选项] [参数]注意：1）个别命令使用不遵循此格式2）当有多个选项时，可以写在一起3）简化选项与完整选项-a 等于 –all 查询目录中内容：lsls [选项] [文件或目录]选项：-a 显示所有文件，包括隐藏文件-l 显示详情">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-15T05:05:30.253Z">
+<meta property="og:updated_time" content="2020-02-17T06:12:28.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DreamTheater&#39;s Blog">
+<meta name="twitter:title" content="Linux基础命令片段">
 <meta name="twitter:description" content="命令提示符[root@localhost]#其中：root 当前登录用户localhost主机名当前所在目录（家目录）#超级用户的提示符$普通用户的提示符 命令格式命令 [选项] [参数]注意：1）个别命令使用不遵循此格式2）当有多个选项时，可以写在一起3）简化选项与完整选项-a 等于 –all 查询目录中内容：lsls [选项] [文件或目录]选项：-a 显示所有文件，包括隐藏文件-l 显示详情">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
   <meta name="description" content="learning">
-  <meta name="keywords" content>
+  <meta name="keywords" content=",Linux">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="DreamTheater&#39;s Blog">
-  <meta name="msapplication-starturl" content="http://dream-theater.top/2019/12/15/Linux基础命令片段/">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/17/Linux基础命令片段/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
@@ -40,12 +40,12 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <meta property="article:published_time" content="Sun Dec 15 2019 13:05:30 GMT+0800">
-    <meta property="article:modified_time" content="Sun Dec 15 2019 13:05:30 GMT+0800">
+    <meta property="article:published_time" content="Mon Feb 17 2020 14:11:14 GMT+0800">
+    <meta property="article:modified_time" content="Mon Feb 17 2020 14:12:28 GMT+0800">
   
 
   
-    <link rel="canonical" href="http://dream-theater.top/2019/12/15/Linux基础命令片段/">
+    <link rel="canonical" href="http://dream-theater.top/2020/02/17/Linux基础命令片段/">
   
 
   
@@ -65,7 +65,7 @@
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
     <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
     <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
     <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
   </div>
 </header>
@@ -93,49 +93,49 @@
   <div class="mdui-list" mdui-collapse="{accordion: true}">
     <a href="/" class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
-      <div class="mdui-list-item-content">主页</div>
+      <div class="mdui-list-item-content">Home</div>
     </a>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
-        <div class="mdui-list-item-content">归档</div>
+        <div class="mdui-list-item-content">Archive</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">9</span></a>
         
       </div>
     </div>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
-        <div class="mdui-list-item-content">分类</div>
+        <div class="mdui-list-item-content">Category</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
         
         
-          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">分类为空</a>
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
         
       </div>
     </div>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
-        <div class="mdui-list-item-content">标签</div>
+        <div class="mdui-list-item-content">Tag</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">7</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a>
         
       </div>
     </div>
     <a href="/about" class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
-      <div class="mdui-list-item-content">关于</div>
+      <div class="mdui-list-item-content">About</div>
     </a>
   </div>
 
@@ -149,7 +149,7 @@
     
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <div class="mdui-list-item-content">友情链接</div>
+        <div class="mdui-list-item-content">Links</div>
         <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
@@ -166,11 +166,11 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-13.png" style="max-height: 240px;">
+      <img src="/images/random/material-2.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title"></div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-12-15 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+          <div class="mdui-card-primary-title">Linux基础命令片段</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-17 / <i class="iconfont">&#xe601;</i> Wujiang</div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -182,7 +182,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYElEQVR42u3aQZKDMAwEQP7/6d0XEEayMCTVnFJZiGkfbO1Yx99PXwceHh4eHh4eHt7LeEd85U9dDD80yulTeHh4eFt4yQudfVMdPvn9pXfDw8PD28g7e62ze84W8XwKcl7+LB4eHt47efnn5K+9CcLDw8P7Ll5z4Hji8PDw8L6Fl/zDnyzr6+HsY1kLHh4eXszrDbnn89bzPTw8PLyAV25pikvnvBz/HBBv7SnDw8PDC3j5QrxeQCchRe998PDw8HbyZgvcqSOufCKikhoPDw9vlPd5QZ9qBUjaqlaOyvDw8PB28nqhw30tAgPlPh4eHt5DvHzzSLaWXqSbRxV4eHh4O3nVOGBl6U/K696deHh4eDt5ybH9yiK+3rZVniY8PDy8Lbz1ADcveWc3ITw8PLz9vObxfLFBKg8mkl++eH88PDy8m3nV4LUa9VZj2Wp0i4eHh7efFx0pTS3ZxYK7OdF4eHh4N/PyMKIaPaw0WlWnGA8PD28nLw8jVsrihFQtwYdjXDw8PLwWL3o4XuKTg/9qe9ZAGIGHh4d3G69QwrbK5Wpzar5J4OHh4T3LqzJ6TVo5bCClxsPDwxvlVYPd2TI6j0IuAl88PDy8m3nVK9k8qiV1Xo5HgQUeHh7ezbwjvqpbRX5PfpzWLKnx8PDwbuBVN4OLARZaV6sbAx4eHt6zvOEFulV89w7J8PDw8N7Pqw6ct71WW2PLTVd4eHh4D/E+A3ohbP7Npn0PDw8PbyiMSKKBatnda2/Fw8PDe5aXRwBJfNA73Mq3nHKMi4eHhzfK+70LDw8PDw8PDw/vBdc/VUddySFAQVYAAAAASUVORK5CYII=">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQW7jMBAEQP//09nrAoGV7qFIOUHxFCiOxeKBw/Tw9fWnxwsPDw8PDw8PD+/DeK94/P/5d3/7/Xk0oTefb+eGh4eHd5KXvP76+QxzvRCzueHh4eGd5CXFoAVfb/fXz4dzw8PDw/swXnSoLY/a7WLh4eHh/UbejiP49RM8PDy8z+Ql022Dg/z7k6lvz1rw8PDwYt5KA2z3zw/39/Dw8PC+8doxCxcSwNdNAw8PD283byVCvW5ctVHvsAzM/mPAw8PDW+bNLkK1gW/y27z9VhQGPDw8vFt5K42rWcFoy0MdCuPh4eEd5LWtrJVY9roNlmCGMS4eHh7eMi8PYfMrUDmgXb66MODh4eEd4eXslRAhX5r2YI2Hh4d3ntdewGoXaDcSDw8P7yleG9q2MURSTpK2GR4eHt55XrIdr8QE+VF7dijHw8PDe4qXvCxvm7WtrPYzPywoHh4e3kHebFufLVN73WrpSI2Hh4d3Ky/f+tvlyJdmVkjehhd4eHh4m3lJqHpX42qlDBRvxMPDw9vMayc6uxCwEknUTTg8PDy8zby88Z9jZpcGrnlFyw0PDw/vId4sQm23+zaSWEqp8fDw8G7itVem2ohhJeYYXmLAw8PD28xb3+KTOHgljMivLODh4eGd4d27oSeH5ja0TQoYHh4e3nneymbdRrp5AciP/nh4eHhP8WbXTGfhRX4ozy9+4eHh4X0mb1/BaK8gbCkMeHh4eA/xZq2yPBSuY1w8PDy8bbyVMOKuo/asGODh4eGd593bAEuKQfJtw0AEDw8PbzPv7w08PDw8PDw8PLwPGP8ALuzUmHt+j/UAAAAASUVORK5CYII=">
               
             </li>
           </ul>
@@ -191,25 +191,25 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://dream-theater.top/2019/12/15/Linux基础命令片段/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux基础命令片段&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=&url=http://dream-theater.top/2019/12/15/Linux基础命令片段/&via=Wujiang" target="_blank" class="mdui-ripple">分享到Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=Linux基础命令片段&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2019/12/15/Linux基础命令片段/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">Share to Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=http://dream-theater.top/2019/12/15/Linux基础命令片段/" target="_blank" class="mdui-ripple">分享到Google+</a>
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">Share to Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2019/12/15/Linux基础命令片段/&title=" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&title=Linux基础命令片段" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2019/12/15/Linux基础命令片段/" target="_blank" class="mdui-ripple">分享到QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=Linux基础命令片段&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">Share to QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2019/12/15/Linux基础命令片段/&text=" target="_blank" class="mdui-ripple">分享到Telegram</a>
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&text=Linux基础命令片段" target="_blank" class="mdui-ripple">Share to Telegram</a>
             </li>
           </ul>
         
@@ -236,12 +236,14 @@
 
       <blockquote class="mdui-m-t-5">
         
-        <strong>本文链接：</strong><a href="http://dream-theater.top/2019/12/15/Linux基础命令片段/">http://dream-theater.top/2019/12/15/Linux基础命令片段/</a>
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/17/Linux基础命令片段/">http://dream-theater.top/2020/02/17/Linux基础命令片段/</a>
       </blockquote>
       
     </div>
     <footer class="mdui-card-actions">
       
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Linux/">Linux</a>
       
     </footer>
     
@@ -253,15 +255,10 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2020/02/16/正则表达式/">
-        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
-      </a>
-    
     <div class="spacer"></div>
     
-      <a rel="next" class="extend next" href="/2019/12/05/MYSQL基础/">
-        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a rel="next" class="extend next" href="/2020/02/17/MYSQL基础/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
     

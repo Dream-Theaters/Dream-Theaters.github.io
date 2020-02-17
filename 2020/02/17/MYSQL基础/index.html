@@ -8,31 +8,31 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>DreamTheater&#39;s Blog</title>
+  <title>MYSQL基础 | DreamTheater&#39;s Blog</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
   <meta name="description" content="一.对数据库的操作（增删改查）–创建数据库：create database 数据库名； –删除数据库 drop database 数据库名； –修改数据库 alter database 数据库名 harset=gbk； –查询所有数据库：show databases； –查看建立数据库的语句：show create database 数据库名；show databases like ‘%t%’;–">
-<meta name="keywords" content="learn">
+<meta name="keywords" content="MYSQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DreamTheater&#39;s Blog">
-<meta property="og:url" content="http://dream-theater.top/2019/12/05/MYSQL基础/index.html">
+<meta property="og:title" content="MYSQL基础">
+<meta property="og:url" content="http://dream-theater.top/2020/02/17/MYSQL基础/index.html">
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
 <meta property="og:description" content="一.对数据库的操作（增删改查）–创建数据库：create database 数据库名； –删除数据库 drop database 数据库名； –修改数据库 alter database 数据库名 harset=gbk； –查询所有数据库：show databases； –查看建立数据库的语句：show create database 数据库名；show databases like ‘%t%’;–">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-04T06:57:31.921Z">
+<meta property="og:updated_time" content="2020-02-17T06:10:26.032Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DreamTheater&#39;s Blog">
+<meta name="twitter:title" content="MYSQL基础">
 <meta name="twitter:description" content="一.对数据库的操作（增删改查）–创建数据库：create database 数据库名； –删除数据库 drop database 数据库名； –修改数据库 alter database 数据库名 harset=gbk； –查询所有数据库：show databases； –查看建立数据库的语句：show create database 数据库名；show databases like ‘%t%’;–">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
   <meta name="description" content="learning">
-  <meta name="keywords" content>
+  <meta name="keywords" content=",MYSQL">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="DreamTheater&#39;s Blog">
-  <meta name="msapplication-starturl" content="http://dream-theater.top/2019/12/05/MYSQL基础/">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/17/MYSQL基础/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
@@ -40,12 +40,12 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <meta property="article:published_time" content="Thu Dec 05 2019 21:35:16 GMT+0800">
-    <meta property="article:modified_time" content="Wed Dec 04 2019 14:57:31 GMT+0800">
+    <meta property="article:published_time" content="Mon Feb 17 2020 14:08:59 GMT+0800">
+    <meta property="article:modified_time" content="Mon Feb 17 2020 14:10:26 GMT+0800">
   
 
   
-    <link rel="canonical" href="http://dream-theater.top/2019/12/05/MYSQL基础/">
+    <link rel="canonical" href="http://dream-theater.top/2020/02/17/MYSQL基础/">
   
 
   
@@ -65,7 +65,7 @@
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
     <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
     <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
     <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
   </div>
 </header>
@@ -93,49 +93,49 @@
   <div class="mdui-list" mdui-collapse="{accordion: true}">
     <a href="/" class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
-      <div class="mdui-list-item-content">主页</div>
+      <div class="mdui-list-item-content">Home</div>
     </a>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
-        <div class="mdui-list-item-content">归档</div>
+        <div class="mdui-list-item-content">Archive</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/12/">December 2019<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">9</span></a>
         
       </div>
     </div>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
-        <div class="mdui-list-item-content">分类</div>
+        <div class="mdui-list-item-content">Category</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
         
         
-          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">分类为空</a>
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
         
       </div>
     </div>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
-        <div class="mdui-list-item-content">标签</div>
+        <div class="mdui-list-item-content">Tag</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">7</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">7</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a>
         
       </div>
     </div>
     <a href="/about" class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
-      <div class="mdui-list-item-content">关于</div>
+      <div class="mdui-list-item-content">About</div>
     </a>
   </div>
 
@@ -149,7 +149,7 @@
     
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <div class="mdui-list-item-content">友情链接</div>
+        <div class="mdui-list-item-content">Links</div>
         <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
@@ -166,11 +166,11 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-1.png" style="max-height: 240px;">
+      <img src="/images/random/material-14.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title"></div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-12-05 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+          <div class="mdui-card-primary-title">MYSQL基础</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-17 / <i class="iconfont">&#xe601;</i> Wujiang</div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -182,7 +182,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aS3LCMBAFQN//0smWqgTzZvRBUO1VKmDLrYU0PM3189XXhYeHh4eHh4eHdxjviq/77z9++s+QwRP+3lt9Nzw8PLydvBdLbQx49oo9ZPXd8PDw8Pbz8mGeYarskenAw8PD+xReXjRXpyYZFw8PD+8TeXlM8KLwbU0THh4e3mm8wg/+AH9fXo9MwcKsBQ8PDy/mVQ/Adv79hvM9PDw8vFteuaXp9tG9rWVh0xUeHh7eAt6zhbhaBN+/bi8gTkZsZi14eHh4U3nji3vemJVMbvIDAA8PD+9dvGpQm28Y+aKfhBETUmo8PDy8AV4eIuQh77qiGQ8PD+8cXr70z220Gm+KxcPDwzuB14sYqoA8tihPAR4eHt5iXrXJqRo3JK0GyQZTaFPAw8PDW8zrPaIXZ+SLfn5shoeHh3caL98S8ki3uqnkxTQeHh7eHt6s5tRqSZ2M25waPDw8vC28kSbRagNBM2IY2Rjw8PDwpvLyB/VaoHqxRR4B4+Hh4e3nJTfnAWsCyEvt/C48PDy8/bxkoa8iZ/2n/AMADw8PbzGvV0yPRBUrxsXDw8Pbz8tj1l5B3Fv6E16UteDh4eFN5c1qkxqKD4IAdyjGxcPDw5vK6x1TjTSYziqgC/seHh4e3lTeFV8jG0kveui1KeDh4eHt4SWbQX7clT9zvOzGw8PDey8vD2eTieg1DfQ2Jzw8PLyTeXkb1tz2gkLJjoeHh3c8rwqeG21MLqnx8PDwiry8UM7jgyRuyL8TvRseHh7eFl41CBg56Eq2gTz+WHK+h4eHh3fL+74LDw8PDw8PDw/vgOsX4LFpBJcFGEsAAAAASUVORK5CYII=">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQXbDIAwFwNz/0u0BWjtfAstO3rDKqxPDsECq0Ovnq8cLDw8PDw8PDw/vYbxXPP550Z+n599MZlxfGx4eHt4M781RGyz6aEHJLPn7ozXg4eHhDfKSxR09zX+1K5zg4eHhfRavt5SjDUoSdDw8PLzv4CUBI0nB86d4eHh4T+Ml//D3Cq/nJeBeCQMPDw/vXl5+yTT/efR+Dw8PDy/glVuaWqXeatK8rekKDw8P7wLeejtUL/nOtyxP0/Hw8PBmeNXSwPol2XohuJxS4+Hh4V3G6yXHvQQ6L9Tm24eHh4d3F6+3xML0C+/cEBjw8PDwlnn5EZ+k2iuBIU/K38yLh4eHN8JbbxooX/AHm1gt++Lh4eHN8KqNAskiegGgWgg+/A4eHh7eCG9v00AvAPSuzfDw8PDu5eUl1CSQ9P5Snb3ZOoCHh4e3wMsP9N5kSfGi+p03jVl4eHh4g7xqW8BKA2sSZvJ14uHh4d3LS6ZcSYvzNoVeCQMPDw9vhpcc/UnqXLimCt5Q/RUeHh7ePG+9OaDXaNXbuHJgwMPDw9vK6x3x1aCSp+ArJQk8PDy8SV7eHNCbvlrMrTaz4uHh4c3z8kX3mqh6jQXlqzI8PDy8i3nVUW2B2lXeLTSw4uHh4V3Me8WjmohXm1nztq1ySo2Hh4d3Aa8XDKrXV/m29gq4eHh4ePO8/IDeFRjyFoTCJRkeHh7eh/CSJZ5ffZ3PXthWPDw8vEfyegl08nmlTIyHh4c3z0sWl0y8N2xUE2s8PDy8GV7+upWG1GpyXC1/4OHh4c3wvm/g4eHh4eHh4eE9YPwC+n18uBGeJgwAAAAASUVORK5CYII=">
               
             </li>
           </ul>
@@ -191,25 +191,25 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://dream-theater.top/2019/12/05/MYSQL基础/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=MYSQL基础&url=http://dream-theater.top/2020/02/17/MYSQL基础/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=&url=http://dream-theater.top/2019/12/05/MYSQL基础/&via=Wujiang" target="_blank" class="mdui-ripple">分享到Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=MYSQL基础&url=http://dream-theater.top/2020/02/17/MYSQL基础/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2019/12/05/MYSQL基础/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/MYSQL基础/" target="_blank" class="mdui-ripple">Share to Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=http://dream-theater.top/2019/12/05/MYSQL基础/" target="_blank" class="mdui-ripple">分享到Google+</a>
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/MYSQL基础/" target="_blank" class="mdui-ripple">Share to Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2019/12/05/MYSQL基础/&title=" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/MYSQL基础/&title=MYSQL基础" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2019/12/05/MYSQL基础/" target="_blank" class="mdui-ripple">分享到QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=MYSQL基础&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/MYSQL基础/" target="_blank" class="mdui-ripple">Share to QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2019/12/05/MYSQL基础/&text=" target="_blank" class="mdui-ripple">分享到Telegram</a>
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/MYSQL基础/&text=MYSQL基础" target="_blank" class="mdui-ripple">Share to Telegram</a>
             </li>
           </ul>
         
@@ -257,12 +257,14 @@
 
       <blockquote class="mdui-m-t-5">
         
-        <strong>本文链接：</strong><a href="http://dream-theater.top/2019/12/05/MYSQL基础/">http://dream-theater.top/2019/12/05/MYSQL基础/</a>
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/17/MYSQL基础/">http://dream-theater.top/2020/02/17/MYSQL基础/</a>
       </blockquote>
       
     </div>
     <footer class="mdui-card-actions">
       
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/MYSQL/">MYSQL</a>
       
     </footer>
     
@@ -274,12 +276,17 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2019/12/15/Linux基础命令片段/">
+      <a rel="prev" class="extend prev" href="/2020/02/17/Linux基础命令片段/">
         <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prev
       </a>
     
     <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/17/jQuery版选项卡/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
     
   </nav>
 
