@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>Javascript中的闭包 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="闭包作用域 创建函数 开辟一个堆内存 把函数体中的代码当做字符串存储进去 把堆内存的地址赋值给函数名/变量名 函数在哪创建，那么它执行时候所需要查找的上级作用域就是谁   函数执行 形成一个全新的私有作用域，执行上下文，私有栈内存（执行一次形成一个，多个之间也不会产生影响） 形参赋值&amp;amp;变量提升 代码执行（把所属堆内存中的代码字符串拿出来一行行执行） 遇到一个变量，首先看它是否为私有变量（形">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript中的闭包">
+<meta property="og:url" content="http://dream-theater.top/2020/02/17/Javascript中的闭包/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="闭包作用域 创建函数 开辟一个堆内存 把函数体中的代码当做字符串存储进去 把堆内存的地址赋值给函数名/变量名 函数在哪创建，那么它执行时候所需要查找的上级作用域就是谁   函数执行 形成一个全新的私有作用域，执行上下文，私有栈内存（执行一次形成一个，多个之间也不会产生影响） 形参赋值&amp;amp;变量提升 代码执行（把所属堆内存中的代码字符串拿出来一行行执行） 遇到一个变量，首先看它是否为私有变量（形">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-17T06:51:38.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript中的闭包">
+<meta name="twitter:description" content="闭包作用域 创建函数 开辟一个堆内存 把函数体中的代码当做字符串存储进去 把堆内存的地址赋值给函数名/变量名 函数在哪创建，那么它执行时候所需要查找的上级作用域就是谁   函数执行 形成一个全新的私有作用域，执行上下文，私有栈内存（执行一次形成一个，多个之间也不会产生影响） 形参赋值&amp;amp;变量提升 代码执行（把所属堆内存中的代码字符串拿出来一行行执行） 遇到一个变量，首先看它是否为私有变量（形">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/17/Javascript中的闭包/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Mon Feb 17 2020 14:46:49 GMT+0800">
+    <meta property="article:modified_time" content="Mon Feb 17 2020 14:51:38 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/17/Javascript中的闭包/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">14</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">11</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-16.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">Javascript中的闭包</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-17 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWUlEQVR42u3awW7rMAwEwPz/T7fXBzw43aVkxS3Gp8BJJY0PJkvy9fWnrxceHh4eHh4eHt7DeK/4+vf3VytcbvnfCu93mZ0NDw8P7yTvh1ftW97737d3NuyFh4eHd5A3CwZXK+Rr5p+js+Hh4eE9jHf1sp69+pP7eHh4eL+dN0MmRYfHxT08PDy8TcWI/FjrxYUP1Frw8PDwYt6sAXbm88f6e3h4eHgXvHqkqUyvk8GCPAxEJ8TDw8O7mTdrXyXp73qBOF8TDw8P7yQvga23uJI1ZyMLeHh4eOd5K4Ehh+0qOkSPGA8PD+8Ib6WAm4Dzcav8DHh4eHhP4LWhYhZg7ngQeHh4eJ/ltYWG5HB5Cj4bZsXDw8M7ycvDw+y4+bd5al5PRuDh4eFt5eUb562plRd9uwIeHh7eeV7yCp61o/JxhHZwAQ8PD+85vNmWs8eRr7NUxsXDw8O7gZcnym2Df3OJYRYY8PDw8G7j5Sly+1frhYn8EeDh4eGd4SVDALPkuF1zVzMMDw8P727ebJu2vLuSsucjDnh4eHhneMm//cnLOh8paJF1Qo+Hh4d3hDdr3rfFiLYwMVwHDw8P72beDJAXXveug4eHh/cEXnvN2l1topyHrqJKjYeHh7eJt7fdNQO0xQg8PDy8J/Dawm5bRMjvtGEGDw8P77O8doygTYjzwnEbnPDw8PCezMtbU23a3Y554eHh4f0uXp6Ot7vk4wu3pNR4eHh4NxQjVo6YNLfaR1kEBjw8PLytvLYQMBulqpPjOPDg4eHhneT9vQsPDw8PDw8PD+8B1zcu0gw3dxnBlgAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Javascript中的闭包&url=http://dream-theater.top/2020/02/17/Javascript中的闭包/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=Javascript中的闭包&url=http://dream-theater.top/2020/02/17/Javascript中的闭包/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/Javascript中的闭包/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/Javascript中的闭包/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/Javascript中的闭包/&title=Javascript中的闭包" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=Javascript中的闭包&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/Javascript中的闭包/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/Javascript中的闭包/&text=Javascript中的闭包" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="闭包作用域"><a href="#闭包作用域" class="headerlink" title="闭包作用域"></a><strong>闭包作用域</strong></h3><ol>
+<li>创建函数<ul>
+<li>开辟一个堆内存</li>
+<li>把函数体中的代码当做字符串存储进去</li>
+<li>把堆内存的地址赋值给函数名/变量名</li>
+<li><strong>函数在哪创建，那么它执行时候所需要查找的上级作用域就是谁</strong></li>
+</ul>
+</li>
+<li>函数执行<ul>
+<li>形成一个全新的私有作用域，执行上下文，私有栈内存（执行一次形成一个，多个之间也不会产生影响）</li>
+<li>形参赋值&amp;变量提升</li>
+<li>代码执行（把所属堆内存中的代码字符串拿出来一行行执行）</li>
+<li>遇到一个变量，首先看它是否为私有变量（形参和在私有作用域中声明的变量是私有变量），是私有的就操作自己的变量即可，不是私有的则向上级作用域中查找…一直找到全局作用域为止 =&gt;作用域链查找机制</li>
+<li>私有变量和外界的变量没有必然关系，可以理解为被私有栈内存保护起来了，这种机制其实就是闭包的保护机制</li>
+</ul>
+</li>
+<li>关于堆栈内存释放问题（以谷歌webkit内核为例）<ul>
+<li>函数执行就会形成栈内存（从内存中分配的一块空间），如果内存都不销毁释放，很容易就会导致栈内存溢出（内存爆满，电脑就卡死了），堆栈内存的释放问题是学习js的核心知识之一</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>堆内存释放问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;创建一个引用类型值，就会产生一个堆内存</span></span><br><span class="line"><span class="comment">//=&gt;如果当前创建的堆内存不被其它东西所占用了（浏览器会在空闲的时候，查找每一个内存</span></span><br><span class="line">的引用状况，不被占用的都会给回收释放掉），则会释放</span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">	name: <span class="string">'zhufeng'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> oop = obj;</span><br><span class="line"><span class="comment">//此时obj和oop都占用着对象的堆内存，想要释放堆内存，需要手动解除变量和值的关联（null：空对象指针）</span></span><br><span class="line">obj = <span class="literal">null</span>;</span><br><span class="line">oop = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>栈内存释放</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;打开浏览器形成的全局作用域是栈内存</span></span><br><span class="line"><span class="comment">//=&gt;手动执行函数形成的私有作用域是栈内存</span></span><br><span class="line"><span class="comment">//=&gt;基于ES6中的let/const形成的块作用域也是栈内存</span></span><br><span class="line"><span class="comment">//=&gt;......</span></span><br><span class="line">全局栈内存：关掉页面的时候才会被销毁</span><br><span class="line">私有栈内存：</span><br><span class="line">	<span class="number">1.</span> 一般情况下，函数只要执行完成，形成的私有栈内存就会被销毁释放掉（排除出现无限级递归，出现死循环的模式）</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//...</span></span><br><span class="line">	fn(); </span><br><span class="line">&#125;</span><br><span class="line">fn(); <span class="comment">//=&gt;函数执行形成栈内存，执行完成栈内存销毁</span></span><br><span class="line"></span><br><span class="line">	<span class="number">2.</span> 但是一旦栈内存中的某个东西（一般都是堆地址）被私有作用域以外的事物给占用了，则当前私有栈内存不能立即被释放销毁（特点：私有作用域中的私有变量等信息也保留下来了）</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">X</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">//......</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> f = X();  <span class="comment">//=&gt;f占用了X执行形成的栈内存中的一个东西（返回小函数对应的堆），则X执行形成的栈内存不能被释放了</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">闭包的两大作用</span><br><span class="line"><span class="number">1.</span> 保护（私有变量和外界没有必然联系）</span><br><span class="line"><span class="number">2.</span> 保护（形成不销毁的栈内存，里面的私有变量等信息保存下来了）</span><br></pre></td></tr></table></figure>
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/17/Javascript中的闭包/">http://dream-theater.top/2020/02/17/Javascript中的闭包/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2020/02/17/ES6/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prev
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/17/Javascript中的DOM0和DOM2/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
