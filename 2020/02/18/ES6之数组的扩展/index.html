@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>ES6之数组的扩展 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="数组的扩展Array类上的扩展123456789101112131415161718每一种数据类型都对应着自己所属的类console.log(Array);console.dir(Array);Array 既是一个类 也是一个函数 返回值：返回一个数组console.log(Array(1,2,3)); 将参数变成一个数组返回 //=&amp;gt;[1,2,3]console.log(Array(&quot;1&quot;">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6之数组的扩展">
+<meta property="og:url" content="http://dream-theater.top/2020/02/18/ES6之数组的扩展/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="数组的扩展Array类上的扩展123456789101112131415161718每一种数据类型都对应着自己所属的类console.log(Array);console.dir(Array);Array 既是一个类 也是一个函数 返回值：返回一个数组console.log(Array(1,2,3)); 将参数变成一个数组返回 //=&amp;gt;[1,2,3]console.log(Array(&quot;1&quot;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-18T09:26:55.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6之数组的扩展">
+<meta name="twitter:description" content="数组的扩展Array类上的扩展123456789101112131415161718每一种数据类型都对应着自己所属的类console.log(Array);console.dir(Array);Array 既是一个类 也是一个函数 返回值：返回一个数组console.log(Array(1,2,3)); 将参数变成一个数组返回 //=&amp;gt;[1,2,3]console.log(Array(&quot;1&quot;">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/18/ES6之数组的扩展/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Tue Feb 18 2020 17:17:53 GMT+0800">
+    <meta property="article:modified_time" content="Tue Feb 18 2020 17:26:55 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/18/ES6之数组的扩展/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">16</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">14</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-17.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">ES6之数组的扩展</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-18 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaklEQVR42u3a0Y7iMAwFUP7/p5nXlXan3Os0bcWePFVQQQ5IsWv79f7q9cLDw8PDw8PDw3sY7xWvP+9Prn979x8b+uv+2d7w8PDwruR9OGrjL04+p72/3hseHh7ehbwkGCRH+XF4aF+v94aHh4f3MN7x5o7xeXqNh4eH9328WSr8oYjwnMCAh4eHd2oxIi+nJtQ8Qb+o1oKHh4cX83Y0wM66fmh/Dw8P7z/m1SNN8U/Qvps3xoqhKzw8PLwNvDblbdPo3fjhEwMeHh7eAi8ZCMjvb9tmSZE3b63h4eHhXcnLm1KzhlZekF0ZO8DDw8O7i5cf3+vhIQ8zxV+Ch4eHdzkvKS7k+KS0kZRFigCDh4eHdwkvT1vbYdbZiGqyBzw8PLy7eMO0dWFIK8HkxQs8PDy8J/DWB0nzcLLSGBsGBjw8PLxTn9bbcsDKuOqO4QM8PDy8e3mzcsBsXKBNoz8EITw8PLxLeLPywWzlCXpbwMXDw8O7hpe3sq5plb3L9WHoCg8PD28D75iaHNmzUuxsaDVqnuHh4eFt5s3S2fbQz8cR2sJHlFLj4eHhncrLG13Hm2s/oU2sT2uA4eHh4W3gFY/98ZG9EkLacIKHh4e3m9cWGmZl3LMaaSc8MeDh4eEt82YNp7YUu95UK8IJHh4e3mbebFiqbYydlXwPh67w8PDwNvDawzrHrFznyT0eHh7eXbz1Bliejiev5CEKDw8P78m8Nh1vW1kbU2o8PDy8W3nrgLYcvFTGxcPDw9vGa4sRSUKcw9rBBTw8PLx7eSeUAMpgkABmZV88PDy83bzvW3h4eHh4eHh4eA9YPyrcTwJoIjSJAAAAAElFTkSuQmCC">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=ES6之数组的扩展&url=http://dream-theater.top/2020/02/18/ES6之数组的扩展/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=ES6之数组的扩展&url=http://dream-theater.top/2020/02/18/ES6之数组的扩展/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/18/ES6之数组的扩展/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/18/ES6之数组的扩展/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/18/ES6之数组的扩展/&title=ES6之数组的扩展" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=ES6之数组的扩展&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/18/ES6之数组的扩展/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/18/ES6之数组的扩展/&text=ES6之数组的扩展" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a><strong>数组的扩展</strong></h3><h6 id="Array类上的扩展"><a href="#Array类上的扩展" class="headerlink" title="Array类上的扩展"></a><strong>Array类上的扩展</strong></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">每一种数据类型都对应着自己所属的类</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>);</span><br><span class="line"><span class="built_in">console</span>.dir(<span class="built_in">Array</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span> 既是一个类 也是一个函数 返回值：返回一个数组</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)); 将参数变成一个数组返回 <span class="comment">//=&gt;[1,2,3]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>(<span class="string">"1"</span>)); <span class="comment">//=&gt;["1"]</span></span><br><span class="line"></span><br><span class="line">注意：只有一个参数并且这个参数是个数字n，返回有n个空位的数组</span><br><span class="line">例如：<span class="built_in">console</span>.log(<span class="built_in">Array</span>(<span class="number">5</span>)); <span class="comment">//=&gt; [empty x 5]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.of(); 跟<span class="built_in">Array</span>一样的 唯一不同的是 参数是一个数字的时候返回是一个只有一项的数组（弥补了上述**注意**中的问题）</span><br><span class="line">例如：<span class="built_in">console</span>.log(<span class="built_in">Array</span>.of(<span class="number">5</span>)); <span class="comment">//=&gt; [5]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.from(数组/类数组)   返回一个数组</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])); <span class="comment">//=&gt;[1,2,3]</span></span><br><span class="line">类数组的特点：有length属性</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(<span class="string">"123"</span>));   <span class="comment">//=&gt;["1", "2", "3"]</span></span><br></pre></td></tr></table></figure>
+
+<h6 id="数组原型上的扩展方法"><a href="#数组原型上的扩展方法" class="headerlink" title="数组原型上的扩展方法"></a><strong>数组原型上的扩展方法</strong></h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.prototype);</span><br><span class="line"></span><br><span class="line">copyWithin</span><br><span class="line">含义：从原数组中读取内容 替换数组的指定位置的内容</span><br><span class="line">参数：<span class="number">1.</span>替换的目标起始位置(target) <span class="number">2.</span>查找的起始位置(begin) <span class="number">3.</span>查找的结束位置	 （end）如果该参数不写，默认到末尾）</span><br><span class="line">返回值：修改后的新数组</span><br><span class="line">原来的数组会发生改变</span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="built_in">console</span>.log(ary.copyWithin(<span class="number">3</span>,<span class="number">0</span>,<span class="number">3</span>));  <span class="comment">//=&gt;[1, 2, 3, 1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//原数组length不变，如果有超出部分截取掉</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="built_in">console</span>.log(ary.copyWithin(<span class="number">4</span>,<span class="number">0</span>,<span class="number">3</span>));	 <span class="comment">//=&gt;[1, 2, 3, 4, 1, 2]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//再例如：</span></span><br><span class="line">&gt; <span class="keyword">let</span> ary1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">&gt; ary1.copyWithin(<span class="number">4</span>,<span class="number">2</span>,<span class="number">4</span>);</span><br><span class="line">[ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span> ]</span><br><span class="line">&gt; <span class="built_in">console</span>.log(ary1);</span><br><span class="line">[ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span> ]</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">&gt; ary1.copyWithin(<span class="number">3</span>,<span class="number">2</span>);</span><br><span class="line">[ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span> ]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fill</span><br><span class="line">含义：按照指定字符填充数组的指定位置</span><br><span class="line">参数：</span><br><span class="line">返回值：修改后的新数组</span><br><span class="line">原来的数组会发生改变</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将数组的每一项都变成指定字符</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log(ary.fill(<span class="string">'wujiang'</span>));  <span class="comment">//=&gt;["wujiang", "wujiang", "wujiang", "wujiang", "wujiang", "wujiang", "wujiang", "wujiang"]</span></span><br><span class="line"><span class="built_in">console</span>.log(ary);   <span class="comment">//=&gt;["wujiang", "wujiang", "wujiang", "wujiang", "wujiang", "wujiang", "wujiang", "wujiang"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//所有数组实例上的方法 参数是从索引m到索引n的都是包含m不包含n</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line">ary.fill(<span class="string">"wujiang"</span>,<span class="number">3</span>);   <span class="comment">//=&gt;[1, 2, 3, "wujiang", "wujiang", "wujiang", "wujiang", "wujiang"]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"><span class="comment">//将数组的索引3，4位置替换成"wujiang"</span></span><br><span class="line">ary.fill(<span class="string">"wujiang"</span>,<span class="number">3</span>,<span class="number">5</span>);   <span class="comment">//=&gt;[1, 2, 3, "wujiang", "wujiang", 6, 7, 8]</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">filter</span><br><span class="line">含义：遍历数组 根据返回值去过滤原数组</span><br><span class="line">返回一个新数组，原数组不变</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">"wujiang"</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">"wujiang"</span>];</span><br><span class="line"><span class="keyword">let</span> arr = ary.filter(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,[原数组]</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//如果返回true就留下当前项 返回false不留下当前项</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">typeof</span> item === <span class="string">"number"</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">find   先遍历数组 一旦参数函数返回<span class="literal">true</span> 停止查找 返回当前项   <span class="comment">//只会查找一个</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">"wujiang"</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">"wujiang"</span>];</span><br><span class="line"><span class="keyword">let</span> arr = ary.find(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	retrun <span class="keyword">typeof</span> item === <span class="string">"number"</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);   <span class="comment">//=&gt; 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = ary.find(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	retrun <span class="literal">false</span>;	</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);   <span class="comment">//=&gt; undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = ary.find(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	retrun <span class="literal">true</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);   <span class="comment">//=&gt; "wujiang"</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">findIndex  先遍历数组 一旦参数函数返回<span class="literal">true</span> 停止查找 返回当前项的索引   <span class="comment">//只会查找一个</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="string">"wujiang"</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="string">"wujiang"</span>];</span><br><span class="line"><span class="keyword">let</span> arr = ary.findIndex(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	retrun <span class="keyword">typeof</span> item === <span class="string">"number"</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);   <span class="comment">//=&gt; 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = ary.findIndex(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	retrun <span class="keyword">typeof</span> item === <span class="string">"string"</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);   <span class="comment">//=&gt; 0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">includes    判断数组中有没有某一项</span><br><span class="line"><span class="comment">// 第二个参数是开始查找的位置索引</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].includes(<span class="number">1</span>));    <span class="comment">//=&gt;true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].includes(<span class="number">1</span>,<span class="number">1</span>));    <span class="comment">//=&gt;false</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">every</span><br><span class="line">含义：遍历数组，如果遍历每一项都返回<span class="literal">true</span>，最后结果为<span class="literal">true</span> </span><br><span class="line">	 只要有一个为<span class="literal">false</span>，结果就是<span class="literal">false</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].every(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">typeof</span> item === <span class="string">"number"</span>;</span><br><span class="line">&#125;));    <span class="comment">//=&gt;true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">"wujiang"</span>].every(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">typeof</span> item === <span class="string">"number"</span>;</span><br><span class="line">&#125;));    <span class="comment">//=&gt;false</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">some</span><br><span class="line">含义：遍历数组，只要有一项返回<span class="literal">true</span>，最后结果为<span class="literal">true</span> </span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">"wujiang"</span>].some(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">typeof</span> item === <span class="string">"number"</span>;</span><br><span class="line">&#125;));    <span class="comment">//=&gt;true</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">reduce  迭代    <span class="comment">//第二个参数作为初始的prev</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line">ary.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prev, item</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//prev:上一次的返回值   item：当前项</span></span><br><span class="line">	<span class="built_in">console</span>.log(prev);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//=&gt;返回4个1，第一项没有上一项的返回值，默认不返回</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(ary.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">prev, item</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//prev:上一次的返回值   item：当前项</span></span><br><span class="line">	<span class="keyword">return</span> prev + item;</span><br><span class="line">&#125;));   <span class="comment">//=&gt;15</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reduceRight  跟reduce一样 只是顺序是从右开始</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">keys  遍历每一项的索引的接口，使用<span class="keyword">for</span> <span class="keyword">of</span>遍历</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="comment">//console.log(ary.keys());  //该方法提供了遍历接口</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">of</span> ary.keys())&#123;</span><br><span class="line">	<span class="comment">//key 索引</span></span><br><span class="line">	<span class="built_in">console</span>.log(key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认使用for of遍历数组   默认遍历的就是每一项</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> ary)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">entries  遍历接口 可以遍历到索引和每一项</span><br><span class="line">每一次遍历得到一个数组[索引，当前项]</span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> e <span class="keyword">of</span> ary.entries())&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//想分别得到索引和每一项，一般可以通过数组的解构赋值获取到遍历的结果</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [index,item] <span class="keyword">of</span> ary.entries())&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(index,item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意：遍历数组的方法，参数是一个函数，这个函数中的<span class="keyword">this</span>是<span class="built_in">window</span>，如果想改变这个<span class="keyword">this</span>的</span><br><span class="line">指向，可以通过第二个参数改变函数中的<span class="keyword">this</span></span><br><span class="line">reduce和reduceRight中的函数参数不可以改变<span class="keyword">this</span>的指向</span><br></pre></td></tr></table></figure>
+
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/18/ES6之数组的扩展/">http://dream-theater.top/2020/02/18/ES6之数组的扩展/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/17/ES6之字符串的扩展/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
