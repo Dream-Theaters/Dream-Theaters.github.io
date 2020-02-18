@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>NODEJS中FS模块中常用的方法 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="fs内置模块1234567891011121314&amp;gt; 提供大量的属性和方法，让JS再NODE环境中执行的时候，可以操作服务器上的资源文件，也就是给予了I/O操作的能力- readdir / readdirSync : 异步或者同步读取指定目录（相对目录或者绝对目录都可以）下的文件目录let fs = require(&apos;fs&apos;);let result = fs.readdirSync(&apos;./&apos;">
+<meta name="keywords" content="NODEJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NODEJS中FS模块中常用的方法">
+<meta property="og:url" content="http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="fs内置模块1234567891011121314&amp;gt; 提供大量的属性和方法，让JS再NODE环境中执行的时候，可以操作服务器上的资源文件，也就是给予了I/O操作的能力- readdir / readdirSync : 异步或者同步读取指定目录（相对目录或者绝对目录都可以）下的文件目录let fs = require(&apos;fs&apos;);let result = fs.readdirSync(&apos;./&apos;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-18T13:56:28.115Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NODEJS中FS模块中常用的方法">
+<meta name="twitter:description" content="fs内置模块1234567891011121314&amp;gt; 提供大量的属性和方法，让JS再NODE环境中执行的时候，可以操作服务器上的资源文件，也就是给予了I/O操作的能力- readdir / readdirSync : 异步或者同步读取指定目录（相对目录或者绝对目录都可以）下的文件目录let fs = require(&apos;fs&apos;);let result = fs.readdirSync(&apos;./&apos;">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",NODEJS">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Tue Feb 18 2020 17:48:14 GMT+0800">
+    <meta property="article:modified_time" content="Tue Feb 18 2020 21:56:28 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">17</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">14</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/NODEJS/">NODEJS<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-18.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">NODEJS中FS模块中常用的方法</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-18 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1UlEQVR42u3aS27kMAwFwL7/pZPtAIO436McxC2VV4HjsVUMMAQ/r68jrxc2NjY2NjY2Njb2I9mv+Pr/+X/v/PTb/JnZG5IzY2NjY5/AfvNff/DJ5J3XQbwO9MqZsbGxsc9hJx/+6RDXz1x/sQ1ue2ZsbGxs7GtqntLykM2KH2xsbGzslQRWlATLDGxsbGzsGxo0QUJqC5JkbPBnvTRsbGzsx7PbQe8Tfv6D+TY2Njb2I9nrV5Ja2qZSnqiKc2JjY2Nvyl5p/ecNnfWAJneWli+xsbGxP5bdJqGV9lPbMGoHyW/Oj42Njb01uz1K2+5Pjn5XCKLxADY2NvbW7DZV5Hfa0iVPVDeMB7CxsbE/lp0s1rTN/bZgSFJRsgB62/IlNjY29gey21XIWemSs1eCUgx6sbGxsbdgt69uR605IPnuLDTY2NjY57Bnd+p19uU20+wN2NjY2Huzf4M3LBjiEqVOw9jY2NibsvMha95IuutaSYHY2NjY57DbIUHb1llf+mmTXF2BYWNjY2/BbpNW23Jqy5J2iRMbGxsbOz968oGVd+ZLlnXLCRsbG3tTdr5eM1udTI7bpsBZGYONjY29Kztv/czKlXz8kJcu+Z8EGxsb+xx2W1q0Df3fDm4SbmxsbOy92XkhkZcl+TPtUHnYzMLGxsbelN2WBNfBytcl8/esrIdiY2Njn8Nuk82sSMibUPmpkq9jY2Njn8BeGdnOgjgbJ8ySKzY2NvY57LbMyJs+s9Z/nuSiwGFjY2Nvym6v9XWce4uZfGyAjY2NvSu7TQltopq1imaj5eF4ABsbG3sLdl4Y5GPa9v15QG9LYNjY2NjbsWfNo2vw7N+uN5KGUxFsbGzsY9j14uNoeNAi3yRabGxsbOz4M3lQVtJhfWZsbGzsA9izw7WtpbbxtL4Aio2NjX0Cezbovbf1n7elohYSNjY29jHscy5sbGxsbGxsbGzsx1zfFVvO4Tv76bkAAAAASUVORK5CYII=">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=NODEJS中FS模块中常用的方法&url=http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=NODEJS中FS模块中常用的方法&url=http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/&title=NODEJS中FS模块中常用的方法" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=NODEJS中FS模块中常用的方法&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/&text=NODEJS中FS模块中常用的方法" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="fs内置模块"><a href="#fs内置模块" class="headerlink" title="fs内置模块"></a><strong>fs内置模块</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; 提供大量的属性和方法，让JS再NODE环境中执行的时候，可以操作服务器上的资源文件，也就是给予了I/O操作的能力</span><br><span class="line">- readdir / readdirSync : 异步或者同步读取指定目录（相对目录或者绝对目录都可以）下的文件目录</span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">let</span> result = fs.readdirSync(<span class="string">'./'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line">- 异步操作是：读取成功后触发回调函数执行</span><br><span class="line">- err存储读取失败后的错误信息（err是一个对象）</span><br><span class="line">- result存储读取成功后的结果（此时err === <span class="literal">null</span>）</span><br><span class="line">fs.readdir(<span class="string">'./'</span>, (err, result) =&gt; &#123;</span><br><span class="line">	<span class="keyword">if</span> (err === <span class="literal">null</span>) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(result);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">readFile / readFileSync : 同步或者异步读取某一个文件中的内容</span><br><span class="line">fs.readFileSync([path],[encoding]) : 不设置编码格式([encoding]),默认得到的是Buffer文件流(编码)格式的数据，设置utf8，得到的结果是字符串(例如：<span class="built_in">JSON</span>格式的字符串，HTML或者CSS等格式)；但是对于富媒体的资源（例如：图片，音视频等）我们读取和传输的过程中就是基于BUFFER文件流格式操作的，所以不要设置UTF8读取；</span><br><span class="line"><span class="keyword">let</span> result = fs.readFileSync(<span class="string">'./package.json'</span>, <span class="string">'utf8'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line">fs.readFile([path],[encoding],[callback])</span><br><span class="line">fs.readFile(<span class="string">'./package.json'</span>, <span class="string">'utf8'</span>, (err, result) =&gt; &#123;</span><br><span class="line">	<span class="keyword">if</span> (err !== <span class="literal">null</span>) <span class="keyword">return</span>; </span><br><span class="line">	<span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">writeFileSync / writeFile : 向某个文件中写入内容（如果文件不存在，它会默认创建一个文件再写入，而且写入方式是覆盖式写入“把之前文件中的内容全部覆盖”）=&gt;appendFile是追加写入内容  <span class="comment">//文件不存在可以，但是需要保证路径的正确性</span></span><br><span class="line"></span><br><span class="line">fs.writeFileSync([path],[string/buffer content],[encoding]):没有返回值</span><br><span class="line"><span class="keyword">let</span> result = fs.writeFileSync(<span class="string">'./Hello.txt'</span>, <span class="string">'HelloWorld~~'</span>, <span class="string">'utf8'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);   <span class="comment">//=&gt; undefined(没有返回值)</span></span><br><span class="line"></span><br><span class="line">fs.appendFileSync(<span class="string">'./Hello.txt'</span>, <span class="string">'你好世界~~'</span>, <span class="string">'utf8'</span>);  <span class="comment">//追加写入内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;异步操作的方式可以监听其成功或者失败</span></span><br><span class="line">fs.writeFile(<span class="string">'./Hello.txt'</span>, <span class="string">'node'</span>, <span class="string">'utf8'</span>, err =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> err = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	fs.writeFileSync(<span class="string">'./Hello.txt'</span>, <span class="string">'HelloWorld~~'</span>, <span class="string">'utf8'</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">	err = e;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (err !== <span class="literal">null</span>) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'执行报错~~'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;把某个文件及里面的内容拷贝到新的目录中（替换型拷贝：原来目录中存在这个文件，新拷贝的会替换原来的）</span></span><br><span class="line">fs.copyFile(<span class="string">'./AA.txt'</span>, <span class="string">'./BB.txt'</span>, err =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;创建目录</span></span><br><span class="line">fs.mkdir(<span class="string">'./js'</span>, err =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;删除目录（但是一定要保证目录中不在有文件，否则不让删除）</span></span><br><span class="line">fs.rmdir(<span class="string">'./js'</span>, err =&gt; &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;删除文件</span></span><br><span class="line">fs.unlink(<span class="string">'./js/1.js'</span>, err =&gt; &#123;&#125;);</span><br></pre></td></tr></table></figure>
+
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/">http://dream-theater.top/2020/02/18/NODEJS中FS模块中常用的方法/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/NODEJS/">NODEJS</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/18/ES6之数组的扩展/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
