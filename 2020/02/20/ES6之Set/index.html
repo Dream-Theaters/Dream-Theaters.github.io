@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>ES6之Set | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="ES6之Set1234567891011&amp;gt; 类似数组 只有值value 没有键key&amp;gt; 通过构造函数方式创建一个Set实例&amp;gt; 参数是一个数组（或者是类似数组，只要是有iterable接口）&amp;gt; 有iterable接口：数组，arguments，元素集合，Set，Map，字符串&amp;gt; 会默认去重console.log(new Set([1,2,3,4]));		//实例都是对">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6之Set">
+<meta property="og:url" content="http://dream-theater.top/2020/02/20/ES6之Set/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="ES6之Set1234567891011&amp;gt; 类似数组 只有值value 没有键key&amp;gt; 通过构造函数方式创建一个Set实例&amp;gt; 参数是一个数组（或者是类似数组，只要是有iterable接口）&amp;gt; 有iterable接口：数组，arguments，元素集合，Set，Map，字符串&amp;gt; 会默认去重console.log(new Set([1,2,3,4]));		//实例都是对">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-20T10:38:16.257Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6之Set">
+<meta name="twitter:description" content="ES6之Set1234567891011&amp;gt; 类似数组 只有值value 没有键key&amp;gt; 通过构造函数方式创建一个Set实例&amp;gt; 参数是一个数组（或者是类似数组，只要是有iterable接口）&amp;gt; 有iterable接口：数组，arguments，元素集合，Set，Map，字符串&amp;gt; 会默认去重console.log(new Set([1,2,3,4]));		//实例都是对">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Javascript">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/20/ES6之Set/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Thu Feb 20 2020 18:36:41 GMT+0800">
+    <meta property="article:modified_time" content="Thu Feb 20 2020 18:38:16 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/02/20/ES6之Set/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">22</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">16</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/NODEJS/">NODEJS<span class="mdui-ripple sidebar_archives-count">4</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-1.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">ES6之Set</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-20 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACVklEQVR42u3aS27DMAwFwNz/0u0BCjuPpsQqwXgVBP5NFiLzxNfPVx8vPDw8PDw8PDy8w3iv+Li66uqbv+cnT1zwbnh4eHgjvDdL7cWDk1e/f0r+oxTeDQ8PD2+Ql7xcspR3ikHn3fDw8PBO5iXn5+14Xn7w8PDwPp1XfnBcSPDw8PA+hVdtbfPI9T6GOChrwcPDw4t5+SbT/OfR/T08PDy8gFceaYoD3GpLvWXoCg8PD28Db9U4VHWrbOO2GR4eHt4Ir7qUV+Pa+4JRvXPrHwMeHh5em5dc1h+ZStidrTI8PDy8SV41JM1b4c52Wqvdx8PDwxvh5aUiaXw7y31SnN6ExXh4eHibeXlDnAQH1SC4GnxEAQoeHh7eCG9V9JA3x2uLCh4eHt4k71kYUW2F87GD/qgWHh4e3m5ep4HOl/7km7xZf4PHw8PDG+F1IoBnW2XVSLfwQ+Ph4eGN8PLF91kzXR2i2j5ThoeHh9fgVVvYZ0t/Z+AgKRV4eHh4k7x8+yo/Z+0989AEDw8Pb4bXCRfWNsr9QQQ8PDy8Sd7al65udOWNe4THw8PDG+RV//Z34uBqELygMODh4eFt4FWHVnNkNZhIrr38Hg8PD28zr3okj6ky8gY9Kj94eHh4m3n9RbnaQOdRSD7ChYeHhzfPy4vBqlj2WduNh4eHdxoviVPzTbJOqejEInh4eHgn86rHM0a5ccfDw8M7knffIveb8mpAjIeHh/dfvHzTKw8gOoNWzxprPDw8vBletcHNkZ175gUDDw8Pb5L3fQceHh4eHh4eHt4Bxy/dLO05SYYmyQAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=ES6之Set&url=http://dream-theater.top/2020/02/20/ES6之Set/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=ES6之Set&url=http://dream-theater.top/2020/02/20/ES6之Set/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/20/ES6之Set/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/20/ES6之Set/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/20/ES6之Set/&title=ES6之Set" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=ES6之Set&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/20/ES6之Set/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/20/ES6之Set/&text=ES6之Set" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h3 id="ES6之Set"><a href="#ES6之Set" class="headerlink" title="ES6之Set"></a><strong>ES6之Set</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; 类似数组 只有值value 没有键key</span><br><span class="line">&gt; 通过构造函数方式创建一个<span class="built_in">Set</span>实例</span><br><span class="line">&gt; 参数是一个数组（或者是类似数组，只要是有iterable接口）</span><br><span class="line">&gt; 有iterable接口：数组，<span class="built_in">arguments</span>，元素集合，<span class="built_in">Set</span>，<span class="built_in">Map</span>，字符串</span><br><span class="line">&gt; 会默认去重</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]));		<span class="comment">//实例都是对象</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(<span class="string">"1234"</span>));</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Set</span>(<span class="built_in">arguments</span>));</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">Set</span>的属性：</span><br><span class="line">	size   <span class="built_in">Set</span>实例的大小个数</span><br><span class="line">&gt; <span class="built_in">Set</span>的方法：</span><br><span class="line">	add(增加的值):增加（如果之前没有则加上，有则不加） 返回值是增加后的<span class="built_in">Set</span>实例(可以实现链式写法)  参数是一个（一次只能加一个）</span><br><span class="line">	<span class="keyword">let</span> set1 = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="string">"哈哈"</span>,<span class="literal">null</span>,<span class="literal">NaN</span>,<span class="literal">true</span>]);</span><br><span class="line">	<span class="built_in">console</span>.log(set1.add(<span class="number">10</span>).add(<span class="number">100</span>));</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">delete</span>:删除(删除的值) 返回值是<span class="literal">true</span>/<span class="literal">false</span> 如果里面有这一项则删除成功(<span class="literal">true</span>),没有此项则删除失败(<span class="literal">false</span>)</span><br><span class="line">	<span class="built_in">console</span>.log(set1.delete(<span class="number">1</span>));    <span class="comment">//true</span></span><br><span class="line">	<span class="built_in">console</span>.log(set1.delete(<span class="number">1000</span>)); <span class="comment">//false</span></span><br><span class="line">	<span class="built_in">console</span>.log(set1);</span><br><span class="line">	</span><br><span class="line">	clear:清空 没有返回值(<span class="literal">undefined</span>),没有参数</span><br><span class="line">	<span class="built_in">console</span>.log(set1.clear());</span><br><span class="line">	<span class="built_in">console</span>.log(set1);</span><br><span class="line">	</span><br><span class="line">	has 判断有没有此项 返回值<span class="literal">true</span>/<span class="literal">false</span></span><br><span class="line">	<span class="keyword">let</span> set2 = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="string">"哈哈"</span>,<span class="literal">null</span>,<span class="literal">NaN</span>,<span class="literal">true</span>]);</span><br><span class="line">	<span class="built_in">console</span>.log(set2.has(<span class="literal">NaN</span>));    <span class="comment">//true</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//forEach keys values entries(这些都是遍历的方法)</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//注意：箭头函数没有arguments（所以下面这样写会报错）</span></span><br><span class="line">	set2.forEach(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">	&#125;)	</span><br><span class="line">	set2.forEach(<span class="function">(<span class="params">...rest</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(rest);</span><br><span class="line">	&#125;)	</span><br><span class="line">	set2.forEach(<span class="function">(<span class="params">item,index,input</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="comment">//Set实例只有value，没有key</span></span><br><span class="line">		<span class="comment">//item，index：当前项(value)</span></span><br><span class="line">		<span class="comment">//input：当前Set实例</span></span><br><span class="line">	&#125;)</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">console</span>.log(set2.keys());</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> set2.keys())&#123;</span><br><span class="line">		<span class="comment">//key仍然是value值</span></span><br><span class="line">		<span class="built_in">console</span>.log(key);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> val <span class="keyword">of</span> set2.values())&#123;</span><br><span class="line">		<span class="comment">//val仍然是value值</span></span><br><span class="line">		<span class="built_in">console</span>.log(val);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> val <span class="keyword">of</span> set2.entries())&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(val);</span><br><span class="line">	&#125;</span><br><span class="line">	将上面的val解构一下，如下：</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> [item,val] <span class="keyword">of</span> set2.entries())&#123;</span><br><span class="line">		<span class="comment">//item,val全是value值</span></span><br><span class="line">		<span class="built_in">console</span>.log(item,val);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组去重</span></span><br><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">11</span>,<span class="number">22</span>,<span class="number">15</span>,<span class="number">12</span>,<span class="number">8</span>];</span><br><span class="line"><span class="built_in">console</span>.log([...new <span class="built_in">Set</span>(ary)]);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">ary</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> [...new <span class="built_in">Set</span>(ary)];</span><br><span class="line">	retrun <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(ary));</span><br><span class="line">	<span class="comment">//上面两种方式都可以</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//求两个数组的并集 交集 差集</span></span><br><span class="line"><span class="keyword">let</span> ary1 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">let</span> ary2 = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="comment">//并集</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">ary1,ary2</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> [...new <span class="built_in">Set</span>([...ary1,...ary2])]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(add(ary1,ary2));</span><br><span class="line"><span class="comment">//交集</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">same</span>(<span class="params">ary1,ary2</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ary1.filter(<span class="function"><span class="params">item</span> =&gt;</span> ary2.includes(item))</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(same(ary1,ary2));</span><br><span class="line"><span class="comment">//差集 = 并集 - 交集</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">diff</span>(<span class="params">ary1,ary2</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> add(ary1,ary2).filter(<span class="function"><span class="params">item</span>=&gt;</span>!same(ary1,ary2).includes(item))</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(diff(ary1,ary2));</span><br></pre></td></tr></table></figure>
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/20/ES6之Set/">http://dream-theater.top/2020/02/20/ES6之Set/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/20/JS之构造函数和类/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
