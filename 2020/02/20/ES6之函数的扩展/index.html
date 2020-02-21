@@ -8,30 +8,31 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>Tag: NODEJS | DreamTheater&#39;s Blog</title>
+  <title>ES6之函数的扩展 | DreamTheater&#39;s Blog</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
   <meta name="description" content="learning">
-<meta name="keywords" content="learn">
-<meta property="og:type" content="website">
-<meta property="og:title" content="DreamTheater&#39;s Blog">
-<meta property="og:url" content="http://dream-theater.top/tags/NODEJS/index.html">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6之函数的扩展">
+<meta property="og:url" content="http://dream-theater.top/2020/02/20/ES6之函数的扩展/index.html">
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
 <meta property="og:description" content="learning">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-02-20T15:28:07.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DreamTheater&#39;s Blog">
+<meta name="twitter:title" content="ES6之函数的扩展">
 <meta name="twitter:description" content="learning">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
   <meta name="description" content="learning">
-  <meta name="keywords" content>
+  <meta name="keywords" content=",Javascript">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="DreamTheater&#39;s Blog">
-  <meta name="msapplication-starturl" content="http://dream-theater.top/tags/NODEJS/">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/20/ES6之函数的扩展/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
@@ -39,9 +40,12 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
+    <meta property="article:published_time" content="Thu Feb 20 2020 23:24:49 GMT+0800">
+    <meta property="article:modified_time" content="Thu Feb 20 2020 23:28:07 GMT+0800">
+  
 
   
-    <link rel="canonical" href="http://dream-theater.top/tags/NODEJS/index.html">
+    <link rel="canonical" href="http://dream-theater.top/2020/02/20/ES6之函数的扩展/">
   
 
   
@@ -158,139 +162,97 @@
   </div>
 </aside>
   <main id="main" class="mdui-m-t-5 fadeIn animated">
-
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/2020/02/22/EXPRESS中的数据处理和中间件/">
-      <header class="mdui-card-media mdui-ripple">
-        <img src="/images/random/material-7.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">EXPRESS中的数据处理和中间件</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-22 / <i class="iconfont">&#xe601;</i> Wujiang</div>
-          </div>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-11.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">ES6之函数的扩展</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-20 / <i class="iconfont">&#xe601;</i> Wujiang</div>
         </div>
-      </header>
-    </a>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZklEQVR42u3aQXLDIBAEQP//08kDUpJnFgkrrtbJlZIDzQHWw75+vvp54eHh4eHh4eHhPYz3ip+jbx395e/77XeHc8PDw8Pbwnuz1Z6+0y7K+TKtzw0PDw9vJ+9ockefZ986f3Nlbnh4eHjP551Pa6VAx8PDw/s+3nDgGICHh4f3X3jJD/62vJ5t9x/LWvDw8PBiXl4E7/+89X4PDw8PL+DVLU3ldp8fG8kxcHtPGR4eHl7AyzfiqJyNy+W8ZM/ng4eHh7eH10au681VKy0Fw5IaDw8P71Le+cDJRlwErKMDJm9ZwMPDw9vDW9n0V0rtdoGWYlw8PDy8S3lJ8+jsar9diCTkjWaFh4eHdzOvLliXY4u2HSGPNvDw8PB28tqDId/QE0CyxEW0gYeHh/cAXj58G90mwURdyuPh4eFt4SXb+jAaGB0V+VXcMKXGw8PDW+AlrU75Vp5v9G2Zns8WDw8Pbw+vvfhPkPk7t/eU4eHh4V3KW7kGm11xtQFufpzg4eHh7efVV01lQ0Ab2rYBLh4eHt4eXj5we222HkzkTa54eHh4+3nnG3HeMLrSrJ8v8Rs8Hh4e3nbetZt1y8uDieHBgIeHh3cbbyWuzQGzUd5EJ3h4eHg382ahwyxmzanJuIf/AQ8PD+9m3sqmnMeyeQNBXprXF2B4eHh4l/Jmh8GsIaCNjPHw8PCezMvbp9YPhmTJZkcUHh4e3jN5s1J7FjG0F3J4eHh4T+attyDkl2fFDwA8PDy8jbxZlHBVo0BbXuPh4eF9lte2VbXFcRtwtAcGHh4e3k7e9z14eHh4eHh4eHgPeH4BzZhT7+DT0GkAAAAASUVORK5CYII=">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=ES6之函数的扩展&url=http://dream-theater.top/2020/02/20/ES6之函数的扩展/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=ES6之函数的扩展&url=http://dream-theater.top/2020/02/20/ES6之函数的扩展/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/20/ES6之函数的扩展/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/20/ES6之函数的扩展/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/20/ES6之函数的扩展/&title=ES6之函数的扩展" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=ES6之函数的扩展&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/20/ES6之函数的扩展/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/20/ES6之函数的扩展/&text=ES6之函数的扩展" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
     <div class="mdui-card-content mdui-typo">
       
+      <blockquote class="mdui-m-t-5">
         
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/20/ES6之函数的扩展/">http://dream-theater.top/2020/02/20/ES6之函数的扩展/</a>
+      </blockquote>
       
-      <a href="/2020/02/22/EXPRESS中的数据处理和中间件/">Read More >></a>
     </div>
     <footer class="mdui-card-actions">
       
       
-        <a class="mdui-ripple article_tags-link" href="/tags/NODEJS/">NODEJS</a>
+        <a class="mdui-ripple article_tags-link" href="/tags/Javascript/">Javascript</a>
       
     </footer>
+    
   </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
 
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/2020/02/19/NODEJS中的REQUEST对象和RESPONSE对象/">
-      <header class="mdui-card-media mdui-ripple">
-        <img src="/images/random/material-1.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">NODEJS中的REQUEST对象和RESPONSE对象</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-19 / <i class="iconfont">&#xe601;</i> Wujiang</div>
-          </div>
-        </div>
-      </header>
-    </a>
-    <div class="mdui-card-content mdui-typo">
-      
-        
-      
-      <a href="/2020/02/19/NODEJS中的REQUEST对象和RESPONSE对象/">Read More >></a>
-    </div>
-    <footer class="mdui-card-actions">
-      
-      
-        <a class="mdui-ripple article_tags-link" href="/tags/NODEJS/">NODEJS</a>
-      
-    </footer>
-  </article>
 
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/2020/02/18/NODEJS中的内置模块HTTP/">
-      <header class="mdui-card-media mdui-ripple">
-        <img src="/images/random/material-8.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">NODEJS中的内置模块HTTP</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-18 / <i class="iconfont">&#xe601;</i> Wujiang</div>
-          </div>
-        </div>
-      </header>
-    </a>
-    <div class="mdui-card-content mdui-typo">
-      
-        
-      
-      <a href="/2020/02/18/NODEJS中的内置模块HTTP/">Read More >></a>
-    </div>
-    <footer class="mdui-card-actions">
-      
-      
-        <a class="mdui-ripple article_tags-link" href="/tags/NODEJS/">NODEJS</a>
-      
-    </footer>
-  </article>
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/2020/02/22/EXPRESS中的数据处理和中间件/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prev
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/02/20/ES6之数组的空位/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
 
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/2020/02/18/NODEJS中的内置模块URL/">
-      <header class="mdui-card-media mdui-ripple">
-        <img src="/images/random/material-9.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">NODEJS中的内置模块URL</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-18 / <i class="iconfont">&#xe601;</i> Wujiang</div>
-          </div>
-        </div>
-      </header>
-    </a>
-    <div class="mdui-card-content mdui-typo">
-      
-        
-HTTP协议默认端口号：80；
-HTTPS协议默认端口号：443；
-FTP协议默认端口号：21
-      
-      <a href="/2020/02/18/NODEJS中的内置模块URL/">Read More >></a>
-    </div>
-    <footer class="mdui-card-actions">
-      
-      
-        <a class="mdui-ripple article_tags-link" href="/tags/NODEJS/">NODEJS</a>
-      
-    </footer>
-  </article>
 
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/2020/02/18/NODEJS中FS模块中常用的方法/">
-      <header class="mdui-card-media mdui-ripple">
-        <img src="/images/random/material-13.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">NODEJS中FS模块中常用的方法</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-18 / <i class="iconfont">&#xe601;</i> Wujiang</div>
-          </div>
-        </div>
-      </header>
-    </a>
-    <div class="mdui-card-content mdui-typo">
-      
-        
-      
-      <a href="/2020/02/18/NODEJS中FS模块中常用的方法/">Read More >></a>
-    </div>
-    <footer class="mdui-card-actions">
-      
-      
-        <a class="mdui-ripple article_tags-link" href="/tags/NODEJS/">NODEJS</a>
-      
-    </footer>
-  </article>
 
 </main>
   <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
