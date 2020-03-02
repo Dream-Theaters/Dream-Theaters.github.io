@@ -8,22 +8,22 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>NODEJS中的内置模块URL | DreamTheater&#39;s Blog</title>
+  <title>EXPRESS项目整体框架和路由管理 | DreamTheater&#39;s Blog</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
-  <meta name="description" content="HTTP协议默认端口号：80； HTTPS协议默认端口号：443； FTP协议默认端口号：21  123456//url.parse(str,true)用来解析URL中每一部分信息的，第二个参数（默认为FALSE）传TRUE，自动会把问号参数解析成键值对的方式，存储在query属性中// query：问号传递参数的键值对// pathname：请求路径名称let url = require(&apos;u">
+  <meta name="description" content="learning">
 <meta name="keywords" content="NODEJS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NODEJS中的内置模块URL">
-<meta property="og:url" content="http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/index.html">
+<meta property="og:title" content="EXPRESS项目整体框架和路由管理">
+<meta property="og:url" content="http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/index.html">
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
-<meta property="og:description" content="HTTP协议默认端口号：80； HTTPS协议默认端口号：443； FTP协议默认端口号：21  123456//url.parse(str,true)用来解析URL中每一部分信息的，第二个参数（默认为FALSE）传TRUE，自动会把问号参数解析成键值对的方式，存储在query属性中// query：问号传递参数的键值对// pathname：请求路径名称let url = require(&apos;u">
+<meta property="og:description" content="learning">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-19T02:43:44.784Z">
+<meta property="og:updated_time" content="2020-02-22T08:05:10.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NODEJS中的内置模块URL">
-<meta name="twitter:description" content="HTTP协议默认端口号：80； HTTPS协议默认端口号：443； FTP协议默认端口号：21  123456//url.parse(str,true)用来解析URL中每一部分信息的，第二个参数（默认为FALSE）传TRUE，自动会把问号参数解析成键值对的方式，存储在query属性中// query：问号传递参数的键值对// pathname：请求路径名称let url = require(&apos;u">
+<meta name="twitter:title" content="EXPRESS项目整体框架和路由管理">
+<meta name="twitter:description" content="learning">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
@@ -32,7 +32,7 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="DreamTheater&#39;s Blog">
-  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
@@ -40,12 +40,12 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <meta property="article:published_time" content="Tue Feb 18 2020 22:08:08 GMT+0800">
-    <meta property="article:modified_time" content="Wed Feb 19 2020 10:43:44 GMT+0800">
+    <meta property="article:published_time" content="Sat Feb 22 2020 14:20:20 GMT+0800">
+    <meta property="article:modified_time" content="Sat Feb 22 2020 16:05:10 GMT+0800">
   
 
   
-    <link rel="canonical" href="http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/">
+    <link rel="canonical" href="http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/">
   
 
   
@@ -166,11 +166,11 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-9.png" style="max-height: 240px;">
+      <img src="/images/random/material-6.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">NODEJS中的内置模块URL</div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-18 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+          <div class="mdui-card-primary-title">EXPRESS项目整体框架和路由管理</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-02-22 / <i class="iconfont">&#xe601;</i> Wujiang</div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -182,7 +182,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACz0lEQVR42u3aUXLbMAwEUN//0u0BWtm7oNLK5NOXJ5ElPmYmGGD5+nXk9cLGxsbGxsbGxsZ+JPsVX3/e/5dHB3dePfnqOVe/zdeMjY2NfQL7w7/+i6Unn/Of5Bs9XDM2Njb2Aez3L74qIfnT3t/flsB6zdjY2NjYZSvyvtjk25qvBxsbGxt7nT0rXUkTgo2NjY1911CpHfGs39+GB9jY2Nhnstug9wmf/0O+jY2Njf1IdnvNIt7kyE4bLdQrx8bGxt6U3R6jXClseTuRj5mKCBkbGxt7U/ZsuPP+ZUlw2w6tZtuEjY2NfSb7Jw5Ntgd02kYoKorY2NjYB7Dzh0YF46Z2Ir//Q/ODjY2NfQB71gy0S88bjJUGqR4qYWNjY385e2WUs/K5DX3bjcDGxsY+gZ0PjJLmJB9L5cOsWTxQ59vY2NjYX86eDYxm7cFs+1ZiZmxsbOy92fcWpHzA1G7NbEOxsbGxT2a3wW1e3v7NuAobGxv7HPbs6Ey7WUlRzL+bvx0bGxv7HHbyuGTRbRybl8N2FIWNjY19Djv52qyRaMtSO3JKqNjY2NgnsFcC3fa4Tw5uA4moJGNjY2Mfyc6bgdn46d5geOnwJTY2NvbXsvPRUlKE2sH9SiScg7GxsbH3Zrfge4tWUixn7KhuY2NjY2/EXln0vYd+WnZeMrGxsbF3Zeej/DxwXR8SrTdC2NjY2NhtrJtvQf6WJLTIv4WNjY29K3sWmuYhcRsPtH+SolHBxsbG3pQ9W+hKkVt/znDjsLGxsTdltwUsL1qz4GFl+36wbmNjY2M/np03DOvxbTtIytuhD8/BxsbGPoA9C1zbJbbtTT5UwsbGxsbOi8GMlDQPsyNBS60INjY29sHsvAlZjwfyLSviAWxsbOzt2HlxSjarXW4bJOT3Y2NjY5/AXgl610dISdNyQ7SMjY2NvSn7nAsbGxsbGxsbGxv7MddvmBABk9dooEUAAAAASUVORK5CYII=">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACyElEQVR42u3aQVLDMAwF0Nz/0nAApumXZCC1X1YdKLGfF2ik7+vryOfCxsbGxsbGxsbGfiT7ip/77/98Z/I5+W2+hze7wsbGxt6a/eZffwy7f0P1cJPVC3vGxsbGPoCdbCIvP9VV8gNt7hkbGxsbOziCvLBV35k3LdjY2NjY+TL52Kha0rCxsbGxe+xesakWs/wQ84HRr8/SsLGxsR/Png/u//7zP+Tb2NjY2I9kl68wFo9m1UWfpGi92Tk2Njb2puzFYertFvMQt3ftckEHho2Njf2B7GUjm1YMkJe33oUebGxs7DPZhRcNrvhM4of8zdjY2NgnsOcXayYbql7H6a2OjY2NvTc7H+ivGg8lLUcSTpTjB2xsbOxN2fn1x2qRq7Yr1XWrMTA2Njb2ruykLOWtQj48mjQe1XgYGxsbe2/22sXyklMtgb8eD2BjY2N/LLvaQkyK35xRHX5hY2Njn8CuRrn5ECpvFfIQNz8CbGxs7NPY+bZ646d8rV6cvLgDw8bGxv5wdnUA1EOuur5T+Dk2Njb21uxeYJAfVn5w1auco1QEGxsbewt2LzRNAoZq05KPmXr7xMbGxt6VnQzZ8zJTjWCrUUQ1csDGxsY+k50PcZIlV13l7MXS2NjY2Oewe1Fur20obzeOeLGxsbGx54DR0CcoTpNVsLGxsXdlJ4P+fPTfu3CZYyYxBjY2NvYJ7MnlywRQbWOqLRA2Njb2mezehiYRbw7rtUwvjx4bGxt7U3b16RWhahszDwnexAPY2NjYG7Gv+Lln5MOpedvT3A82Njb21uxJ0cq/k2x0Hjm/3A82Njb2Aex8TL/q6mT1zaM4ARsbGxt7Ujxa7yyPjbCxsbGxl5alyUioevUnCjawsbGxD2DnQ6Ve85D8VbKHZTeVsLGxsTdiz4PeSRuTh7u9qAAbGxt7b/Y5DzY2NjY2NjY2NvZjnm+harnMIHTRkQAAAABJRU5ErkJggg==">
               
             </li>
           </ul>
@@ -191,42 +191,35 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=NODEJS中的内置模块URL&url=http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=EXPRESS项目整体框架和路由管理&url=http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=NODEJS中的内置模块URL&url=http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=EXPRESS项目整体框架和路由管理&url=http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/" target="_blank" class="mdui-ripple">Share to Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/" target="_blank" class="mdui-ripple">Share to Google+</a>
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/" target="_blank" class="mdui-ripple">Share to Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/&title=NODEJS中的内置模块URL" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/&title=EXPRESS项目整体框架和路由管理" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=NODEJS中的内置模块URL&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/" target="_blank" class="mdui-ripple">Share to QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=EXPRESS项目整体框架和路由管理&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/" target="_blank" class="mdui-ripple">Share to QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/&text=NODEJS中的内置模块URL" target="_blank" class="mdui-ripple">Share to Telegram</a>
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/&text=EXPRESS项目整体框架和路由管理" target="_blank" class="mdui-ripple">Share to Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <ul>
-<li>HTTP协议默认端口号：80；</li>
-<li>HTTPS协议默认端口号：443；</li>
-<li>FTP协议默认端口号：21</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//url.parse(str,true)用来解析URL中每一部分信息的，第二个参数（默认为FALSE）传TRUE，自动会把问号参数解析成键值对的方式，存储在query属性中</span></span><br><span class="line"><span class="comment">// query：问号传递参数的键值对</span></span><br><span class="line"><span class="comment">// pathname：请求路径名称</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">'http://www.dream-theater.top:80/stu/index.html?lx=1&amp;from=weixin#student'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(url.parse(str, <span class="literal">true</span>));<span class="comment">//解析出来的是一个对象</span></span><br></pre></td></tr></table></figure>
-
-
+      
       <blockquote class="mdui-m-t-5">
         
-        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/">http://dream-theater.top/2020/02/18/NODEJS中的内置模块URL/</a>
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/">http://dream-theater.top/2020/02/22/EXPRESS项目整体框架和路由管理/</a>
       </blockquote>
       
     </div>
@@ -245,14 +238,9 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2020/02/18/NODEJS中的内置模块HTTP/">
-        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prev
-      </a>
-    
     <div class="spacer"></div>
     
-      <a rel="next" class="extend next" href="/2020/02/18/NODEJS中FS模块中常用的方法/">
+      <a rel="next" class="extend next" href="/2020/02/22/EXPRESS中的数据处理和中间件/">
         Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
