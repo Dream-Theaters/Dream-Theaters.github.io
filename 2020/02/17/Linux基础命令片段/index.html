@@ -12,18 +12,18 @@
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
-  <meta name="description" content="命令提示符[root@localhost]#其中：root 当前登录用户localhost主机名当前所在目录（家目录）#超级用户的提示符$普通用户的提示符 命令格式命令 [选项] [参数]注意：1）个别命令使用不遵循此格式2）当有多个选项时，可以写在一起3）简化选项与完整选项-a 等于 –all 查询目录中内容：lsls [选项] [文件或目录]选项：-a 显示所有文件，包括隐藏文件-l 显示详情">
+  <meta name="description" content="命令提示符 [root@localhost]# root 当前登录用户 localhost主机名 当前所在目录（家目录） #超级用户的提示符 $普通用户的提示符    命令格式 命令 [选项] [参数]  注意：  1）个别命令使用不遵循此格式  2）当有多个选项时，可以写在一起  3）简化选项与完整选项 如：-a 等于 --all  查询目录中内容：ls  ls [选项] [文件或目录] 选项：">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux基础命令片段">
 <meta property="og:url" content="http://dream-theater.top/2020/02/17/Linux基础命令片段/index.html">
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
-<meta property="og:description" content="命令提示符[root@localhost]#其中：root 当前登录用户localhost主机名当前所在目录（家目录）#超级用户的提示符$普通用户的提示符 命令格式命令 [选项] [参数]注意：1）个别命令使用不遵循此格式2）当有多个选项时，可以写在一起3）简化选项与完整选项-a 等于 –all 查询目录中内容：lsls [选项] [文件或目录]选项：-a 显示所有文件，包括隐藏文件-l 显示详情">
+<meta property="og:description" content="命令提示符 [root@localhost]# root 当前登录用户 localhost主机名 当前所在目录（家目录） #超级用户的提示符 $普通用户的提示符    命令格式 命令 [选项] [参数]  注意：  1）个别命令使用不遵循此格式  2）当有多个选项时，可以写在一起  3）简化选项与完整选项 如：-a 等于 --all  查询目录中内容：ls  ls [选项] [文件或目录] 选项：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-17T06:12:28.782Z">
+<meta property="og:updated_time" content="2020-05-11T03:57:48.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础命令片段">
-<meta name="twitter:description" content="命令提示符[root@localhost]#其中：root 当前登录用户localhost主机名当前所在目录（家目录）#超级用户的提示符$普通用户的提示符 命令格式命令 [选项] [参数]注意：1）个别命令使用不遵循此格式2）当有多个选项时，可以写在一起3）简化选项与完整选项-a 等于 –all 查询目录中内容：lsls [选项] [文件或目录]选项：-a 显示所有文件，包括隐藏文件-l 显示详情">
+<meta name="twitter:description" content="命令提示符 [root@localhost]# root 当前登录用户 localhost主机名 当前所在目录（家目录） #超级用户的提示符 $普通用户的提示符    命令格式 命令 [选项] [参数]  注意：  1）个别命令使用不遵循此格式  2）当有多个选项时，可以写在一起  3）简化选项与完整选项 如：-a 等于 --all  查询目录中内容：ls  ls [选项] [文件或目录] 选项：">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
@@ -41,7 +41,7 @@
 
   
     <meta property="article:published_time" content="Mon Feb 17 2020 14:11:14 GMT+0800">
-    <meta property="article:modified_time" content="Mon Feb 17 2020 14:12:28 GMT+0800">
+    <meta property="article:modified_time" content="Mon May 11 2020 11:57:48 GMT+0800">
   
 
   
@@ -65,7 +65,7 @@
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
     <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
     <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
     <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
   </div>
 </header>
@@ -93,12 +93,12 @@
   <div class="mdui-list" mdui-collapse="{accordion: true}">
     <a href="/" class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
-      <div class="mdui-list-item-content">主页</div>
+      <div class="mdui-list-item-content">Home</div>
     </a>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
-        <div class="mdui-list-item-content">归档</div>
+        <div class="mdui-list-item-content">Archive</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
@@ -110,21 +110,21 @@
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
-        <div class="mdui-list-item-content">分类</div>
+        <div class="mdui-list-item-content">Category</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
         
         
-          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">分类为空</a>
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
         
       </div>
     </div>
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
-        <div class="mdui-list-item-content">标签</div>
+        <div class="mdui-list-item-content">Tag</div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
@@ -135,7 +135,7 @@
     </div>
     <a href="/about" class="mdui-list-item mdui-ripple">
       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
-      <div class="mdui-list-item-content">关于</div>
+      <div class="mdui-list-item-content">About</div>
     </a>
   </div>
 
@@ -149,7 +149,7 @@
     
     <div class="mdui-collapse-item">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <div class="mdui-list-item-content">友情链接</div>
+        <div class="mdui-list-item-content">Links</div>
         <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
@@ -166,7 +166,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-17.png" style="max-height: 240px;">
+      <img src="/images/random/material-7.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">Linux基础命令片段</div>
@@ -191,52 +191,89 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux基础命令片段&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux基础命令片段&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=Linux基础命令片段&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&via=Wujiang" target="_blank" class="mdui-ripple">分享到Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=Linux基础命令片段&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">Share to Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">分享到Google+</a>
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">Share to Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&title=Linux基础命令片段" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&title=Linux基础命令片段" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=Linux基础命令片段&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">分享到QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=Linux基础命令片段&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/02/17/Linux基础命令片段/" target="_blank" class="mdui-ripple">Share to QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&text=Linux基础命令片段" target="_blank" class="mdui-ripple">分享到Telegram</a>
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/02/17/Linux基础命令片段/&text=Linux基础命令片段" target="_blank" class="mdui-ripple">Share to Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <p>命令提示符<br>[root@localhost]#<br>其中：<br>root 当前登录用户<br>localhost主机名<br>当前所在目录（家目录）<br>#超级用户的提示符<br>$普通用户的提示符</p>
-<p>命令格式<br>命令 [选项] [参数]<br>注意：<br>1）个别命令使用不遵循此格式<br>2）当有多个选项时，可以写在一起<br>3）简化选项与完整选项<br>-a 等于 –all</p>
-<p>查询目录中内容：ls<br>ls [选项] [文件或目录]<br>选项：<br>-a 显示所有文件，包括隐藏文件<br>-l 显示详情信息<br>-d查看目录属性<br>-h人性化显示文件大小<br>-i 显示inode</p>
+      <h6 id="命令提示符"><a href="#命令提示符" class="headerlink" title="命令提示符"></a>命令提示符</h6><ul>
+<li>[root@localhost]#<ul>
+<li>root 当前登录用户</li>
+<li>localhost主机名</li>
+<li>当前所在目录（家目录）</li>
+<li>#超级用户的提示符</li>
+<li>$普通用户的提示符</li>
+</ul>
+</li>
+</ul>
+<h6 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h6><ul>
+<li><p>命令 [选项] [参数]</p>
+<blockquote>
+<p>注意：<br>  1）个别命令使用不遵循此格式<br>  2）当有多个选项时，可以写在一起<br>  3）简化选项与完整选项</p>
+<pre><code>如：-a 等于 --all</code></pre></blockquote>
+</li>
+<li><p>查询目录中内容：ls</p>
+<ul>
+<li>ls [选项] [文件或目录]<ul>
+<li>选项：<br>-a 显示所有文件，包括隐藏文件<br>-l 显示详情信息<br>-d查看目录属性<br>-h人性化显示文件大小<br>-i 显示inode</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>权限<br>-rw-r–r–<br>-文件类型（-文件d目录 | 软链接文件）<br>r读 w写 x执行</p>
-<p>建立目录：mkdir<br>mkdir -p [目录]<br>-p 递归创建<br>命令英文原意：make directories</p>
-<p>切换所在目录：cd<br>cd [目录]<br>命令英文原意：change directory<br>简化操作<br>cd ~<br>cd 进入家目录<br>cd - 进入上次目录<br>cd .. 进入上一级目录<br>cd . 进入当前目录<br>cd / 进入根目录</p>
+<ul>
+<li><p>建立目录：mkdir<br>mkdir -p [目录]<br>-p 递归创建<br>命令英文原意：make directories</p>
+</li>
+<li><p>切换所在目录：cd<br>cd [目录]<br>命令英文原意：change directory<br>简化操作<br>cd ~<br>cd 进入家目录<br>cd - 进入上次目录<br>cd .. 进入上一级目录<br>cd . 进入当前目录<br>cd / 进入根目录</p>
+</li>
+</ul>
 <p>Tab键 命令补全/目录补全<br>查询所在目录位置：pwd<br>命令英文原意：print working directory</p>
-<p>删除空目录：rmdir<br>rmdir [目录名]<br>命令英文原意：remove empty directory</p>
-<p>删除文件或目录：rm<br>rm -rf [文件或目录]<br>命令英文原意：remove<br>选项：<br>-r 删除目录<br>-f 强制</p>
-<p>复制命令：cp<br>cp [选项] [原文件或目录] [目标目录]<br>命令英文原意：copy<br>选项：<br>-r 复制目录<br>-p 连带文件属性复制<br>-d若源文件是链接文件，则复制链接属性<br>-a相当于-pdr</p>
-<p>ls -l =ll</p>
-<p>剪切或改名命令：mv<br>mv[原文件或目录][目标目录]<br>命令英文原意：move</p>
+<ul>
+<li><p>删除空目录：rmdir<br>rmdir [目录名]<br>命令英文原意：remove empty directory</p>
+</li>
+<li><p>删除文件或目录：rm<br>rm -rf [文件或目录]<br>命令英文原意：remove<br>选项：<br>-r 删除目录<br>-f 强制</p>
+</li>
+<li><p>复制命令：cp<br>cp [选项] [原文件或目录] [目标目录]<br>命令英文原意：copy<br>选项：<br>-r 复制目录<br>-p 连带文件属性复制<br>-d若源文件是链接文件，则复制链接属性<br>-a相当于-pdr</p>
+</li>
+<li><p>ls -l =ll</p>
+</li>
+<li><p>剪切或改名命令：mv<br>mv[原文件或目录][目标目录]<br>命令英文原意：move</p>
 <p>/root超级用户的家目录<br>/tmp临时目录<br>/sbin命令保存目录（超级用户才能使用的目录）<br>/proc直接写入内存的<br>/sys<br>/usr系统软件资源目录<br>/usr/bin/系统命令（普通用户）<br>/usr/sbin/系统命令（超级用户）<br>/var系统相关文档内容</p>
-<p>ln -s [原文件] [目标文件]<br>命令英文原意：link<br>功能描述：生成链接文件<br>选项： -s 创建软链接<br>硬链接特征：<br>\1. 拥有相同的i节点和存储block块，可以看做是同一个文件<br>\2. 可通过i节点识别<br>\3. 不能跨分区<br>\4. 不能针对目录使用</p>
-<p>软链接特征：<br>\1. 类似windows快捷方式<br>\2. 软链接拥有自己的i节点和block块，但是数据块中只保存原文件的文件名和i节点号，并没有实际的文件数据<br>\3. |rwxrwxrwx | 软链接<br>软链接文件权限都为rwxrwxrwx<br>\4. 修改任意文件，另一个都改变<br>\5. 删除原文件，软链接不能使用</p>
-<p>文件搜索命令locate（速度非常快）<br>locate命令格式<br>locate 文件名<br>在后台数据库中按搜索按文件名搜索，搜索速度更快<br>/var/lib/mlocate<br># locate命令所搜索的后台数据库</p>
-<p>updatedb<br>更新数据库</p>
+</li>
+<li><p>ln -s [原文件] [目标文件]<br>命令英文原意：link<br>功能描述：生成链接文件<br>选项： -s 创建软链接<br>硬链接特征：<br>\1. 拥有相同的i节点和存储block块，可以看做是同一个文件<br>\2. 可通过i节点识别<br>\3. 不能跨分区<br>\4. 不能针对目录使用</p>
+</li>
+<li><p>软链接特征：<br>\1. 类似windows快捷方式<br>\2. 软链接拥有自己的i节点和block块，但是数据块中只保存原文件的文件名和i节点号，并没有实际的文件数据<br>\3. |rwxrwxrwx | 软链接<br>软链接文件权限都为rwxrwxrwx<br>\4. 修改任意文件，另一个都改变<br>\5. 删除原文件，软链接不能使用</p>
+</li>
+<li><p>文件搜索命令locate（速度非常快）<br>locate命令格式<br>locate 文件名<br>在后台数据库中按搜索按文件名搜索，搜索速度更快<br>/var/lib/mlocate<br># locate命令所搜索的后台数据库</p>
+</li>
+<li><p>updatedb<br>更新数据库</p>
+</li>
+</ul>
 
       <blockquote class="mdui-m-t-5">
         
-        <strong>本文链接：</strong><a href="http://dream-theater.top/2020/02/17/Linux基础命令片段/">http://dream-theater.top/2020/02/17/Linux基础命令片段/</a>
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/02/17/Linux基础命令片段/">http://dream-theater.top/2020/02/17/Linux基础命令片段/</a>
       </blockquote>
       
     </div>
@@ -257,13 +294,13 @@
     
       <a rel="prev" class="extend prev" href="/2020/02/17/Javascript中的数组去重/">
         <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prev
       </a>
     
     <div class="spacer"></div>
     
       <a rel="next" class="extend next" href="/2020/02/17/MYSQL基础/">
-        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
     
