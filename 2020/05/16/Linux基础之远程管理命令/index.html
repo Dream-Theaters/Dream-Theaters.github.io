@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>Linux基础之远程管理命令 | DreamTheater&#39;s Blog</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
+  <meta name="description" content="01-关机和重启 关机 / 重启     序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全 关闭 或者 重新启动系统     选项 含义    -r 重新启动    提示：  不指定选项和参数，默认表示 1分钟之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基础之远程管理命令">
+<meta property="og:url" content="http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/index.html">
+<meta property="og:site_name" content="DreamTheater&#39;s Blog">
+<meta property="og:description" content="01-关机和重启 关机 / 重启     序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全 关闭 或者 重新启动系统     选项 含义    -r 重新启动    提示：  不指定选项和参数，默认表示 1分钟之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-05-16T14:15:09.734Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux基础之远程管理命令">
+<meta name="twitter:description" content="01-关机和重启 关机 / 重启     序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全 关闭 或者 重新启动系统     选项 含义    -r 重新启动    提示：  不指定选项和参数，默认表示 1分钟之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="learning">
+  <meta name="keywords" content=",Linux">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="DreamTheater&#39;s Blog">
+  <meta name="msapplication-starturl" content="http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DreamTheater&#39;s Blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Sat May 16 2020 14:17:22 GMT+0800">
+    <meta property="article:modified_time" content="Sat May 16 2020 22:15:09 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">DreamTheater&#39;s Blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'Search'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="Enter the key words">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/bog_head portrait.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Wujiang</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>学习日志</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">Archive</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/05/">May 2020<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/02/">February 2020<span class="mdui-ripple sidebar_archives-count">26</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">Category</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme" style="justify-content: center;">No Categories</a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">Tag</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Django/">Django<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">18</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/NODEJS/">NODEJS<span class="mdui-ripple sidebar_archives-count">6</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">About</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tags" class="mdui-list-item mdui-ripple">Tags</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">Gallery</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">Links</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://github.com" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">Github</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-7.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">Linux基础之远程管理命令</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-05-16 / <i class="iconfont">&#xe601;</i> Wujiang</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">Send to mobile phone</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC20lEQVR42u3aS24CQQwFQO5/6WQbCTE820SAu2aFEmZwNVIcf24/R143bGxsbGxsbGxs7I9k3+Lr7/vvn3D9zPuf39+bfHovZmxsbOwT2E/+9F9+8DXg0XPyw00OOooZGxsb+wB2NWnl9+ZpJuE1Y8bGxsbGDkKpFhKTBImNjY2NPWHnbaMkOU0aW9jY2NjYvRDz316npZzx5l4aNjY29sezJ8njXa/fNt/GxsbG/jB2eYWxlVp6h5sPEqLIsbGxsZeye8PUyXh4XgjlQwhsbGzsE9hJmukls3yIm5Oqr7GxsbFPYFdb9tVjmgTaGwwUShFsbGzsRew5oxdunq4efQHJXdjY2NjnsCfFQx7cpOmfDCcK821sbGzsRew8DeR3TUa5SSGUN7awsbGxd7OTNDbnJWVMbwE0L0iwsbGxT2PnbaM83Mm4t3cvNjY29gns6vJl3iSaB50vA0Xvx8bGxl7Kzv+h7w1rk9SSFC2948DGxsY+gZ0XG+XB6njhJh9RRO/HxsbGXsrOAyo04sdX7+jLeRsbGxt7KftVazd5Euo1m5LUi42NjX0CO8H0Gj3zRZ9eYis0lbCxsbFXsJNWTnWUW20PVdeGeiUNNjY29m52zrhOGJMDyhNn9S5sbGzs3exeKycnVQ9uXg41KzBsbGzsFex8mSYvPHoj5OQoXzYewMbGxv5ydm9xJx/W9gqM/MmFOLGxsbEPY8/Bees/T2mTNIaNjY29lZ3zkjTTawzlrajqog82Njb2CezqVV27rDb6rwcGeRLFxsbGPoddXWRM0sZkTFtNmYXxAzY2NvZqdpK0emPdSSMpb1eVxwPY2NjYS9m9oWzvCPJio1relBMYNjY29mHs659MBrrVEqUcITY2NjZ2cWXntS2hJw2j/y5FsLGxsb+EnTeV8mTWu/IRb+FLwsbGxl7NftWwtnc088FDdHzY2NjYS9nnXNjY2NjY2NjY2Ngfc/0CIvHNgAX9g4EAAAAASUVORK5CYII=">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux基础之远程管理命令&url=http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/&pic=http://dream-theater.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=Linux基础之远程管理命令&url=http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/&via=Wujiang" target="_blank" class="mdui-ripple">Share to Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/" target="_blank" class="mdui-ripple">Share to Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/&title=Linux基础之远程管理命令" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=DreamTheater&#39;s Blog&title=Linux基础之远程管理命令&summary=learning&pics=http://dream-theater.top/images/favicon.png&url=http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/" target="_blank" class="mdui-ripple">Share to QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/&text=Linux基础之远程管理命令" target="_blank" class="mdui-ripple">Share to Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h1 id="01-关机和重启"><a href="#01-关机和重启" class="headerlink" title="01-关机和重启"></a>01-关机和重启</h1><ul>
+<li>关机 / 重启</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">命令</th>
+<th align="center">对应英文</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">01</td>
+<td align="center">shutdwon 选项 时间</td>
+<td align="center">shutdown</td>
+<td align="center">关机 / 重新启动</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>shutdown</code>命令可以 <strong>安全 关闭</strong> 或者 <strong>重新启动系统</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-r</td>
+<td align="center">重新启动</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示：</p>
+<ul>
+<li><strong>不指定选项和参数</strong>，默认表示 <strong>1分钟</strong>之后 <strong>关闭电脑</strong></li>
+<li>远程维护服务器时，最好不要关闭系统，而应该重新启动系统</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>常用命令示例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重新启动操作系统，其中 now 表示现在</span></span><br><span class="line">$ shutdown -r now</span><br><span class="line"></span><br><span class="line"><span class="comment"># 立刻关机，其中 now 表示现在</span></span><br><span class="line">$ shutdown now</span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统在今天的 20:25 会关机</span></span><br><span class="line">$ shutdown <span class="number">20</span>:<span class="number">25</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 系统再过十分钟后自动关机</span></span><br><span class="line">$ shutdown +<span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消之前指定的关机计划</span></span><br><span class="line">$ shutdown -c</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>查看或配置网卡信息</p>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">命令</th>
+<th align="center">对应英文</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">01</td>
+<td align="center">ifconfig</td>
+<td align="center">configure a network interface</td>
+<td align="center">查看/配置计算机当前的网卡配置信息</td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td align="center">ping ip地址</td>
+<td align="center">ping</td>
+<td align="center">检测到目标ip地址的连接是否正常</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>网卡和IP地址</p>
+<p><strong>网卡</strong></p>
+<ul>
+<li><p>网卡是一个专门负责网络通讯的硬件设备</p>
+</li>
+<li><p><strong>IP地址</strong>是设置在网卡上的地址信息</p>
+<blockquote>
+<p>我们可以把 <strong>电脑</strong> 比作 <strong>电话</strong>，<strong>网卡</strong> 相当于 <strong>SIM卡</strong>，<strong>IP地址</strong> 相当于 <strong>电话号码</strong></p>
+</blockquote>
+</li>
+</ul>
+<p><strong>IP地址</strong></p>
+<ul>
+<li><strong>每台联网的电脑上</strong>都有<strong>IP地址</strong>，<strong>是保证电脑之间正常通讯的重要设置</strong></li>
+</ul>
+<blockquote>
+<p>注意：每台电脑的IP地址不能相同，否则会出现IP地址冲突，并且没有办法正常通讯</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看网卡配置信息</span></span><br><span class="line">$ ifconfig</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看网卡对应的IP地址</span></span><br><span class="line">$ ifconfig | grep inet</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>&gt; 提示：一台计算机中有可能会有一个 **物理网卡** 和 **多个虚拟网卡**，在Linux中物理网卡的名字通常以 `ensXX` 表示
+
+- `127.0.0.1` 被称为 **本地回环/回环地址，一般用来测试本机网卡是否正常</code></pre><ul>
+<li><p>ping</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检测到目标主机是否连接正常</span></span><br><span class="line">$ ping IP地址</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检测本地网卡是否工作正常</span></span><br><span class="line">$ ping <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
+<pre><code>- `ping` 一般用于检测网络 **通与不通，数值越大，速度越慢**</code></pre><blockquote>
+<ul>
+<li><p><code>ping</code> 的工作原理与潜水艇的声纳相似，<code>ping</code> 这个命令就是取自</p>
+<p><strong>声纳的声音</strong></p>
+</li>
+<li><p>网络管理员之间也常将 <code>ping</code> 用作动词 – ping 一下计算机X，看他是否开着</p>
+</li>
+</ul>
+</blockquote>
+<p>  ​    原理：网络上的机器都有 <strong>唯一确定的IP地址</strong> ，我们给<strong>目标IP地址</strong>发送一个数据包，对方就要返回一个数据包，根据返回的数据包以及时间，我们可以确定目标主机的存在</p>
+<blockquote>
+<p>提示：在Linux中，想要终止一个终端程序的执行，绝大多数都可以使用 <code>CTRL+ C</code> </p>
+</blockquote>
+<ul>
+<li><p>远程登录和复制文件</p>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">命令</th>
+<th align="center">对应英文</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">01</td>
+<td align="center">ssh 用户名@ip</td>
+<td align="center">secure shell</td>
+<td align="center">关机/重新启动</td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td align="center">scp 用户名@ip:文件名或路径 用户名@ip:文件名或路径</td>
+<td align="center">secure copy</td>
+<td align="center">远程复制文件</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>ssh基础</p>
+<p>在Linux中SSH是 <strong>非常常用</strong> 的工具，通过 <strong>SSH 客户端</strong> 我们可以连接到运行了 <strong>SSH 服务器</strong> 的远程机器上</p>
+<p>​                        数据传输是加密的，可以防止信息泄露</p>
+<p>​                        数据传输是压缩的，可以提高传输速度</p>
+<p>SSH客户端     —————————————————–&gt;     SSH服务端    </p>
+<ul>
+<li><p><strong>SSH客户端</strong>是一种使用 <code>Secure Shell (SSH)</code> 协议连接到远程计算机的软件程序</p>
+</li>
+<li><p><code>SSH</code> 是目前较可靠，<strong>专为远程登录会话和其他网络服务</strong> 提供安全性的协议</p>
+<ul>
+<li>利用 <code>SSH 协议</code> 可以有效<strong>防止远程管理过程中的信息泄露</strong></li>
+<li>通过 <code>SSH 协议</code> 可以对所有传输的数据进行加密，也能够防止 DNS欺骗 和 IP欺骗</li>
+</ul>
+</li>
+<li><p><code>SSH</code> 的另一项优点是传输的数据可以是经过压缩的，所以可以加快传输的速度</p>
+</li>
+<li><p>域名和端口号</p>
+<ul>
+<li><p>域名</p>
+<ul>
+<li>由一串 <strong>用点分隔</strong> 的名字组成，例如：<a href="http://www.itcast.cn" target="_blank" rel="noopener">www.itcast.cn</a></li>
+<li>是 IP地址 的别名，方便用户记忆</li>
+</ul>
+</li>
+<li><p>端口号</p>
+<ul>
+<li><p>IP地址：通过 <strong>iP地址</strong> 找到网络上的 <strong>计算机</strong></p>
+</li>
+<li><p>端口号：通过 <strong>端口号</strong> 可以找到 <strong>计算机上运行的应用程序</strong></p>
+<ul>
+<li><strong>SSH服务器</strong> 的默认端口号是 <code>22</code> ，如果是默认端口号，在连接的时候，可以省略</li>
+</ul>
+</li>
+<li><p>常见服务端口号列表：</p>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">服务</th>
+<th align="center">端口号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">01</td>
+<td align="center">SSH 服务器</td>
+<td align="center">22</td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td align="center">Web 服务器</td>
+<td align="center">80</td>
+</tr>
+<tr>
+<td align="center">03</td>
+<td align="center">HTTPS</td>
+<td align="center">443</td>
+</tr>
+<tr>
+<td align="center">04</td>
+<td align="center">FTP 服务器</td>
+<td align="center">21</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>SSH客户端的简单使用</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh [-p port] user@remote</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- `user` 是在远程机器上的用户名，如果不指定的话默认为当前用户
+- ` remote ` 是远程机器的地址，可以是IP/域名，或者是 **后面会提到的别命**
+- ` port ` 是 `SSH Server监听的端口` ，如果不指定，就为默认值 ` 22 `</code></pre><blockquote>
+<p>提示：</p>
+<ul>
+<li><p>使用 <code>exit</code> 退出当前用户的登录</p>
+<p>注意：</p>
+<ul>
+<li><code>ssh</code> 这个终端命令只能在 <code>Linux</code> 或者 <code>UNIX</code> 系统下使用</li>
+<li>如果在 <code>Windows</code> 系统中，可以安装 <code>PuTTY</code> 或者 <code>XShell</code> 客户端软件即可</li>
+</ul>
+<p>提示：</p>
+<ul>
+<li>在工作中，SSH服务器的端口号很有可能<strong>不是22</strong>，如果遇到这种情况就需要使用 <code>-p</code> 选项，指定正确的端口号，否则无法正常连接到服务器</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>Windows下SSH客户端的安装<ul>
+<li>Putty   <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noopener">http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></li>
+<li>XShell   <a href="http://xshellcn.com" target="_blank" rel="noopener">http://xshellcn.com</a></li>
+</ul>
+</li>
+</ul>
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>PermaLink: </strong><a href="http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/">http://dream-theater.top/2020/05/16/Linux基础之远程管理命令/</a>
+      </blockquote>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Linux/">Linux</a>
+      
+    </footer>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2020/05/09/Django之分页/">
+        Next&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2020 Wujiang<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
