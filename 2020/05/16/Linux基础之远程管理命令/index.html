@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
 <meta property="og:description" content="01-关机和重启 关机 / 重启     序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全 关闭 或者 重新启动系统     选项 含义    -r 重新启动    提示：  不指定选项和参数，默认表示 1分钟之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-16T14:15:09.734Z">
+<meta property="og:updated_time" content="2020-05-17T04:41:51.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础之远程管理命令">
 <meta name="twitter:description" content="01-关机和重启 关机 / 重启     序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全 关闭 或者 重新启动系统     选项 含义    -r 重新启动    提示：  不指定选项和参数，默认表示 1分钟之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
@@ -41,7 +41,7 @@
 
   
     <meta property="article:published_time" content="Sat May 16 2020 14:17:22 GMT+0800">
-    <meta property="article:modified_time" content="Sat May 16 2020 22:15:09 GMT+0800">
+    <meta property="article:modified_time" content="Sun May 17 2020 12:41:51 GMT+0800">
   
 
   
@@ -166,7 +166,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-7.png" style="max-height: 240px;">
+      <img src="/images/random/material-13.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">Linux基础之远程管理命令</div>
@@ -461,9 +461,90 @@
 </ul>
 </blockquote>
 <ul>
-<li>Windows下SSH客户端的安装<ul>
+<li><p>Windows下SSH客户端的安装</p>
+<ul>
 <li>Putty   <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="noopener">http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</a></li>
 <li>XShell   <a href="http://xshellcn.com" target="_blank" rel="noopener">http://xshellcn.com</a></li>
+</ul>
+</li>
+<li><p>scp</p>
+<ul>
+<li>scp就是 <code>secure copy</code>，是一个在Linux下用来进行 <code>远程拷贝文件</code> 的命令</li>
+<li>它的 <strong>地址格式与ssh基本相同，需要注意的是</strong>，在指定端口时用的是大写的 <code>-P</code> 而不是小写的</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 把本地当前目录下的01.py文件复制到远程家目录下的Desktop/01.py</span></span><br><span class="line"><span class="comment"># 注意：`:` 后面的路径如果不是绝对路径，则以用户的家目录作为参照路径</span></span><br><span class="line">scp -P port <span class="number">01.</span>py user@remote:Desktop/<span class="number">01.</span>py</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 把远程家目录下的Desktop/01.py文件复制到本地当前目录下的01.py</span></span><br><span class="line">scp -P port user@remote:Desktop/<span class="number">01.</span>py <span class="number">01.</span>py</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 加上 -r 选项可以传送文件夹</span></span><br><span class="line"><span class="comment"># 把当前目录下的demo文件夹复制到远程家目录下的Desktop</span></span><br><span class="line">scp -r demo user@remote:Desktop</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 把远程家目录下的Desktop复制到当前目录下的demo文件夹</span></span><br><span class="line">scp -r user@remote:Desktop demo</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-r</td>
+<td align="center">若给出的源文件是目录文件，则scp将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</td>
+</tr>
+<tr>
+<td align="center">-P</td>
+<td align="center">若远程SSH服务器的端口不是22，需要使用大写字母-P选项指定端口</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li><code>scp</code> 这个终端命令只能在 <code>Linux</code> 或者 <code>UNIX</code> 系统下使用</li>
+<li>如果在 <code>Windows</code> 系统中，可以安装 <code>PuTTY</code>，使用 <code>pscp</code> 命令行工具或者安装 <code>FileZilla</code> 使用 <code>FTP</code> 进行文件传输</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>FileZilla</strong><ul>
+<li>官方网站：<a href="https://www.filezilla.cn/download/client" target="_blank" rel="noopener">https://www.filezilla.cn/download/client</a></li>
+<li><code>FileZilla</code> 在传输文件时，使用的是 <code>FTP服务</code> 而不是 <code>SSH服务</code>，因此端口号应该设置为 <code>21</code> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>SSH高级</p>
+<ul>
+<li>免密码登录</li>
+<li>配置别名</li>
+</ul>
+<blockquote>
+<p>提示：有关SSH配置信息都保存在用户家目录下的 <code>.ssh</code> 目录下 </p>
+</blockquote>
+<ul>
+<li><p><strong>免密码登录</strong></p>
+<ul>
+<li>步骤<ul>
+<li>配置公钥<ul>
+<li>执行 <code>ssh-keygen</code> 即可生成SSH钥匙，一路回车即可</li>
+</ul>
+</li>
+<li>上传公钥到服务器<ul>
+<li>执行 <code>ssh-copy-id -p port user@remote</code> ，可以让远程服务器记住我们的公钥</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>非对称加密算法</p>
+<ul>
+<li>使用 <strong>公钥</strong> 加密的数据，需要使用 <strong>私钥</strong> 解密</li>
+<li>使用 <strong>私钥</strong> 加密的数据，需要使用 <strong>公钥</strong> 解密</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>配置别名</p>
+<p>每次都输入 <code>ssh -p port user@remote</code>，时间久了会觉得很麻烦，特别是当 <code>user</code>，<code>remote</code> 和 <code>port</code> 都得输入，而且还不好记忆</p>
+<p>而 <strong>配置别名</strong> 可以让我们进一步偷懒，譬如：<code>ssh mac</code> 来替代上面这么一长串，那么就在 <code>~/.ssh/config</code> 里面追加以下内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host mac </span><br><span class="line">	HostName ip地址</span><br><span class="line">    User itheima</span><br><span class="line">    port <span class="number">22</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>保存之后，即可用 <code>ssh mac</code> 实现远程登录了，<code>scp</code> 同样可以使用</strong></p>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
