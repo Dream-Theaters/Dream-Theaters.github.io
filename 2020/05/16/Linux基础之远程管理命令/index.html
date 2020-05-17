@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
 <meta property="og:description" content="01-关机和重启 关机 / 重启    序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全关闭 或者 重新启动系统    选项 含义    -r 重新启动      提示：  不指定选项和参数，默认表示 1分钟 之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-17T14:50:48.800Z">
+<meta property="og:updated_time" content="2020-05-17T14:53:39.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础之远程管理命令">
 <meta name="twitter:description" content="01-关机和重启 关机 / 重启    序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全关闭 或者 重新启动系统    选项 含义    -r 重新启动      提示：  不指定选项和参数，默认表示 1分钟 之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
@@ -41,7 +41,7 @@
 
   
     <meta property="article:published_time" content="Sat May 16 2020 14:17:22 GMT+0800">
-    <meta property="article:modified_time" content="Sun May 17 2020 22:50:48 GMT+0800">
+    <meta property="article:modified_time" content="Sun May 17 2020 22:53:39 GMT+0800">
   
 
   
@@ -166,7 +166,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-15.png" style="max-height: 240px;">
+      <img src="/images/random/material-5.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">Linux基础之远程管理命令</div>
@@ -301,9 +301,9 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- ping</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检测到目标主机是否连接正常</span></span><br><span class="line">$ ping IP地址</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 检测本地网卡是否工作正常</span></span><br><span class="line">$ ping <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   - `ping` 一般用于检测网络 **通与不通，数值越大，速度越慢**</span><br><span class="line">&gt; `ping` 的工作原理与潜水艇的声纳相似，`ping` 这个命令就是取自**声纳的声音**</span><br><span class="line">&gt; 网络管理员之间也常将 `ping` 用作动词 ----- ping 一下计算机X，看他是否开着</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- `ping` 一般用于检测网络 **通与不通，数值越大，速度越慢**</span><br><span class="line">&gt; `ping` 的工作原理与潜水艇的声纳相似，`ping` 这个命令就是取自**声纳的声音**</span><br><span class="line">&gt; 网络管理员之间也常将 `ping` 用作动词 ----- ping 一下计算机X，看他是否开着</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原理：网络上的机器都有 **唯一确定的IP地址** ，我们给**目标IP地址**发送一个数据包，对方就要返回一个数据包，根据返回的数据包以及时间，我们可以确定目标主机的存在</span><br><span class="line"> &gt; 提示：在Linux中，想要终止一个终端程序的执行，绝大多数都可以使用 `CTRL+ C`</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">原理：网络上的机器都有 **唯一确定的IP地址** ，我们给**目标IP地址**发送一个数据包，对方就要返回一个数据包，根据返回的数据包以及时间，我们可以确定目标主机的存在</span><br><span class="line">&gt; 提示：在Linux中，想要终止一个终端程序的执行，绝大多数都可以使用 `CTRL+ C`</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>远程登录和复制文件</p>
