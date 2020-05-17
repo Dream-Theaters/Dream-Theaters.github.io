@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
 <meta property="og:description" content="01-关机和重启 关机 / 重启    序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全关闭 或者 重新启动系统    选项 含义    -r 重新启动      提示：  不指定选项和参数，默认表示 1分钟 之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-17T14:26:05.816Z">
+<meta property="og:updated_time" content="2020-05-17T14:38:45.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础之远程管理命令">
 <meta name="twitter:description" content="01-关机和重启 关机 / 重启    序号 命令 对应英文 作用    01 shutdwon 选项 时间 shutdown 关机 / 重新启动    shutdown命令可以 安全关闭 或者 重新启动系统    选项 含义    -r 重新启动      提示：  不指定选项和参数，默认表示 1分钟 之后 关闭电脑 远程维护服务器时，最好不要关闭系统，而应该重新启动系统    常用命令示例 1">
@@ -41,7 +41,7 @@
 
   
     <meta property="article:published_time" content="Sat May 16 2020 14:17:22 GMT+0800">
-    <meta property="article:modified_time" content="Sun May 17 2020 22:26:05 GMT+0800">
+    <meta property="article:modified_time" content="Sun May 17 2020 22:38:45 GMT+0800">
   
 
   
@@ -166,7 +166,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-3.png" style="max-height: 240px;">
+      <img src="/images/random/material-2.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">Linux基础之远程管理命令</div>
@@ -298,13 +298,14 @@
 <blockquote>
 <p>我们可以把 <strong>电脑</strong> 比作 <strong>电话</strong>，<strong>网卡</strong> 相当于 <strong>SIM卡</strong>，<strong>IP地址</strong> 相当于 <strong>电话号码</strong></p>
 </blockquote>
-<pre><code>**IP地址**</code></pre><ul>
-<li><strong>每台联网的电脑上都有IP地址，是保证电脑之间正常通讯的重要设置</strong></li>
-</ul>
+<p>​      <strong>IP地址</strong></p>
+<p>​        <strong>每台联网的电脑上都有IP地址，是保证电脑之间正常通讯的重要设置</strong></p>
 <blockquote>
 <p>注意：每台电脑的IP地址不能相同，否则会出现IP地址冲突，并且没有办法正常通讯</p>
 </blockquote>
-<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看网卡配置信息</span></span><br><span class="line">$ ifconfig</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看网卡对应的IP地址</span></span><br><span class="line">$ ifconfig | grep inet</span><br></pre></td></tr></table></figure></code></pre><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看网卡配置信息</span></span><br><span class="line">$ ifconfig</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看网卡对应的IP地址</span></span><br><span class="line">$ ifconfig | grep inet</span><br></pre></td></tr></table></figure>
+
+<blockquote>
 <p>提示：一台计算机中有可能会有一个 <strong>物理网卡</strong> 和 <strong>多个虚拟网卡</strong>，在Linux中物理网卡的名字通常以 <code>ensXX</code> 表示</p>
 </blockquote>
 <pre><code>- `127.0.0.1` 被称为 **本地回环/环回地址**，一般用来测试本机网卡是否正常</code></pre><ul>
