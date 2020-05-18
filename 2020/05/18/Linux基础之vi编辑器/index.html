@@ -12,23 +12,23 @@
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="DreamTheater's Blog">
-  <meta name="description" content="learning">
-<meta name="keywords" content="learn">
+  <meta name="description" content="vi —– 终端中的编辑器 目录  vi简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图   vi简介学习vi的目的  在工作中，要对服务器上的文件简单的修改，可以使用ssh远程登录到服务器上，并且使用vi进行快速的编辑即可 常见需要修改的文件包括 源程序 配置文件，例如ssh的配置文件~/.ssh/config      在没有图形界面的环境下，要编辑文件，vi是最佳选择！">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux基础之vi编辑器">
 <meta property="og:url" content="http://dream-theater.top/2020/05/18/Linux基础之vi编辑器/index.html">
 <meta property="og:site_name" content="DreamTheater&#39;s Blog">
-<meta property="og:description" content="learning">
+<meta property="og:description" content="vi —– 终端中的编辑器 目录  vi简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图   vi简介学习vi的目的  在工作中，要对服务器上的文件简单的修改，可以使用ssh远程登录到服务器上，并且使用vi进行快速的编辑即可 常见需要修改的文件包括 源程序 配置文件，例如ssh的配置文件~/.ssh/config      在没有图形界面的环境下，要编辑文件，vi是最佳选择！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-18T01:10:18.702Z">
+<meta property="og:updated_time" content="2020-05-18T15:11:21.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基础之vi编辑器">
-<meta name="twitter:description" content="learning">
+<meta name="twitter:description" content="vi —– 终端中的编辑器 目录  vi简介 打开和新建文件 三种工作模式 常用命令 分屏命令 常用命令速查图   vi简介学习vi的目的  在工作中，要对服务器上的文件简单的修改，可以使用ssh远程登录到服务器上，并且使用vi进行快速的编辑即可 常见需要修改的文件包括 源程序 配置文件，例如ssh的配置文件~/.ssh/config      在没有图形界面的环境下，要编辑文件，vi是最佳选择！">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
   <meta name="description" content="learning">
-  <meta name="keywords" content>
+  <meta name="keywords" content=",Linux">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="DreamTheater&#39;s Blog">
@@ -41,7 +41,7 @@
 
   
     <meta property="article:published_time" content="Mon May 18 2020 09:10:18 GMT+0800">
-    <meta property="article:modified_time" content="Mon May 18 2020 09:10:18 GMT+0800">
+    <meta property="article:modified_time" content="Mon May 18 2020 23:11:21 GMT+0800">
   
 
   
@@ -129,7 +129,7 @@
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/tags/Django/">Django<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">18</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">8</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/NODEJS/">NODEJS<span class="mdui-ripple sidebar_archives-count">6</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/Django/">Django<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Javascript/">Javascript<span class="mdui-ripple sidebar_archives-count">18</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/Linux/">Linux<span class="mdui-ripple sidebar_archives-count">9</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/MYSQL/">MYSQL<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/NODEJS/">NODEJS<span class="mdui-ripple sidebar_archives-count">6</span></a>
         
       </div>
     </div>
@@ -166,7 +166,7 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-12.png" style="max-height: 240px;">
+      <img src="/images/random/material-16.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
           <div class="mdui-card-primary-title">Linux基础之vi编辑器</div>
@@ -216,7 +216,344 @@
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      
+      <h5 id="vi-—–-终端中的编辑器"><a href="#vi-—–-终端中的编辑器" class="headerlink" title="vi —– 终端中的编辑器"></a><strong>vi —– 终端中的编辑器</strong></h5><hr>
+<p><strong>目录</strong></p>
+<ul>
+<li><code>vi</code>简介</li>
+<li>打开和新建文件</li>
+<li>三种工作模式</li>
+<li>常用命令</li>
+<li>分屏命令</li>
+<li>常用命令速查图</li>
+</ul>
+<hr>
+<h6 id="vi简介"><a href="#vi简介" class="headerlink" title="vi简介"></a>vi简介</h6><p><strong>学习vi的目的</strong></p>
+<ul>
+<li>在工作中，要对<strong>服务器</strong>上的文件<strong>简单</strong>的修改，可以使用<code>ssh</code>远程登录到服务器上，并且使用<code>vi</code>进行快速的编辑即可</li>
+<li>常见需要修改的文件包括<ul>
+<li><strong>源程序</strong></li>
+<li><strong>配置文件</strong>，例如<code>ssh</code>的配置文件<code>~/.ssh/config</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>在没有图形界面的环境下，要编辑文件，<code>vi</code>是最佳选择！</li>
+<li>每一个要使用Linux的程序员，都应该或多或少的学习一些<code>vi</code>的常用命令</li>
+</ul>
+</blockquote>
+<p><strong>vi 和vim</strong></p>
+<ul>
+<li>在很多<code>Linux</code>发行版中，直接把<code>vi</code>做成<code>vim</code>的软链接</li>
+</ul>
+<p><strong>vi</strong></p>
+<ul>
+<li><code>vi</code>是<code>Visual interface</code>的简称，是<code>Linux</code>中<strong>最经典</strong>的文本编辑器</li>
+<li><code>vi</code>的核心设计思想—–&gt;<strong>让程序员的手指始终保持在键盘的核心区域，就能完成所有的编辑操作</strong></li>
+<li><code>vi</code>的特点：<ul>
+<li><strong>没有图形界面</strong>的<strong>功能强大</strong>的编辑器</li>
+<li>只能是编辑<strong>文本内容</strong>，不能对字体、段落进行排版</li>
+<li><strong>不支持鼠标操作</strong></li>
+<li>没有菜单</li>
+<li>只有命令</li>
+</ul>
+</li>
+<li><code>vi</code>编辑器在<strong>系统管理、服务器管理</strong> 编辑文件时，<strong>其功能永远不是图形界面的编辑器能比拟的</strong></li>
+</ul>
+<p><strong>vim</strong></p>
+<p><strong>vim = vi improved</strong></p>
+<ul>
+<li><code>vim</code>是从<code>vi</code>发展出来的一个文本编辑器，支持 <strong>代码补全、编译 及 错误跳转</strong> 等方便编程的功能特别丰富，在程序员中被广泛使用，被称为 <strong>编辑器之神</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找 vi 的运行文件</span></span><br><span class="line"></span><br><span class="line">$ which vi</span><br><span class="line">$ ls -l /usr/bin/vi</span><br><span class="line">$ ls -l /etc/alternatives/vi</span><br><span class="line">$ ls -l /usr/bin/vim.basic</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找 vim 的运行文件</span></span><br><span class="line"></span><br><span class="line">$ which vim</span><br><span class="line">$ ls -l /usr/bin/vim</span><br><span class="line">$ ls -l /etc/alternatives/vim</span><br><span class="line">$ ls -l /usr/bin/vim.basic</span><br></pre></td></tr></table></figure>
+
+<h6 id="打开和新建文件"><a href="#打开和新建文件" class="headerlink" title="打开和新建文件"></a><strong>打开和新建文件</strong></h6><ul>
+<li>在终端中输入<code>vi</code> <strong>在后面跟上文件名</strong> 即可</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi 文件名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果文件已经存在，会直接打开该文件</li>
+<li>如果文件不存在，会新建一个文件</li>
+</ul>
+<p><strong>打开文件并且定位行</strong></p>
+<ul>
+<li>在日常工作中，有可能会遇到 <strong>打开一个文件，并定位到指定行</strong> 的情况</li>
+<li>例如：在开发时，<strong>知道某一行代码有错误</strong>，可以 <strong>快速定位</strong>到出错代码的位置</li>
+<li>这个时候，可以使用以下命令打开文件</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi 文件名 + 行数</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>提示：如果只带上 <code>+</code> 而不指定行号，会直接定位到文件末尾</p>
+</blockquote>
+<p><strong>异常处理</strong></p>
+<ul>
+<li>如果<code>vi</code>异常退出，在磁盘上可能会保存有 <strong>交换文件</strong></li>
+<li>下次再使用<code>vi</code>编辑该文件时，会看到以下屏幕信息，按下字母<code>d</code>可以 <strong>删除交换文件</strong> 即可</li>
+</ul>
+<blockquote>
+<p>提示：按下键盘时，注意关闭输入法</p>
+</blockquote>
+<h6 id="三种工作模式"><a href="#三种工作模式" class="headerlink" title="三种工作模式"></a>三种工作模式</h6><ul>
+<li><p><code>vi</code>有三种基本工作模式</p>
+<ol>
+<li>命令模式<ul>
+<li><strong>打开文件首先进入命令模式</strong>，是使用<code>vi</code>的<strong>入口</strong></li>
+<li>通过<strong>命令</strong>对文件进行常规的编辑操作，例如：**定位、翻页、复制、粘贴、删除……</li>
+<li>在其他图形编辑器下，通过 <strong>快捷键</strong> 或者 <strong>鼠标</strong> 实现的操作，都在 <strong>命令模式</strong> 下实现</li>
+</ul>
+</li>
+<li><strong>末行模式</strong> —–&gt; 执行 <strong>保存、退出</strong> 等操作<ul>
+<li>要退出<code>vi</code>返回到控制台，需要在末行模式下输入命令</li>
+<li><strong>末行模式</strong> 是 <code>vi</code> 的 <strong>出口</strong></li>
+</ul>
+</li>
+<li><strong>编辑模式</strong> —–&gt; 正常的编辑文字</li>
+</ol>
+<blockquote>
+<p>提示：在<code>Touch Bar</code>的Mac电脑上，按<code>ESC</code>不方便，可以使用<code>CTRL + [</code>替代</p>
+</blockquote>
+<p><strong>末行模式命令</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">w</td>
+<td align="center">write</td>
+<td align="center">保存</td>
+</tr>
+<tr>
+<td align="center">q</td>
+<td align="center">quit</td>
+<td align="center">退出，如果没有保存，不允许退出</td>
+</tr>
+<tr>
+<td align="center">q!</td>
+<td align="center">quit</td>
+<td align="center">强行退出，不保存退出</td>
+</tr>
+<tr>
+<td align="center">wq</td>
+<td align="center">write &amp; quit</td>
+<td align="center">保存并退出</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center"></td>
+<td align="center">保存并退出</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h6 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h6><p><strong>命令线路图</strong></p>
+<ol>
+<li>重复次数<ul>
+<li>在命令模式下，<strong>先输入一个数字，再跟上一个命令</strong>，可以让该命令 <strong>重复执行指定次数</strong></li>
+</ul>
+</li>
+<li>移动和选择（多练）<ul>
+<li><code>vi</code>之所以快，关键在于 <strong>能够快速定位到要编辑的代码行</strong></li>
+<li><strong>移动命令</strong> 能够 和 <strong>编辑操作</strong> 命令 <strong>组合使用</strong></li>
+</ul>
+</li>
+<li>编辑操作<ul>
+<li>删除、复制、粘贴、替换、缩排</li>
+</ul>
+</li>
+<li>撤销和重复</li>
+<li>查找替换</li>
+<li>编辑</li>
+</ol>
+<p><strong>学习提示</strong></p>
+<ol>
+<li><code>vi</code>的命令较多，<strong>不要期望一下子全部记住</strong>，个别命令忘记了，只是会影响编辑速度而已</li>
+<li>再使用<code>vi</code>命令时，注意 <strong>关闭中文输入法</strong></li>
+</ol>
+<p><strong>移动（基本）</strong></p>
+<ul>
+<li>要熟练使用<code>vi</code>，首先应该学会怎么在 <strong>命令模式</strong> 下快速移动光标</li>
+<li><strong>编辑操作命令</strong>，能够和 <strong>移动命令</strong> 结合在一起使用</li>
+</ul>
+<p><strong>上、下、左、右</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">功能</th>
+<th align="center">手指</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">h</td>
+<td align="center">向左</td>
+<td align="center">食指</td>
+</tr>
+<tr>
+<td align="center">j</td>
+<td align="center">向下</td>
+<td align="center">食指</td>
+</tr>
+<tr>
+<td align="center">k</td>
+<td align="center">向上</td>
+<td align="center">中指</td>
+</tr>
+<tr>
+<td align="center">l</td>
+<td align="center">向右</td>
+<td align="center">无名指</td>
+</tr>
+</tbody></table>
+<p><strong>行内移动</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">w</td>
+<td align="center">word</td>
+<td align="center">向后移动一个单词</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">back</td>
+<td align="center">向前移动一个单词</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center">行首</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center"></td>
+<td align="center">行首，第一个不是空白字符的位置</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center"></td>
+<td align="center">行尾</td>
+</tr>
+</tbody></table>
+<p><strong>行数移动</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">gg</td>
+<td align="center">go</td>
+<td align="center">文件顶部</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center">go</td>
+<td align="center">文件末尾</td>
+</tr>
+<tr>
+<td align="center">数字gg</td>
+<td align="center">go</td>
+<td align="center">移动到 数字 对应行数</td>
+</tr>
+<tr>
+<td align="center">数字G</td>
+<td align="center">go</td>
+<td align="center">移动到 数字 对应行数</td>
+</tr>
+<tr>
+<td align="center">:数字</td>
+<td align="center"></td>
+<td align="center">移动到 数字 对应 行数</td>
+</tr>
+</tbody></table>
+<p><strong>屏幕移动</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Ctrl + b</td>
+<td align="center">back</td>
+<td align="center">向上翻页</td>
+</tr>
+<tr>
+<td align="center">Ctrl + f</td>
+<td align="center">forward</td>
+<td align="center">向下翻页</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center">Head</td>
+<td align="center">屏幕顶部</td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td align="center">Middle</td>
+<td align="center">屏幕中间</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center">Low</td>
+<td align="center">屏幕底部</td>
+</tr>
+</tbody></table>
+<p><strong>移动（程序）</strong></p>
+<p><strong>段落移动</strong></p>
+<ul>
+<li><code>vi</code>中使用 空行 来区分段落</li>
+<li>在程序开发时，通常 <strong>一段功能相关的代码会写在一起</strong> —–&gt; 之间没有空行</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">{</td>
+<td align="center">上一级</td>
+</tr>
+<tr>
+<td align="center">}</td>
+<td align="center">下一级</td>
+</tr>
+</tbody></table>
+<p><strong>括号切换</strong></p>
+<ul>
+<li>在程序世界里，<code>()</code>、<code>[]</code>、<code>{}</code> 使用频率很高，而且 <strong>都是成对出现的</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%</td>
+<td align="center">括号匹配及切换</td>
+</tr>
+</tbody></table>
+
       <blockquote class="mdui-m-t-5">
         
         <strong>本文链接：</strong><a href="http://dream-theater.top/2020/05/18/Linux基础之vi编辑器/">http://dream-theater.top/2020/05/18/Linux基础之vi编辑器/</a>
@@ -225,6 +562,8 @@
     </div>
     <footer class="mdui-card-actions">
       
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/Linux/">Linux</a>
       
     </footer>
     
